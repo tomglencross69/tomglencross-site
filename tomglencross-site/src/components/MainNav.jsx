@@ -1,27 +1,26 @@
 'use client';
 import Header from "./Header";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import fakeWorksData from "@/testdata/testWorksData";
+import SideNav from "./SideNav";
 
 export default function MainNav() {
-
-    const worksListFunction = () => {
-        return fakeWorksData.map((work)=>{
-            return work.reference + " " + work.title
-        })
-    }
-
-    const [isMenuOpen, setIsMenuOpen] = useState(true)
-    const [expanded, setExpanded] = useState(null)
-    const [selectedItem, setSelectedItem] = useState(null)
-    const router = useRouter()
-
-    const toggleSubMenu = (menu) => {
-        setExpanded(expanded === menu ? null: menu)
-    }
-    
+  const [isMenuOpen, setIsMenuOpen] = useState(true)
+  const [expanded, setExpanded] = useState(null)
+  const [selectedItem, setSelectedItem] = useState(null)
+  const router = useRouter()
+  
+  const toggleSubMenu = (menu) => {
+    setExpanded(expanded === menu ? null: menu)
+  }
+  
+  const worksListFunction = () => {
+      return fakeWorksData.map((work)=>{
+          return work.reference + " " + work.title
+      })
+  }
     const handleItemClick = (item, route) => {
         if (route === '/') {
             router.push(route)
@@ -40,16 +39,15 @@ export default function MainNav() {
     const handleClickedItemMenuReturn = () => {
         setIsMenuOpen(true)
     }
-
+console.log(selectedItem, "<<<<<<<<")
   return (
     <>
         <Header onClick={() => handleItemClick(null, '/')}/>
+          <SideNav handleItemClick={handleItemClick}  />
         <nav className="bg-transparent text-blueCustom text-2xl p-2 sm:p-4 ">
-      {/* Main Menu */}
       <ul className="space-y-0">
         {isMenuOpen && (
           <>
-            {/* Works - Dropdown */}
             <li>
               <div
                 onClick={() => toggleSubMenu('works')}
@@ -72,11 +70,9 @@ export default function MainNav() {
   </ul>
 )}
             </li>
-
-            {/* Other Menu Items */}
             <li>
               <div
-                onClick={() => handleItemClick('2 Dev', 'dev')} 
+                onClick={() => handleItemClick('2 Dev', '/dev')} 
                 className={`cursor-pointer ${selectedItem === '2 Dev' ? 'text-pinkCustom' : ''} hover:text-pinkCustom transition-colors duration-300 `}
               >
                 <span className="text-black">2</span> Dev
@@ -84,7 +80,7 @@ export default function MainNav() {
             </li>
             <li>
               <div
-                onClick={() => handleItemClick('3 Blog', 'blog')}
+                onClick={() => handleItemClick('3 Blog', '/blog')}
                 className={`cursor-pointer ${selectedItem === '3 Blog' ? 'text-pinkCustom' : ''} hover:text-pinkCustom transition-colors duration-300 `}
               >
                 <span className="text-black">3</span> Blog
@@ -92,7 +88,7 @@ export default function MainNav() {
             </li>
             <li>
               <div
-                onClick={() => handleItemClick('4 CV', 'cv')}
+                onClick={() => handleItemClick('4 CV', '/cv')}
                 className={`cursor-pointer ${selectedItem === '4 CV' ? 'text-pinkCustom' : ''} hover:text-pinkCustom transition-colors duration-300 `}
               >
                 <span className="text-black">4</span> CV
@@ -100,16 +96,14 @@ export default function MainNav() {
             </li>
             <li>
               <div
-                onClick={() => handleItemClick('5 About', 'about')}
-                className={`cursor-pointer ${selectedItem == '5 About' ? 'text-pinkCustom' : ''}hover:text-pinkCustom transition-colors duration-300 `}
+                onClick={() => handleItemClick('5 About', '/about')}
+                className={`cursor-pointer ${selectedItem === '5 About' ? 'text-pinkCustom' : ''} hover:text-pinkCustom transition-colors duration-300 `}
               >
                 <span className="text-black">5</span> About
               </div>
             </li>
           </>
         )}
-
-        {/* Display Selected Item at the Top */}
         {selectedItem && !isMenuOpen && (
           <div className="text-2xl">
             <span 

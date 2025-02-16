@@ -1,5 +1,6 @@
 import "./globals.css";
 import MainNav from "@/components/MainNav";
+import SideNav from "@/components/SideNav";
 
 
 export default function RootLayout({ children }) {
@@ -8,6 +9,7 @@ export default function RootLayout({ children }) {
       <body>
         <MainNav/>
         {children}
+        {/* <SideNav/> */}
       </body>
     </html>
   );
