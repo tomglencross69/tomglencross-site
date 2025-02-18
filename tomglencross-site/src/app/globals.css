@@ -24,5 +24,6 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: 'Times New Roman', Times, serif;
+  transition: background-color 1000ms ease-in-out, color 1000ms ease-in-out
 }
 /*THIS WAS PRELOADED IN GLOBALS, I JUST CHANGED FONT FAMILY*/
