@@ -43,16 +43,16 @@ export default function MainNav() {
     <>
         <Header onClick={() => handleItemClick(null, '/')}/>
           <SideNav handleItemClick={handleItemClick}  />
-        <nav className="bg-transparent text-blueCustom text-3xl flex p-2 sm:p-4 ">
+        <nav className={`text-blueCustom dark:text-nightModeBlueCustom bg-transparent text-3xl flex p-2 sm:p-4`} >
       <ul className="space-y-0">
         {isMenuOpen && (
           <>
             <li>
               <div
                 onClick={() => toggleSubMenu('works')}
-                className="cursor-pointer hover:text-pinkCustom transition-colors duration-300"
+                className={`cursor-pointer hover:text-pinkCustom dark:nightModePinkCustom transition-colors duration-300`}
               >
-                <span><span className="text-black">1</span> Works</span>
+                <span><span className={`text-black dark:text-white`}>1</span> Works</span>
                 <span>{expanded === 'works' ? ' ↞' : ' ↡'}</span>
               </div>
               {expanded === 'works' && (
@@ -61,9 +61,9 @@ export default function MainNav() {
       <li
         key={work.id}
         onClick={() => handleItemClick(`${work.reference} ${work.title}`, `/works/${work.urlSlug}`)}
-        className={`cursor-pointer ${selectedItem === `${work.reference} ${work.title}` ? 'text-pinkCustom' : ''} hover:text-pinkCustom transition-colors duration-300 `}
+        className={`cursor-pointer ${selectedItem === `${work.reference} ${work.title}` ? `text-pinkCustom dark:nightModePinkCustom` : ''} hover:text-pinkCustom dark:nightModePinkCustom transition-colors duration-300 `}
       >
-        <span className="text-black">{work.reference}</span> {work.title}
+        <span className={`text-black dark:text-white`}>{work.reference}</span> {work.title}
       </li>
     ))}
   </ul>
@@ -72,44 +72,44 @@ export default function MainNav() {
             <li>
               <div
                 onClick={() => handleItemClick('2 Dev', '/dev')} 
-                className={`cursor-pointer ${selectedItem === '2 Dev' ? 'text-pinkCustom' : ''} hover:text-pinkCustom transition-colors duration-300 `}
+                className={`cursor-pointer ${selectedItem === '2 Dev' ? `text-pinkCustom dark:nightModePinkCustom` : ''} hover:text-pinkCustom dark:nightModePinkCustom transition-colors duration-300 `}
               >
-                <span className="text-black">2</span> Dev
+                <span className={`text-black dark:text-white`}>2</span> Dev
               </div>
             </li>
             <li>
               <div
                 onClick={() => handleItemClick('3 Blog', '/blog')}
-                className={`cursor-pointer ${selectedItem === '3 Blog' ? 'text-pinkCustom' : ''} hover:text-pinkCustom transition-colors duration-300 `}
+                className={`cursor-pointer ${selectedItem === '3 Blog' ? `text-pinkCustom dark:nightModePinkCustom` : ''} hover:text-pinkCustom dark:nightModePinkCustom transition-colors duration-300 `}
               >
-                <span className="text-black">3</span> Blog
+                <span className={`text-black dark:text-white`}>3</span> Blog
               </div>
             </li>
             <li>
               <div
                 onClick={() => handleItemClick('4 CV', '/cv')}
-                className={`cursor-pointer ${selectedItem === '4 CV' ? 'text-pinkCustom' : ''} hover:text-pinkCustom transition-colors duration-300 `}
+                className={`cursor-pointer ${selectedItem === '4 CV' ? `text-pinkCustom dark:nightModePinkCustom` : ''} hover:text-pinkCustom dark:nightModePinkCustom transition-colors duration-300 `}
               >
-                <span className="text-black">4</span> CV
+                <span className={`text-black dark:text-white`}>4</span> CV
               </div>
             </li>
             <li>
               <div
                 onClick={() => handleItemClick('5 About', '/about')}
-                className={`cursor-pointer ${selectedItem === '5 About' ? 'text-pinkCustom' : ''}hover:text-pinkCustom transition-colors duration-300 `}
+                className={`cursor-pointer ${selectedItem === '5 About' ? `text-pinkCustom dark:nightModePinkCustom` : ''}hover:text-pinkCustom dark:nightModePinkCustom transition-colors duration-300 `}
               >
-                <span className="text-black">5</span> About
+                <span className={`text-black dark:text-white`}>5</span> About
               </div>
             </li>
           </>
         )}
         {selectedItem && !isMenuOpen && (
-          <div className="text-2xl">
+          <div className="text-3xl">
             <span 
-            onClick={() => handleClickedItemMenuReturn()}className="cursor-pointer text-pinkCustom">↞
+            onClick={() => handleClickedItemMenuReturn()}className={`cursor-pointer text-pinkCustom dark:nightModePinkCustom`}>↞
             </span> 
-            <span className="text-black">{" " + selectedItem.split(' ')[0]}</span>
-            <span className="text-pinkCustom">{" " + selectedItem.split(' ').slice(1).join(' ')}</span>
+            <span className={`text-black dark:text-white`}>{" " + selectedItem.split(' ')[0]}</span>
+            <span className={`text-pinkCustom dark:nightModePinkCustom`}>{" " + selectedItem.split(' ').slice(1).join(' ')}</span>
           </div>
         )}
       </ul>
@@ -123,6 +123,4 @@ export default function MainNav() {
 -pink background?
 -think about themes now?
 -should menu disappear once selected? or remain in mobile too?
--build other navbar
--kanban rest of project...
 */

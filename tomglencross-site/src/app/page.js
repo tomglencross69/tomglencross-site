@@ -4,7 +4,7 @@ import homepageImage from "../assets/images/homePageImage1.jpg"
 export default function Home() {
   return (
     <>
-    <div className="text-2xl pt-4 pb-6 ">Tom Glencross is an artist, writer and dev working in the UK. </div>
+    <div className="text-2xl pt-4 pb-6">Tom Glencross is an artist, writer and dev working in the UK. </div>
     <div className="flex justify-center">
     <Image 
     alt="portrait of Tom Glencross beside some neolithic standing stones"
