@@ -7,4 +7,3 @@ export default function Header({onClick}) {
     <div onClick={onClick} className="cursor-pointer p-2 text-4xl sm:p-4 hover:text-pinkCustom active:text-pinkCustom transition-colors duration-1000">TOM GLENCROSS</div>
   )
 }
-// onClick={()=> router.push("/")}

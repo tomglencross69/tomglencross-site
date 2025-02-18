@@ -39,12 +39,11 @@ export default function MainNav() {
     const handleClickedItemMenuReturn = () => {
         setIsMenuOpen(true)
     }
-console.log(selectedItem, "<<<<<<<<")
   return (
     <>
         <Header onClick={() => handleItemClick(null, '/')}/>
           <SideNav handleItemClick={handleItemClick}  />
-        <nav className="bg-transparent text-blueCustom text-2xl p-2 sm:p-4 ">
+        <nav className="bg-transparent text-blueCustom text-3xl flex p-2 sm:p-4 ">
       <ul className="space-y-0">
         {isMenuOpen && (
           <>
@@ -97,7 +96,7 @@ console.log(selectedItem, "<<<<<<<<")
             <li>
               <div
                 onClick={() => handleItemClick('5 About', '/about')}
-                className={`cursor-pointer ${selectedItem === '5 About' ? 'text-pinkCustom' : ''} hover:text-pinkCustom transition-colors duration-300 `}
+                className={`cursor-pointer ${selectedItem === '5 About' ? 'text-pinkCustom' : ''}hover:text-pinkCustom transition-colors duration-300 `}
               >
                 <span className="text-black">5</span> About
               </div>

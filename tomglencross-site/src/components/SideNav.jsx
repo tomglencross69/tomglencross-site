@@ -1,22 +1,21 @@
 'use client'
-import { useRouter } from "next/navigation";
 
 export default function SideNav ({handleItemClick}) {
   return (
-    <nav className="bg-gray-200 text-black text-xl sm:p-2 fixed right-0 top-0 h-full" style={{writingMode: 'vertical-rl'}} >
-        <ul className="flex flex-row">
+    <nav className="bg-gray-200 text-black text-xl fixed right-0 top-0 h-full" style={{writingMode: 'vertical-rl'}} >
+        <ul className="flex flex-row pt-2">
             <li className="cursor-pointer hover:text-pinkCustom transition-colors duration-300"
-            onClick={() => handleItemClick(null, '/')}>Home </li><span>•</span>
+            onClick={() => handleItemClick(null, '/')}>home </li><span>•</span>
             <li className="cursor-pointer hover:text-pinkCustom transition-colors duration-300"
-            onClick={() => handleItemClick('1 Works', '/works')}>Works </li><span>•</span>
+            onClick={() => handleItemClick('1 Works', '/works')}>works </li><span>•</span>
             <li className="cursor-pointer hover:text-pinkCustom transition-colors duration-300"
-            onClick={() => handleItemClick('2 Dev', '/dev')}>Dev </li><span>•</span>
+            onClick={() => handleItemClick('2 Dev', '/dev')}>dev </li><span>•</span>
             <li className="cursor-pointer hover:text-pinkCustom transition-colors duration-300"
-            onClick={() => handleItemClick('3 Blog', '/blog')}>Blog </li><span>•</span>
+            onClick={() => handleItemClick('3 Blog', '/blog')}>blog </li><span>•</span>
             <li className="cursor-pointer hover:text-pinkCustom transition-colors duration-300"
-            onClick={() => handleItemClick('4 CV', '/blog')}>CV </li><span>•</span>
+            onClick={() => handleItemClick('4 CV', '/blog')}>cv </li><span>•</span>
             <li className="cursor-pointer hover:text-pinkCustom transition-colors duration-300"
-            onClick={() => handleItemClick('5 About', '/about')}>About</li>
+            onClick={() => handleItemClick('5 About', '/about')}>about</li>
             </ul>
     </nav>
   )

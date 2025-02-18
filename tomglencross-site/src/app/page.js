@@ -1,7 +1,21 @@
+import Image from "next/image";
+import homepageImage from "../assets/images/homePageImage1.jpg"
+
 export default function Home() {
   return (
     <>
-    <span>HomePage</span></>
+    <div className="text-2xl pt-4 pb-6 ">Tom Glencross is an artist, writer and dev working in the UK. </div>
+    <div className="flex justify-center">
+    <Image 
+    alt="portrait of Tom Glencross beside some neolithic standing stones"
+    src={homepageImage}
+    width={300}
+    height={300}
+    className="reponsive"
+    priority
+    placeholder="blur"/>
+    </div>
+    </>
   );
 }
 
