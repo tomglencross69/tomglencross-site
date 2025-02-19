@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +7,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-default: 'Times New Roman', Times, serif;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -26,4 +28,5 @@ body {
   font-family: 'Times New Roman', Times, serif;
   transition: background-color 1000ms ease-in-out, color 1000ms ease-in-out
 }
+
 /*THIS WAS PRELOADED IN GLOBALS, I JUST CHANGED FONT FAMILY*/

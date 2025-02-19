@@ -16,6 +16,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        arimo: ["Arimo", "sans-serif"]
+      }
     },
   },
   plugins: [],
