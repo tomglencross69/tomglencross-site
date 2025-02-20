@@ -5,7 +5,7 @@
 // The response body (body: JSON.stringify(result.rows)),
 // The headers ({ 'Content-Type': 'application/json' }).
 
-  import db from '../../../../db/connection.js'
+import db from "@db/connection.js";
 
 export async function GET() {
   try {

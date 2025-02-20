@@ -1,10 +1,10 @@
 'use client';
-import Header from "./Header";
+import Header from "@/components/Header";
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import fakeWorksData from "@/testdata/testWorksData";
-import SideNav from "./SideNav";
+import SideNav from "@/components/SideNav";
 
 export default function MainNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(true)
