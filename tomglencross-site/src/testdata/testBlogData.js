@@ -1,6 +1,6 @@
-import portraitImage from "../assets/images/annunciation.jpg"
-import landscapeImage from "../assets/images/cat.jpg"
-import squareImage from "../assets/images/homePageImage1.jpg"
+// import portraitImage from "../assets/images/annunciation.jpg"
+// import landscapeImage from "../assets/images/cat.jpg",
+// import squareImage from "../assets/images/homePageImage1.jpg",
 
 const fakeBlogData = [
 {
@@ -12,7 +12,7 @@ const fakeBlogData = [
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   body:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  image_src: portraitImage,
+  image_src: "../assets/images/annunciation.jpg",
   image_alt_text: "the annunciation",
   date_added: "2024-02-19T14:30:00.000Z",
   tags: ["politics", "art", "erotica"],
@@ -26,7 +26,7 @@ const fakeBlogData = [
     "As web design changes, so does the way we experience written content. But is this a genuine improvement or a fleeting phase?",
   body:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  image_src: landscapeImage,
+  image_src: "../assets/images/cat.jpg",
   image_alt_text: "the cat",
   date_added: "2024-02-18T10:15:00.000Z",
   tags: ["technology", "media", "design"],
@@ -40,7 +40,7 @@ const fakeBlogData = [
     "What makes a headline irresistible? Is it manipulation, or is there a genuine psychology behind it?",
   body:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  image_src: squareImage,
+  image_src: "../assets/images/homePageImage1.jpg",
   image_alt_text: "me",
   date_added: "2024-02-17T16:45:00.000Z",
   tags: ["writing", "media", "psychology"],
@@ -54,7 +54,7 @@ const fakeBlogData = [
     "Articles often say more than what’s written. But how much of that is intentional, and how much is projection?",
   body:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  image_src: portraitImage,
+  image_src: "../assets/images/annunciation.jpg",
   image_alt_text: "the annunciation",
   date_added: "2024-02-16T08:20:00.000Z",
   tags: ["literature", "philosophy", "culture"],
@@ -68,7 +68,7 @@ const fakeBlogData = [
     "How much does design affect the way we interpret content? More than we might think.",
   body:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  image_src: landscapeImage,
+  image_src: "../assets/images/cat.jpg",
   image_alt_text: "the cat",
   date_added: "2024-02-15T12:50:00.000Z",
   tags: ["design", "media", "technology"],
@@ -82,7 +82,7 @@ const fakeBlogData = [
     "Great writing isn't just about the words. Structure, pacing, and even rhythm play a crucial role.",
   body:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  image_src: squareImage,
+  image_src: "../assets/images/homePageImage1.jpg",
   image_alt_text: "me",
   date_added: "2024-02-14T18:05:00.000Z",
   tags: ["writing", "art", "psychology"],
@@ -96,7 +96,7 @@ const fakeBlogData = [
     "Do images enhance understanding, or are they just there to break up the text? Let's explore.",
   body:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  image_src: portraitImage,
+  image_src: "../assets/images/annunciation.jpg",
   image_alt_text: "the annunciation",
   date_added: "2024-02-13T09:30:00.000Z",
   tags: ["media", "photography", "design"],
@@ -110,7 +110,7 @@ const fakeBlogData = [
     "When does an article stop being 'just an article' and start being something more? A piece of art, perhaps?",
   body:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  image_src: landscapeImage,
+  image_src: "../assets/images/cat.jpg",
   image_alt_text: "the cat",
   date_added: "2024-02-12T15:10:00.000Z",
   tags: ["art", "literature", "philosophy"],
@@ -124,7 +124,7 @@ const fakeBlogData = [
     "Once an article is out in the world, what happens next? Does it have a lifespan, or does it live forever?",
   body:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  image_src: squareImage,
+  image_src: "../assets/images/homePageImage1.jpg",
   image_alt_text: "me",
   date_added: "2024-02-11T11:40:00.000Z",
   tags: ["media", "writing", "culture"],

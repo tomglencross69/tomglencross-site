@@ -10,7 +10,7 @@ const fakeUsersData = [
       username: "blogger_69",
       email: "blogger.69@example.com",
       created_at: "2024-01-12T14:20:00.000Z",
-    },
+    }
   ]
 
   export default fakeUsersData

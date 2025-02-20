@@ -1,8 +1,10 @@
 import db from './connection.js'
 import format from 'pg-format'
 
-const seed = async (fakeBlogData, fakeCommentsData, fakeUsersData) => {
+const seed = async ({fakeBlogData, fakeCommentsData, fakeUsersData}) => {
+
     try {
+        console.log(fakeBlogData, fakeCommentsData, fakeUsersData, "<")
       console.log('Dropping existing tables...');
   
       await db.query(`DROP TABLE IF EXISTS comments;`);
@@ -49,29 +51,28 @@ const seed = async (fakeBlogData, fakeCommentsData, fakeUsersData) => {
       `);
   
       console.log('🌱 Inserting test data...');
-  
       // Insert users data
       const insertUsersQuery = format(
-        `INSERT INTO users (username, email) VALUES %L RETURNING *;`,
-        fakeUsersData.map(({ username, email }) => [username, email])
+        `INSERT INTO users (user_id, username, email) VALUES %L RETURNING *;`,
+        fakeUsersData.map(({user_id, username, email}) => [user_id, username, email])
       );
       const { rows: insertedUsers } = await db.query(insertUsersQuery);
   
       // Insert blogposts with correct author mapping (assuming author is a string here)
-      const insertPostsQuery = format(
-        `INSERT INTO blogposts (title, author, subtitle, excerpt, body, image_src, image_alt_text, tags) 
+      const insertBlogPostsQuery = format(
+        `INSERT INTO blogposts (blog_id, title, author, subtitle, excerpt, body, image_src, image_alt_text, tags) 
          VALUES %L RETURNING *;`,
-        fakeBlogData.map(({ title, author, subtitle, excerpt, body, image_src, image_alt_text, tags }) => [
-          title, author, subtitle, excerpt, body, image_src, image_alt_text, tags
+        fakeBlogData.map(({ blog_id, title, author, subtitle, excerpt, body, image_src, image_alt_text, tags }) => [
+          blog_id, title, author, subtitle, excerpt, body, image_src, image_alt_text, tags ? `{${tags.join(',')}}` : null,
         ])
       );
-      const { rows: insertedPosts } = await db.query(insertPostsQuery);
+      const { rows: insertedPosts } = await db.query(insertBlogPostsQuery);
   
       // Insert comments with correct blog_id and user_id mapping
       const insertCommentsQuery = format(
-        `INSERT INTO comments (user_id, blog_id, comment_text) VALUES %L;`,
-        fakeCommentsData.map(({ user_id, blog_id, comment_text }) => [
-          user_id, blog_id, comment_text
+        `INSERT INTO comments (comment_id, user_id, blog_id, comment_text) VALUES %L;`,
+        fakeCommentsData.map(({ comment_id, user_id, blog_id, comment_text }) => [
+          comment_id, user_id, blog_id, comment_text
         ])
       );
       await db.query(insertCommentsQuery);
