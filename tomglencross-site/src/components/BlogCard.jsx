@@ -1,17 +1,18 @@
 import Image from "next/image"
 
+
 export default function BlogCard({blogPost}) {
+
   return (
     <>
     <div className="relative h-[300px]">
-    {/* <Image 
+    <Image
         alt={blogPost.image_alt_text}
-        src={blogPost.image_src}
-        some logic here in meantime before setting up image hosting ie. if blogPost.image === cat, then {cat}
+        src={`/images/${blogPost.image_src.replace('../assets/images/', '')}`}
         layout="fill"
-        className="object-cover "
+        className="object-cover"
         priority
-        /> */}
+        />
     </div>
     <div className="text-3xl">{blogPost.title}</div>
     <div className="text-xl pb-2">{blogPost.subtitle}</div>

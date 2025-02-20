@@ -10,21 +10,17 @@ export default function Blog() {
 
   useEffect(() => {
     const fetchBlogPosts = async () => {
-      const response = await fetch('/api/blogposts');  // Ensure this matches the API route
+      const response = await fetch('/api/blogposts'); 
       const data = await response.json();
-      setBlogPosts(data);  // Set the fetched blog posts to state
+      setBlogPosts(data);  
       console.log(data, "<<<<<data")
     };
-
     fetchBlogPosts()
-  }, []); // Empty dependency array means this runs once on component mount
-
-  console.log(blogPosts, "<<<<<<<<")
-
- 
+  }, []);
+  
     return (
       <>
-      {fakeBlogData.map((blogPost)=> (
+      {blogPosts.map((blogPost)=> (
        <BlogCard key={blogPost.blog_id} blogPost={blogPost}/>
       ))}
       </>
