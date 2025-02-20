@@ -4,14 +4,14 @@ export default function BlogCard({blogPost}) {
   return (
     <>
     <div className="relative h-[300px]">
-    <Image 
+    {/* <Image 
         alt={blogPost.image_alt_text}
         src={blogPost.image_src}
-        //some logic here in meantime before setting up image hosting ie. if blogPost.image === cat, then {cat}
+        some logic here in meantime before setting up image hosting ie. if blogPost.image === cat, then {cat}
         layout="fill"
         className="object-cover "
         priority
-        placeholder="blur"/>
+        /> */}
     </div>
     <div className="text-3xl">{blogPost.title}</div>
     <div className="text-xl pb-2">{blogPost.subtitle}</div>
