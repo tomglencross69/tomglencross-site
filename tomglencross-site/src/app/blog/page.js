@@ -1,7 +1,6 @@
 "use client"
 
 import BlogCard from "@/components/BlogCard"
-import fakeBlogData from "@/testdata/testBlogData"
 import { useState, useEffect } from "react"
 
 export default function Blog() {
@@ -10,9 +9,9 @@ export default function Blog() {
 
   useEffect(() => {
     const fetchBlogPosts = async () => {
-      const response = await fetch('/api/blogposts'); 
-      const data = await response.json();
-      setBlogPosts(data);  
+        const response = await fetch('/api/blogposts'); 
+        const data = await response.json();
+        setBlogPosts(data);  
     };
     fetchBlogPosts()
   }, []);

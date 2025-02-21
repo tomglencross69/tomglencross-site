@@ -6,7 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import fakeWorksData from "@/testdata/testWorksData";
 import SideNav from "@/components/SideNav";
 
-export default function MainNav() {
+export default function MainNav({toggleMode, isDarkMode}) {
   const [isMenuOpen, setIsMenuOpen] = useState(true)
   const [expanded, setExpanded] = useState(null)
   const [selectedItem, setSelectedItem] = useState(null)
@@ -46,8 +46,11 @@ export default function MainNav() {
 
   return (
     <>
+    <div className="flex">
         <Header onClick={() => handleItemClick(null, '/')}/>
-          <SideNav handleItemClick={handleItemClick}  />
+        <button className="text-xl ml-auto pr-2"  onClick={toggleMode}> {isDarkMode? '☾ ☀' : '☀ ☾'}</button>
+        </div>
+        <SideNav handleItemClick={handleItemClick}  />
         <nav className={`text-blueCustom dark:text-nightModeBlueCustom bg-transparent text-3xl flex p-2 sm:p-4`} >
       <ul className="space-y-0">
         {isMenuOpen && (
