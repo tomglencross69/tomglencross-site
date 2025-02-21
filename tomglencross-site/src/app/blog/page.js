@@ -13,7 +13,6 @@ export default function Blog() {
       const response = await fetch('/api/blogposts'); 
       const data = await response.json();
       setBlogPosts(data);  
-      console.log(data, "<<<<<data")
     };
     fetchBlogPosts()
   }, []);
