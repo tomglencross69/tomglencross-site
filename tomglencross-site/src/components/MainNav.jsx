@@ -2,7 +2,7 @@
 import Header from "@/components/Header";
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import fakeWorksData from "@/testdata/testWorksData";
 import SideNav from "@/components/SideNav";
 
@@ -11,6 +11,7 @@ export default function MainNav() {
   const [expanded, setExpanded] = useState(null)
   const [selectedItem, setSelectedItem] = useState(null)
   const router = useRouter()
+  const pathname = usePathname()
   
   const toggleSubMenu = (menu) => {
     setExpanded(expanded === menu ? null: menu)
@@ -37,8 +38,12 @@ export default function MainNav() {
     }
 
     const handleClickedItemMenuReturn = () => {
+      if (pathname.startsWith('/blog/')) {
+        router.push('/blog')
+      }
         setIsMenuOpen(true)
     }
+
   return (
     <>
         <Header onClick={() => handleItemClick(null, '/')}/>
