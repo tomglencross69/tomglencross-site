@@ -1,6 +1,6 @@
 'use client';
 import Header from "@/components/Header";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import fakeWorksData from "@/testdata/testWorksData";
@@ -22,6 +22,29 @@ export default function MainNav({toggleMode, isDarkMode}) {
           return work.reference + " " + work.title
       })
   }
+
+  useEffect(() => {
+    if (pathname === "/") {
+      setSelectedItem(null);
+    } else if (pathname.startsWith("/works/")) {
+      const work = fakeWorksData.find((work) => pathname.includes(work.urlSlug));
+      setSelectedItem(work ? `${work.reference} ${work.title}` : null);
+      setExpanded("works");
+    } else if (pathname.startsWith("/blog/")) {
+      setSelectedItem("3 Blog")
+    } else if (pathname === "/dev") {
+      setSelectedItem("2 Dev");
+    } else if (pathname === "/blog") {
+      setSelectedItem("3 Blog");
+    } else if (pathname === "/cv") {
+      setSelectedItem("4 CV");
+    } else if (pathname === "/about") {
+      setSelectedItem("5 About");
+    } else {
+      setSelectedItem(null);
+    }
+  }, [pathname]);
+
     const handleItemClick = (item, route) => {
         if (route === '/') {
             router.push(route)
