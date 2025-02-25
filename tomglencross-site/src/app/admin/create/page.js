@@ -15,14 +15,12 @@ export default function CreateBlogPost() {
     const [imageUrl, setImageUrl] = useState("");
     const [imageAltText, setImageAltText] = useState("");
     const [tags, setTags] = useState([]);
-    const [isDraft, setIsDraft] = useState(true);
     const [message, setMessage] = useState(""); 
     const router = useRouter();
 
-    const handleSubmit = async (published) => {
-        setIsDraft(!published);
-        
+    const handleSubmit = async () => {
         const postData = {
+            blog_id: 10,
             title,
             author,
             subtitle,
@@ -31,7 +29,6 @@ export default function CreateBlogPost() {
             image_src: imageUrl, 
             image_alt_text: imageAltText,
             tags,
-            published
         };
 
         const response = await fetch("/api/blogposts", {
@@ -41,11 +38,11 @@ export default function CreateBlogPost() {
         });
 
         if (response.ok) {
-            setMessage("Successfully published!");
-            alert("Your post has been successfully published!");
+            setMessage("Successfully created!");
+            alert("Your post has been successfully created!");
             router.push("/admin");
         } else {
-            setMessage("Failed to publish. Please try again.");
+            setMessage("Failed to create. Please try again.");
         }
     };
     
@@ -148,21 +145,12 @@ export default function CreateBlogPost() {
                 <div>
                     <button 
                         type="button" 
-                        onClick={() => handleSubmit(false)}
+                        onClick={handleSubmit}
                     >
-                        Save as Draft
-                    </button>
-                    <div/>
-    
-                    <button 
-                        type="button" 
-                        onClick={() => handleSubmit(true)}
-                    >
-                        Publish
+                        Save Post
                     </button>
                 </div>
             </form>
         </div>
     );
-    
-    }
+}
