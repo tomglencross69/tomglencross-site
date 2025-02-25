@@ -28,18 +28,29 @@ export default function AdminDashboard() {
 
   return (
     <>
-    <div className="text-2xl">Admin Dashboard</div>
-    <div className="text-xl">Blog Posts</div>
-    {blogPosts.map(post => (
-        <div key={post.blog_id}>
-            <div>{post.title}</div>
-            <button onClick={() => handleDelete(post.blog_id)}>Delete</button>
-            <details>
-            <summary>Preview</summary>
-            <div>{post.body}</div>
-          </details>
-        </div>
-    ))}
+      <div className="text-3xl mb-6">Admin Dashboard</div>
+      <div className="text-2xl mb-4">Blog Posts</div>
+      <div className="space-y-6">
+        {blogPosts.map(post => (
+          <div key={post.blog_id} className="bg-white p-6 rounded-lg shadow-md">
+            <div className="text-xl text-gray-800 mb-3">{post.title}</div>
+            <button 
+              onClick={() => handleDelete(post.blog_id)} 
+              className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-colors duration-200"
+            >
+              Delete
+            </button>
+            <details className="mt-4">
+              <summary className="text-blue-600 cursor-pointer font-medium hover:text-blue-800">
+                Preview
+              </summary>
+              <div className="mt-2 text-gray-700">
+                <p>{post.body}</p>
+              </div>
+            </details>
+          </div>
+        ))}
+      </div>
     </>
   )
 }

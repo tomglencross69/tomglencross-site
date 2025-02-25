@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { use } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import parse from "html-react-parser"
 
 export default function BlogPostPage({ params }) {
   const { id } = use(params); 
@@ -29,6 +30,9 @@ export default function BlogPostPage({ params }) {
 
   if (!individualBlogPost) return <p>Loading...</p>;
 
+  const containsHtml = (str) => /<\/?[a-z][\s\S]*>/i.test(str);
+
+
   return (
     <>
     <div className="text-3xl pl-4">
@@ -46,7 +50,9 @@ export default function BlogPostPage({ params }) {
             priority
             />
     <div className="font-arimo text-xs ">{`${individualBlogPost.tags[0]} / ${individualBlogPost.tags[1]} / ${individualBlogPost.tags[2]}`.toUpperCase()}</div>
-    <div className="font-arimo text-xs pb-5">{`Last updated ${individualBlogPost.date_added}`}</div>
+    <div className="font-arimo text-xs pb-5">
+  {`Last updated ${new Date(individualBlogPost.date_added).toLocaleString()}`}
+</div>
     <div className="text-xl pb-5">by <span onClick={() => {
         router.replace('/');
         setTimeout(()=>{
@@ -55,7 +61,9 @@ export default function BlogPostPage({ params }) {
     }}
          className= "cursor-pointer hover:text-pinkCustom active:text-pinkCustom transition-colors duration-1000">TOM GLENCROSS</span></div>
     <div className="text-3xl text-center pb-5">⚶</div>
-    <div className="text-xl">{individualBlogPost.body}</div>
+    <div className="text-xl">
+        {containsHtml(individualBlogPost.body) ? parse(individualBlogPost.body) : individualBlogPost.body}       
+      </div>
     <div className="text-3xl text-center pt-5 pb-5">߷</div>
     </>
   );
