@@ -28,8 +28,8 @@ export default function AdminDashboard() {
 
   return (
     <>
-    <div>AdminDashboard</div>
-    <div className="text-2xl">Blog Posts</div>
+    <div className="text-2xl">Admin Dashboard</div>
+    <div className="text-xl">Blog Posts</div>
     {blogPosts.map(post => (
         <div key={post.blog_id}>
             <div>{post.title}</div>
