@@ -35,7 +35,6 @@ export default function AdminDashboard() {
             <summary>Preview</summary>
             <div>{post.body}</div>
           </details>
-
         </div>
     ))}
     </>
