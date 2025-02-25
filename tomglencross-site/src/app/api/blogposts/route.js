@@ -23,6 +23,7 @@ export async function GET() {
   }
 }
 
+//blog_id is added here as insert value temporarily whilst testing, it will be a serial generated in production database - 0t needs to be removed and $VALUES decreased by one accordingly
 export async function POST(request) {
   try {
     const postData = await request.json();

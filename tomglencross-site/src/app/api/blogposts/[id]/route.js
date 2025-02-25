@@ -17,3 +17,20 @@ export async function GET(req, {params}) {
     });
   }
 }
+
+export async function DELETE(req, { params }) {
+  const { id } = params;
+  try {
+      await db.query('DELETE FROM blogposts WHERE blog_id = $1', [id]);
+      return new Response(JSON.stringify({ message: 'Post deleted successfully' }), {
+          status: 200,
+          headers: { 'Content-Type': 'application/json' }
+      });
+  } catch (error) {
+      console.error('Error deleting blog post:', error);
+      return new Response(JSON.stringify({ error: 'Internal Server Error' }), {
+          status: 500,
+          headers: { 'Content-Type': 'application/json' }
+      });
+  }
+}

@@ -18,6 +18,7 @@ export default function CreateBlogPost() {
     const [message, setMessage] = useState(""); 
     const router = useRouter();
 
+    //blog_id is added here as hardcoded insert value temporarily whilst testing, it will be a serial generated in production database
     const handleSubmit = async () => {
         const postData = {
             blog_id: 10,

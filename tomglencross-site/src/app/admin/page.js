@@ -17,12 +17,15 @@ export default function AdminDashboard() {
 
       const handleDelete = async (blog_id) => {
         if (confirm("Delete post?")) {
-            await fetch (`/api/blogposts/${blog_id}`, {method: "DELETE"})
-            setBlogPosts(blogPosts.filter(post=> post.blog_id !== blog_id))
+            const response = await fetch(`/api/blogposts/${blog_id}`, {method: "DELETE"})
+            if (response.ok) {
+              setBlogPosts(blogPosts.filter(post=> post.blog_id !== blog_id))
+            } else {
+              alert ('Failed to delete the post. Please try again.')
+            }
         }
       }
 
-    
   return (
     <>
     <div>AdminDashboard</div>
