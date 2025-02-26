@@ -40,14 +40,31 @@ export default function BlogPostPage({ params }) {
         <span> 3.{individualBlogPost.blog_id}</span>
       <span className={`text-pinkCustom dark:nightModePinkCustom`}> {individualBlogPost.title}</span>
     </div>
-    <Image
+     {/* logic removed whilst working out how to show images that come from URL sources
+    {/* <Image
             alt={individualBlogPost.image_alt_text}
-            src={`/images/${individualBlogPost.image_src.replace('../assets/images/', '')}`}
+            src={
+    individualBlogPost.image_src.startsWith("http") 
+      ? individualBlogPost.image_src 
+      : `/images/${individualBlogPost.image_src.replace('../assets/images/', '')}`
+  }
             width={1000}
             height={1000}
             style={{ objectFit: "cover", width: "100%", height: "100%" }}
             className="object-cover fill"
             priority
+            /> */}
+            <img
+            alt={individualBlogPost.image_alt_text}
+            src={
+    individualBlogPost.image_src.startsWith("http") 
+      ? individualBlogPost.image_src 
+      : `/images/${individualBlogPost.image_src.replace('../assets/images/', '')}`
+  }
+            width={1000}
+            height={1000}
+            style={{ objectFit: "cover", width: "100%", height: "100%" }}
+            className="object-cover fill"
             />
     <div className="font-arimo text-xs ">{`${individualBlogPost.tags[0]} / ${individualBlogPost.tags[1]} / ${individualBlogPost.tags[2]}`.toUpperCase()}</div>
     <div className="font-arimo text-xs pb-5">

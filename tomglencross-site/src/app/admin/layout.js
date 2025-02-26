@@ -21,16 +21,22 @@ const navigateToAdminHome = () => {
 
   return (
     <>
-    <div>
-        <button onClick={handleLogout}>Logout</button>
+    <div onClick={navigateToAdminHome} className={`text-3xl pl-2 cursor-pointer text-pinkCustom hover:text-nightModeBlueCustom dark:nightModeBlueCustom transition-colors duration-300 `}>ADMIN DASHBOARD</div>
+    <nav className="column pl-2 text-3xl text-pinkCustom">
+        <div>
+        <button className={`text-3xl cursor-pointer text-pinkCustom hover:text-nightModeBlueCustom dark:nightModeBlueCustom transition-colors duration-300`}
+        onClick={navigateToAdminHome}>I Blog Post Dashboard</button>
         </div>
         <div>
-        <button onClick={navigateToAdminHome}>Admin</button>
-        </div>
-        <div>
-        <button onClick={navigateToCreate}>Create Blog Post</button>
-        {children}
+        <button className={`text-3xl cursor-pointer text-pinkCustom hover:text-nightModeBlueCustom dark:nightModeBlueCustom transition-colors duration-300`}
+        onClick={navigateToCreate}>II Create Blog Post</button>
     </div>
+    <div>
+        <button className={`text-3xl cursor-pointer text-pinkCustom hover:text-nightModeBlueCustom dark:nightModeBlueCustom transition-colors duration-300`}
+        onClick={handleLogout}>III Logout</button>
+        </div>
+    </nav>
+        {children}
     </>
   )
 }

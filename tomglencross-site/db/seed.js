@@ -46,7 +46,8 @@ const seed = async ({fakeBlogData, fakeCommentsData, fakeUsersData}) => {
           user_id INT REFERENCES users(user_id) ON DELETE CASCADE,
           blog_id INT REFERENCES blogposts(blog_id) ON DELETE CASCADE,
           comment_text TEXT NOT NULL,
-          created_at TIMESTAMP DEFAULT NOW()
+          created_at TIMESTAMP DEFAULT NOW(),
+          isPending BOOLEAN
         );
       `);
   
@@ -58,7 +59,7 @@ const seed = async ({fakeBlogData, fakeCommentsData, fakeUsersData}) => {
       );
       const { rows: insertedUsers } = await db.query(insertUsersQuery);
   
-      // Insert blogposts with correct author mapping (assuming author is a string here)
+      // Insert blogposts
       const insertBlogPostsQuery = format(
         `INSERT INTO blogposts (blog_id, title, author, subtitle, excerpt, body, image_src, image_alt_text, tags) 
          VALUES %L RETURNING *;`,
@@ -70,9 +71,9 @@ const seed = async ({fakeBlogData, fakeCommentsData, fakeUsersData}) => {
   
       // Insert comments with correct blog_id and user_id mapping
       const insertCommentsQuery = format(
-        `INSERT INTO comments (comment_id, user_id, blog_id, comment_text) VALUES %L;`,
-        fakeCommentsData.map(({ comment_id, user_id, blog_id, comment_text }) => [
-          comment_id, user_id, blog_id, comment_text
+        `INSERT INTO comments (comment_id, user_id, blog_id, comment_text, isPending) VALUES %L;`,
+        fakeCommentsData.map(({ comment_id, user_id, blog_id, comment_text, isPending }) => [
+          comment_id, user_id, blog_id, comment_text, isPending
         ])
       );
       await db.query(insertCommentsQuery);

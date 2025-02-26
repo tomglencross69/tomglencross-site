@@ -56,8 +56,8 @@ export default function CreateBlogPost() {
     };
 
     return (
-        <div className="max-w-4xl mx-auto p-6">
-            <h1 className="text-2xl mb-6">Create Blog Post</h1>
+        <div className="max-w-4xl mx-auto p-2">
+            <h1 className="text-3xl my-6"> II Create Blog Post</h1>
             <form className="space-y-4">
                 <div>
                     <label className="block font-medium">Title</label>
