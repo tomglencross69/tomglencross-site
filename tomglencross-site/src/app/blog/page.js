@@ -15,7 +15,7 @@ export default function Blog() {
     };
     fetchBlogPosts()
   }, []);
-  
+
     return (
       <>
       {blogPosts.map((blogPost)=> (
