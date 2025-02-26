@@ -35,7 +35,8 @@ export default function BlogCard({blogPost}) {
     <div className="text-base pb-5">{blogPost.excerpt}</div>
     </Link>
     <div className="font-arimo text-xs">{`${blogPost.tags[0]} / ${blogPost.tags[1]} / ${blogPost.tags[2]}`.toUpperCase()}</div>
-    <div className="font-arimo text-xs pb-10">{`Last updated ${new Date(blogPost.date_added).toLocaleString()}`}</div>
+    <div className="font-arimo text-xs ">{`Last updated ${new Date(blogPost.date_added).toLocaleString()}`}</div>
+    <div className="font-arimo text-xs pb-10 ">Comments ({blogPost.comment_count || 0})</div>
     </>
     )
 }

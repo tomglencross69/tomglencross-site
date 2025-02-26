@@ -5,8 +5,14 @@ export async function GET(req, {params}) {
   
     try {
       const result = await db.query('SELECT * FROM blogposts WHERE blog_id = $1', [id]);
-
-      const comments = await db.query('SELECT * FROM comments WHERE blog_id = $1', [id]);
+      const comments = await db.query(
+        `SELECT comments.comment_id, comments.user_id, comments.blog_id, comments.comment_text, 
+                comments.created_at, comments.isPending, users.username 
+         FROM comments
+         JOIN users ON comments.user_id = users.user_id 
+         WHERE comments.blog_id = $1`, 
+        [id]
+    );
 
       return new Response(JSON.stringify({
           ...result.rows[0], 

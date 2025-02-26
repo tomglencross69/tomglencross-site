@@ -32,7 +32,7 @@ export default function BlogPostPage({ params }) {
 
   const containsHtml = (str) => /<\/?[a-z][\s\S]*>/i.test(str);
 
-
+  console.log(individualBlogPost.comments, "log in front end")
   return (
     <>
     <div className="text-3xl pl-4">
@@ -82,6 +82,19 @@ export default function BlogPostPage({ params }) {
         {containsHtml(individualBlogPost.body) ? parse(individualBlogPost.body) : individualBlogPost.body}       
       </div>
     <div className="text-3xl text-center pt-5 pb-5">߷</div>
+    <div className="text-xl">
+  {individualBlogPost.comments.length > 0 ? (
+    individualBlogPost.comments.map((comment) => (
+      !comment.ispending &&
+      <div key={comment.comment_id} className="mb-4">
+        <p><strong>{comment.username}:</strong> {comment.comment_text}</p>
+        <p><small>{new Date(comment.created_at).toLocaleString()}</small></p>
+      </div>
+    ))
+  ) : (
+    <p>No comments yet.</p>
+  )}
+</div>
     </>
   );
 }

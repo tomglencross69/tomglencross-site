@@ -9,7 +9,10 @@ import db from "@db/connection.js";
 
 export async function GET() {
   try {
-    const result = await db.query('SELECT * FROM blogposts');
+    const result = await db.query(`SELECT blogposts.*, COUNT(comments.comment_id) AS comment_count
+       FROM blogposts
+       LEFT JOIN comments ON blogposts.blog_id = comments.blog_id
+       GROUP BY blogposts.blog_id`);
     return new Response(JSON.stringify(result.rows), {
       status: 200,
       headers: { 'Content-Type': 'application/json' }
