@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function CommentForm({ blogId, userId }) {
+export default function CommentForm({ blogId, userId, refreshComments}) {
  const [commentText, setCommentText] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -55,7 +55,8 @@ export default function CommentForm({ blogId, userId }) {
         setSuccessMessage('Comment added successfully!');
         setCommentText('');
         setUsername('');
-        setEmail('');
+        setEmail('')
+        await refreshComments();
       } else {
         setError(data.error || 'An error occurred.');
       }

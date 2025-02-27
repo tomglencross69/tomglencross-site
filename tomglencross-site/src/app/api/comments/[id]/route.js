@@ -1,7 +1,7 @@
 import db from "@db/connection.js";
 
 export async function DELETE(req, { params }) {
-    const { id } = params;
+    const { id } = await params;
     try {
         const result = await db.query('DELETE FROM comments WHERE comment_id = $1', [id]);
         console.log(result)

@@ -27,12 +27,21 @@ export default function BlogPostPage({ params }) {
     };
 
     fetchIndividualBlogPost();
-  }, [id]);
+  }, [id, setIndividualBlogPost]);
 
   if (!individualBlogPost) return <p>Loading...</p>;
 
   const containsHtml = (str) => /<\/?[a-z][\s\S]*>/i.test(str);
-
+  
+  const refreshComments = async () => {
+    try {
+      const response = await fetch(`/api/blogposts/${id}`);
+      const data = await response.json();
+      setIndividualBlogPost(data);
+    } catch (error) {
+      console.error("Error fetching blog post:", error);
+    }
+  };
   
   return (
     <>
@@ -83,21 +92,38 @@ export default function BlogPostPage({ params }) {
         {containsHtml(individualBlogPost.body) ? parse(individualBlogPost.body) : individualBlogPost.body}       
       </div>
     <div className="text-3xl text-center pt-5 pb-5">߷</div>
+    
     <div className="text-xl">
-  {individualBlogPost.comments.length > 0 ? (
-    individualBlogPost.comments.map((comment) => (
-      !comment.ispending &&
-      <div key={comment.comment_id} className="mb-4">
-        <p><strong>{comment.username}:</strong> {comment.comment_text}</p>
-        <p><small>{new Date(comment.created_at).toLocaleString()}</small></p>
+        {individualBlogPost.comments.length > 0 ? (
+          individualBlogPost.comments.map((comment) => (
+            <div key={comment.comment_id} className="mb-4">
+              {comment.ispending ? (
+                <div className="p-4 bg-gray-200 rounded-md animate-pulse">
+                  <p className="text-gray-600 font-semibold">
+                    {comment.username}
+                  </p>
+                  <p className="text-gray-500 text-sm italic flashing-text">
+                    Comment Pending...
+                  </p>
+                </div>
+              ) : (
+                <div>
+                  <p>
+                    <strong>{comment.username}:</strong> {comment.comment_text}
+                  </p>
+                  <p>
+                    <small>{new Date(comment.created_at).toLocaleString()}</small>
+                  </p>
+                </div>
+              )}
+            </div>
+          ))
+        ) : (
+          <p>No comments yet.</p>
+        )}
       </div>
-    ))
-  ) : (
-    <p>No comments yet.</p>
-  )}
-</div>
 {/* HARDCODING USERID FOR NOW */}
-<CommentForm blogId={id} userId={1}/>
+<CommentForm blogId={id} userId={1} refreshComments={refreshComments}/>
     </>
   );
 }
