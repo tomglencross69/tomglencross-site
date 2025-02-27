@@ -32,7 +32,7 @@ export default function BlogPostPage({ params }) {
 
   const containsHtml = (str) => /<\/?[a-z][\s\S]*>/i.test(str);
 
-  console.log(individualBlogPost.comments, "log in front end")
+  
   return (
     <>
     <div className="text-3xl pl-4">

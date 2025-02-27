@@ -11,7 +11,6 @@ export async function POST(req, { params }) {
             headers: { 'Content-Type': 'application/json' }
         });
     }
-
     try {
         // Insert the new comment into the comments table
         const result = await db.query(

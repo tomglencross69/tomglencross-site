@@ -5,7 +5,7 @@ import React from 'react'
 
 export default function AdminDashboard() {
     const [blogPosts, setBlogPosts] = useState([])
-    const [showComments, setShowComments] = useState(false)
+    const [comments, setComments] = useState([])
 
     useEffect(() => {
         const fetchBlogPosts = async () => {
@@ -27,10 +27,41 @@ export default function AdminDashboard() {
         }
       }
 
+      useEffect(() => {
+        const fetchComments = async (blog_id) => {
+          try {
+            const response = await fetch(`/api/blogposts/${blog_id}`);
+            const data = await response.json();
+            setComments((prev) => ({ ...prev, [blog_id]: data.comments }));
+          } catch (error) {
+            console.error("Error fetching comments:", error);
+          }
+        };
+          blogPosts.forEach((post) => {
+          fetchComments(post.blog_id);
+        });
+      }, [blogPosts]);
+
+    const handleDeleteComment = async (comment_id, blog_id) => {
+      if (confirm("Delete comment?")) {
+          const response = await fetch(`/api/comments/${comment_id}`, { method: "DELETE" });
+          const data = await response.json()
+          if (response.ok) {
+            console.log("Delete response:", data.message)
+              setComments(prev => ({
+                  ...prev,
+                  [blog_id]: prev[blog_id].filter(comment => comment.comment_id !== comment_id)
+              }));
+          } else {
+              alert("Failed to delete the comment. Please try again.");
+          }
+      }
+  }
+
+
   return (
     <>
       <div className="text-3xl pl-2 py-2 my-3">I Blogpost Dashboard</div>
-      <div className="text-2xl pl-2 l my-2">Current Blog Posts</div>
       <div className="space-y-6">
         {blogPosts.map(post => (
           <div key={post.blog_id} className="bg-white p-3 rounded-lg shadow-md">
@@ -39,26 +70,39 @@ export default function AdminDashboard() {
               onClick={() => handleDelete(post.blog_id)} 
               className="bg-red-500 text-white px-4 py-2 mr-2 rounded hover:bg-red-600 transition-colors duration-200"
             >
-              DELETE
+              DELETE POST
             </button>
             <div className="flex flex-horizontal gap-4">
+            <div className="mt-4">
+          
+              <div className="mt-2 text-gray-700">
+                {comments[post.blog_id] && comments[post.blog_id].length > 0 ? (
+                  comments[post.blog_id].map((comment) => (
+                    <div key={comment.comment_id} className="border p-2 mb-2 rounded">
+                      <p><strong>{comment.username}:</strong> {comment.comment_text}</p>
+                      <p><small>{new Date(comment.created_at).toLocaleString()}</small></p>
+                      <button
+                        onClick={() => handleDeleteComment(comment.comment_id, post.blog_id)}
+                        className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
+                      >
+                        DELETE COMMENT
+                      </button>
+                    </div>
+                  ))
+                ) : (
+                  <p>No comments yet.</p>
+                )}
+              </div>
+            </div>
+            </div>
             <details className="mt-4">
               <summary className="text-blue-600 cursor-pointer font-medium hover:text-blue-800">
-                Preview Body
+                Preview Post
               </summary>
               <div className="mt-2 text-gray-700">
                 <p>{post.body}</p>
               </div>
             </details>
-            <details className="mt-4">
-              <summary className="text-blue-600 cursor-pointer font-medium hover:text-blue-800">
-                Preview Comments
-              </summary>
-              <div className="mt-2 text-gray-700">
-                {/* <p>{post.comments}GOES HERE</p> */}
-              </div>
-            </details>
-            </div>
           </div>
         ))}
       </div>
