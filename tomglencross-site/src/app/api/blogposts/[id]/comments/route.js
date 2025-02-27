@@ -1,8 +1,8 @@
 import db from "@db/connection.js";
 
 export async function POST(req, { params }) {
-    const { id } = params;  // Extract the blog ID from the URL
-    const { user_id, comment_text } = await req.json();  // Get the comment details from the request body
+    const { id } = await params;  // Extract the blog ID from the URL
+    const { comment_id, user_id, username, email, comment_text } = await req.json();  // Get the comment details from the request body
 
     // Ensure comment_text and user_id are provided
     if (!comment_text || !user_id) {
@@ -14,8 +14,8 @@ export async function POST(req, { params }) {
     try {
         // Insert the new comment into the comments table
         const result = await db.query(
-            'INSERT INTO comments (user_id, blog_id, comment_text, created_at, pending) VALUES ($1, $2, $3, NOW(), $4) RETURNING *',
-            [user_id, id, comment_text, true]  // Assuming 'false' means the comment is not pending
+            'INSERT INTO comments (comment_id, user_id, blog_id, comment_text, created_at, ispending) VALUES ($1, $2, $3, $4, NOW(), $5) RETURNING *',
+            [comment_id, user_id, id, comment_text, true]  // Assuming 'false' means the comment is not pending
         );
 
         // Return the newly created comment

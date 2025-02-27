@@ -4,6 +4,7 @@ import { use } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import parse from "html-react-parser"
+import CommentForm from "@/components/CommentForm";
 
 export default function BlogPostPage({ params }) {
   const { id } = use(params); 
@@ -95,6 +96,8 @@ export default function BlogPostPage({ params }) {
     <p>No comments yet.</p>
   )}
 </div>
+{/* HARDCODING USERID FOR NOW */}
+<CommentForm blogId={id} userId={1}/>
     </>
   );
 }
