@@ -90,41 +90,39 @@ export default function BlogPostPage({ params }) {
     <div className="text-3xl text-center pb-5">⚶</div>
     <div className="text-xl">
         {containsHtml(individualBlogPost.body) ? parse(individualBlogPost.body) : individualBlogPost.body}       
-      </div>
     <div className="text-3xl text-center pt-5 pb-5">߷</div>
-    
+    <div className="text-xl text-center pb-5">COMMENTS</div>
     <div className="text-xl">
         {individualBlogPost.comments.length > 0 ? (
           individualBlogPost.comments.map((comment) => (
             <div key={comment.comment_id} className="mb-4">
               {comment.ispending ? (
-                <div className=" animate-pulse">
-                  <p className="text-gray-600 font-semibold">
-                    {comment.username}
+                <div className="animate-pulse">
+                  <p className="text-gray-600 text-base font-bold">
+                    {comment.username.toUpperCase()}
                   </p>
                   <p className="text-gray-500 text-sm italic flashing-text">
-                    Comment Pending Admin Approval...
+                    Comment pending admin approval...
                   </p>
                 </div>
               ) : (
                 <div>
-                  <p>
-                    <strong>{comment.username}:</strong> {comment.comment_text}
-                  </p>
-                  <p>
-                    <small>{new Date(comment.created_at).toLocaleString()}</small>
-                  </p>
+                  <p className="text-base">
+                    {comment.username.toUpperCase()}</p>
+                  <p className="text-xs font-arimo">{new Date(comment.created_at).toLocaleString()}</p>
+                   <p className="pl-5 text-lg break-words ">{comment.comment_text}</p>
                 </div>
               )}
             </div>
           ))
         ) : (
-          <p>No comments yet.</p>
+          <p className="text-center">NO COMMENTS YET</p>
         )}
       </div>
       <div className="text-3xl text-center pt-5 pb-5">♃</div>
 {/* HARDCODING USERID FOR NOW */}
 <CommentForm blogId={id} userId={1} refreshComments={refreshComments}/>
+      </div>
     </>
   );
 }

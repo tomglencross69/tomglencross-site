@@ -70,48 +70,57 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
   };
 
   return (
-    <div className='pl-5'>
-      <div className='text-3xl'>Comment ?</div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label className='text-xl pr-10'>Username</label>
+    <div className='pl-5 pb-20 '>
+      <div className='text-3xl pb-5'>Leave a comment... </div>
+      <form id="comment-form" onSubmit={handleSubmit}>
+        <div className='grid grid-cols-2 py-2'>
+          <label htmlFor="text" className='text-lg'>USERNAME</label>
           <input
+          className='w-full border'
             type="text"
+            id="text"
             value={username}
             onChange={handleUsernameChange}
             placeholder="Your username"
             required
           />
         </div>
-        <div>
-          <label className='text-xl pr-6'>Email Address</label>
+        <div className='grid grid-cols-2 pb-2 '>
+          <label htmlFor="email" className='text-lg'>EMAIL</label>
           <input
+          className='w-full border'
             type="email"
+            id="email"
             value={email}
             onChange={handleEmailChange}
             placeholder="Your email (won't be displayed)"
+            autoComplete="on"
             required
           />
         </div>
-        <div>
-          <label></label>
+        <div className='grid grid-cols-3'>
+          <label htmlFor="comment-box"></label>
           <textarea
+          type="text"
+          id="comment-box"
             value={commentText}
             onChange={handleCommentChange}
             placeholder="Comment here..."
-            rows="auto"
+            rows="5"
             cols="auto"
             required
-            className='text-xl pr-6 border'
+            className='text-xl border col-span-2'
           />
         </div>
-        <button className='text-xl p-1 border' type="submit" disabled={isSubmitting}>
-          {isSubmitting ? 'Submitting...' : 'Submit Comment'}
+        <div className='grid grid-cols-3 py-2'>
+        <button className='text-xl p-1 border col-start-3 justify-self-end bg-pinkCustom hover:text-white' type="submit" disabled={isSubmitting}>
+          {isSubmitting ? 'Submitting...' : 'SUBMIT'}
         </button>
+        </div>
       </form>
 
-      <div>
-        Note: Your email address will not be displayed with your comment. Only your username will be shown.
+      <div className='text-sm'>
+        Your email address will not be displayed with your comment - only your username will be shown. Comments will appear after admin approval.
       </div>
 
       {error && <div className='text-red'>{error}</div>}
