@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 export default function CommentForm({ blogId, userId, refreshComments}) {
  const [commentText, setCommentText] = useState('');
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('tom_glencross');
+  const [email, setEmail] = useState('tom.glencross@tomglencross.com');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState('');
@@ -34,13 +34,15 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
     }
 
     try {
+        const randomCommentId = Math.floor(Math.random() * (100 - 19 + 1)) + 19;
+
       const response = await fetch(`/api/blogposts/${blogId}/comments`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          comment_id: 19,
+          comment_id: randomCommentId,
           user_id: userId,
           username: username,
           email: email,
@@ -68,11 +70,11 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
   };
 
   return (
-    <div>
-      <h3>Add a Comment</h3>
+    <div className='pl-5'>
+      <div className='text-3xl'>Comment ?</div>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Username</label>
+          <label className='text-xl pr-10'>Username</label>
           <input
             type="text"
             value={username}
@@ -82,7 +84,7 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
           />
         </div>
         <div>
-          <label>Email Address</label>
+          <label className='text-xl pr-6'>Email Address</label>
           <input
             type="email"
             value={email}
@@ -92,27 +94,28 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
           />
         </div>
         <div>
-          <label>Comment</label>
+          <label></label>
           <textarea
             value={commentText}
             onChange={handleCommentChange}
-            placeholder="Write your comment here..."
-            rows="4"
-            cols="50"
+            placeholder="Comment here..."
+            rows="auto"
+            cols="auto"
             required
+            className='text-xl pr-6 border'
           />
         </div>
-        <button type="submit" disabled={isSubmitting}>
+        <button className='text-xl p-1 border' type="submit" disabled={isSubmitting}>
           {isSubmitting ? 'Submitting...' : 'Submit Comment'}
         </button>
       </form>
 
-      <p style={{ fontSize: '0.9em', color: '#888' }}>
+      <div>
         Note: Your email address will not be displayed with your comment. Only your username will be shown.
-      </p>
+      </div>
 
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+      {error && <div className='text-red'>{error}</div>}
+      {successMessage && <div className='text-green'>{successMessage}</div>}
     </div>
   );
 }

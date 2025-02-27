@@ -98,12 +98,12 @@ export default function BlogPostPage({ params }) {
           individualBlogPost.comments.map((comment) => (
             <div key={comment.comment_id} className="mb-4">
               {comment.ispending ? (
-                <div className="p-4 bg-gray-200 rounded-md animate-pulse">
+                <div className=" animate-pulse">
                   <p className="text-gray-600 font-semibold">
                     {comment.username}
                   </p>
                   <p className="text-gray-500 text-sm italic flashing-text">
-                    Comment Pending...
+                    Comment Pending Admin Approval...
                   </p>
                 </div>
               ) : (
@@ -122,6 +122,7 @@ export default function BlogPostPage({ params }) {
           <p>No comments yet.</p>
         )}
       </div>
+      <div className="text-3xl text-center pt-5 pb-5">♃</div>
 {/* HARDCODING USERID FOR NOW */}
 <CommentForm blogId={id} userId={1} refreshComments={refreshComments}/>
     </>
