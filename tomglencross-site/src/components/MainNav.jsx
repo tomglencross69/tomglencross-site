@@ -65,9 +65,13 @@ export default function MainNav() {
 
     const handleClickedItemMenuReturn = () => {
       if (pathname.startsWith('/blog/')) {
-        router.push('/blog')
+        router.push('/blog');
+      } else if (pathname === '/works') {
+        router.push('/');
+      } else if (pathname === '/cv') {
+        router.push('/');
       }
-        setIsMenuOpen(true)
+      setIsMenuOpen(true);
     }
 
   return (
