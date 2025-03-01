@@ -12,7 +12,8 @@ export async function GET() {
     const result = await db.query(`SELECT blogposts.*, COUNT(comments.comment_id) AS comment_count
        FROM blogposts
        LEFT JOIN comments ON blogposts.blog_id = comments.blog_id
-       GROUP BY blogposts.blog_id`);
+       GROUP BY blogposts.blog_id
+       ORDER BY blogposts.blog_id DESC`);
     return new Response(JSON.stringify(result.rows), {
       status: 200,
       headers: { 'Content-Type': 'application/json' }

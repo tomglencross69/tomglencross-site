@@ -4,12 +4,12 @@ import fakeWorksData from '@/testdata/testWorksData';
 export default function Works() {
   return (
     <div>
-      <h1>Works</h1>
       <ul>
         {fakeWorksData.map((work) => (
           <li key={work.id}>
-            <Link href={`/works/${work.urlSlug}`}>
-              {work.id} {work.title}
+            <Link className="pl-4 space-y-0" href={`/works/${work.urlSlug}`}>
+              1.{work.id} 
+              <span className={`cursor-pointer text-blueCustom dark:nightModeBlueCustom transition-colors duration-300 `}> {work.title}</span>
             </Link>
           </li>
         ))}

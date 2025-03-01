@@ -18,7 +18,16 @@ export default {
       },
       fontFamily: {
         arimo: ["Arimo", "sans-serif"]
-      }
+      },
+      keyframes: {
+        fadeOut: {
+          '0%': { opacity: 1 },
+          '100%': { opacity: 0 },
+        },
+      },
+      animation: {
+        'fade-out': 'fadeOut 5s ease-in-out forwards',
+      },
     },
   },
   plugins: [],

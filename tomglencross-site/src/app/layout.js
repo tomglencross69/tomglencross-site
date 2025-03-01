@@ -33,7 +33,6 @@ useEffect(()=>{
   return (
     <html lang="en">
       <body>
-        {/* <button onClick={toggleMode}>{isDarkMode? 'Light' : 'Dark'}</button> */}
         <div className="pr-6"><MainNav isDarkMode={isDarkMode} toggleMode={toggleMode}/></div>
        <div className="pl-2 pr-9">{children}</div>
       </body>

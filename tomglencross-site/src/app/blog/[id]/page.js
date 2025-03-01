@@ -119,7 +119,7 @@ export default function BlogPostPage({ params }) {
           <p className="text-center">NO COMMENTS YET</p>
         )}
       </div>
-      <div className="text-3xl text-center pt-5 pb-5">♃</div>
+      <div className="text-3xl text-center pt-2 pb-3">♃</div>
 {/* HARDCODING USERID FOR NOW */}
 <CommentForm blogId={id} userId={1} refreshComments={refreshComments}/>
       </div>

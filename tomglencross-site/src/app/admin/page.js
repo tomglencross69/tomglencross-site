@@ -105,17 +105,13 @@ export default function AdminDashboard() {
                     comments[post.blog_id].map((comment) => (
                       <div
                         key={comment.comment_id}
-                        className="border p-2 mb-2 rounded"
-                      >
-                        <p>
-                          <strong>{comment.username}:</strong>{" "}
+                        className="border p-2 mb-2 rounded">
+                          <div className="break-words">{comment.username}:</div>{" "}
+                        <div className="break-all">
                           {comment.comment_text}
-                        </p>
-                        <p>
-                          <small>
-                            {new Date(comment.created_at).toLocaleString()}
-                          </small>
-                        </p>
+                        </div>
+                        <div>{new Date(comment.created_at).toLocaleString()}
+                        </div>
                         <button
                           onClick={() =>
                             handleDeleteComment(
@@ -135,7 +131,7 @@ export default function AdminDashboard() {
                                 post.blog_id
                               )
                             }
-                            className="bg-blue-500 text-white px-4 py-2 ml-2 rounded hover:bg-blue-600"
+                            className="bg-green-500 text-white px-2 py-1 ml-2 rounded hover:bg-green-600"
                           >
                             PUBLISH COMMENT
                           </button>

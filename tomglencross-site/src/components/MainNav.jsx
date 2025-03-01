@@ -40,6 +40,8 @@ export default function MainNav({toggleMode, isDarkMode}) {
       setSelectedItem("4 CV");
     } else if (pathname === "/about") {
       setSelectedItem("5 About");
+    } else if (pathname === "/works") {
+      setSelectedItem("1 Works")
     } else {
       setSelectedItem(null);
     }
@@ -73,7 +75,7 @@ export default function MainNav({toggleMode, isDarkMode}) {
         <Header onClick={() => handleItemClick(null, '/')}/>
         <button className="text-xl ml-auto pr-2"  onClick={toggleMode}> {isDarkMode? '☾ ☀' : '☀ ☾'}</button>
         </div>
-        <SideNav handleItemClick={handleItemClick}  />
+        <SideNav handleItemClick={handleItemClick}/>
         <nav className={`text-blueCustom dark:text-nightModeBlueCustom bg-transparent text-3xl flex p-2 sm:p-4`} >
       <ul className="space-y-0">
         {isMenuOpen && (

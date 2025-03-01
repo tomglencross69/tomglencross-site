@@ -54,7 +54,7 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
       const data = await response.json();
 
       if (response.ok) {
-        setSuccessMessage('Comment added successfully!');
+        setSuccessMessage('Comment submitted successfully!');
         setCommentText('');
         setUsername('');
         setEmail('')
@@ -70,25 +70,26 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
   };
 
   return (
-    <div className='pl-5 pb-20 '>
-      <div className='text-3xl pb-5'>Leave a comment... </div>
+    <div className=' pb-10 '>
+      <div className='text-2xl pb-2'>Leave a comment... </div>
       <form id="comment-form" onSubmit={handleSubmit}>
         <div className='grid grid-cols-2 py-2'>
-          <label htmlFor="text" className='text-lg'>USERNAME</label>
+          <label htmlFor="text" className='text-base col-start-1'>USERNAME</label>
           <input
-          className='w-full border'
+          className='w-full border text-base placeholder:text-sm pl-1'
             type="text"
             id="text"
             value={username}
             onChange={handleUsernameChange}
             placeholder="Your username"
             required
+            maxLength={30}
           />
         </div>
         <div className='grid grid-cols-2 pb-2 '>
-          <label htmlFor="email" className='text-lg'>EMAIL</label>
+          <label htmlFor="email" className='text-base'>EMAIL</label>
           <input
-          className='w-full border'
+          className='w-full border text-base placeholder:text-sm pl-1'
             type="email"
             id="email"
             value={email}
@@ -96,6 +97,7 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
             placeholder="Your email (won't be displayed)"
             autoComplete="on"
             required
+            maxLength={100}
           />
         </div>
         <div className='grid grid-cols-3'>
@@ -109,22 +111,23 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
             rows="5"
             cols="auto"
             required
-            className='text-xl border col-span-2'
+            className='text-lg border col-span-3 p-2'
+            maxLength={1000}
           />
         </div>
-        <div className='grid grid-cols-3 py-2'>
-        <button className='text-xl p-1 border col-start-3 justify-self-end bg-pinkCustom hover:text-white' type="submit" disabled={isSubmitting}>
-          {isSubmitting ? 'Submitting...' : 'SUBMIT'}
+        <div className='grid grid-cols-3 pt-2'>
+        <button className='text-lg px-7 border col-start-3 justify-self-end bg-gray-200 hover:text-pinkCustom' type="submit" disabled={isSubmitting}>
+          {isSubmitting ? 'Submitting...' : 'Submit'}
         </button>
         </div>
+      {successMessage && <div className="text-pinkCustom animate-fade-out text-center">{successMessage}</div>}
+      {error && <div className='text-red'>{error}</div>}
       </form>
 
-      <div className='text-sm'>
+      <div className='text-sm text-justify pt-1'>
         Your email address will not be displayed with your comment - only your username will be shown. Comments will appear after admin approval.
       </div>
 
-      {error && <div className='text-red'>{error}</div>}
-      {successMessage && <div className='text-green'>{successMessage}</div>}
     </div>
   );
 }
