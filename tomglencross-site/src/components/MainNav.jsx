@@ -1,18 +1,19 @@
 'use client';
 import Header from "@/components/Header";
 import { useState, useEffect } from "react";
+import { useTheme } from "@/app/context/ThemeContext";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import fakeWorksData from "@/testdata/testWorksData";
 import SideNav from "@/components/SideNav";
 
-export default function MainNav({toggleMode, isDarkMode}) {
+export default function MainNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(true)
   const [expanded, setExpanded] = useState(null)
   const [selectedItem, setSelectedItem] = useState(null)
   const router = useRouter()
   const pathname = usePathname()
-  
+  const { isDarkMode, toggleMode } = useTheme()
   const toggleSubMenu = (menu) => {
     setExpanded(expanded === menu ? null: menu)
   }
