@@ -92,10 +92,10 @@ export default function BlogPostPage({ params }) {
         {containsHtml(individualBlogPost.body) ? parse(individualBlogPost.body) : individualBlogPost.body}       
     <div className="text-3xl text-center pt-5 pb-5">߷</div>
     <div className="text-xl text-center pb-5">COMMENTS</div>
-    <div className="text-xl">
+    <div className="text-xl divide-y divide-pinkCustom">
         {individualBlogPost.comments.length > 0 ? (
           individualBlogPost.comments.map((comment) => (
-            <div key={comment.comment_id} className="mb-4">
+            <div key={comment.comment_id} className="mb-2">
               {comment.ispending ? (
                 <div className="animate-pulse">
                   <p className="text-gray-600 text-base font-bold">
@@ -109,7 +109,7 @@ export default function BlogPostPage({ params }) {
                 <div>
                   <p className="text-base">
                     {comment.username.toUpperCase()}</p>
-                  <p className="text-xs font-arimo">{new Date(comment.created_at).toLocaleString()}</p>
+                  <p className="text-xs font-arimo">{new Date(comment.created_at).toLocaleString().slice(0,-3)}</p>
                    <p className="pl-5 text-lg break-words ">{comment.comment_text}</p>
                 </div>
               )}

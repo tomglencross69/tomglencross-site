@@ -7,7 +7,7 @@ export default function ArtistCV() {
     <>
     <div>
     <span onClick={(()=> router.back())} className={`text-3xl cursor-pointer text-pinkCustom dark:nightModePinkCustom`}>↞</span> 
-    <div className="text-3xl pl-4 space-y-0">
+    <div className="text-3xl pl-4 pb-2 space-y-0">
                   4.1 
                   <span className={`cursor-pointer text-pinkCustom dark:text-nightModePinkCustom
                       hover:text-pinkCustom hover:dark:text-nightModePinkCustom 
