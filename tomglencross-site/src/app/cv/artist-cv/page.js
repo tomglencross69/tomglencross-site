@@ -13,13 +13,14 @@ export default function ArtistCV() {
                       hover:text-pinkCustom hover:dark:text-nightModePinkCustom 
                       transition-colors duration-300`}> Artist CV</span>
                 </div>
-                <p className="text-2xl py-1"><i>Education</i></p>
+                <p className="text-2xl py-3"><i>Education</i></p>
                 <div className="text-lg space-y-3">
                 <p><span className="text-base">MA </span> English and Comparative Literature, Goldsmiths, University of London	<i>Distinction </i> </p>
                 <p><span className="text-base">BA </span>English Literature, Goldsmiths, University of London <i>1st Class Hons, Winifred Hyde Prize for highest overall undergraduate classification</i></p>
                 <p></p>
                 </div>
-                <p className="text-2xl py-1"><i>Selected exhibitions and works: </i></p>
+                <div className="border-t-[2px] border-pinkCustom w-80 text-center mx-auto"></div>
+                <p className="text-2xl py-3"><i>Selected exhibitions and works </i></p>
                 <div className="text-lg space-y-1 divide-y divide-pinkCustom">
                 <p>Kneading Cultures, Konstfack (Sweden, January-February 2025)</p>
                 <p> LORE, Sunnybank Mills, Leeds (UK, October-December 2024) <a className={`cursor-pointer
@@ -49,9 +50,10 @@ export default function ArtistCV() {
                 <p>Intimacy, SAH – Reel Long Overdub Records (UK, 2021)</p>
                 <p>Ben Vince – Don’t Give Your Life, Thirty-Three Thirty-Three Records (UK, 2019)</p>
                 <p>Jacob Samuel & Ben Vince – I’ll Stick Around, First Terrace Records (UK, 2019) </p>
-                <p>Housewives – Twilight Splendour, Blank Editions Records (UK, 2019) Visual, text.</p>
+                <p className="pb-3">Housewives – Twilight Splendour, Blank Editions Records (UK, 2019) Visual, text.</p>
                 </div>
-                <p className="text-2xl py-4"><i>Experience</i></p>
+                <div className="border-t-[2px] border-pinkCustom w-80 text-center mx-auto"></div>
+                <p className="text-2xl py-3"><i>Experience</i></p>
                 <div className="text-lg space-y-1 pb-5 divide-y divide-blueCustom">
                 <p>Studio Assistant – <a className={`cursor-pointer
                 text-pinkCustom dark:text-nightModePinkCustom
