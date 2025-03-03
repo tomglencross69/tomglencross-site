@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useTheme } from "@/app/context/ThemeContext";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import fakeWorksData from "@/testdata/testWorksData";
+import worksData from '@/app/works/worksData'
 import SideNav from "@/components/SideNav";
 
 export default function MainNav() {
@@ -19,7 +19,7 @@ export default function MainNav() {
   }
   
   const worksListFunction = () => {
-      return fakeWorksData.map((work)=>{
+      return worksData.map((work)=>{
           return work.reference + " " + work.title
       })
   }
@@ -28,7 +28,7 @@ export default function MainNav() {
     if (pathname === "/") {
       setSelectedItem(null);
     } else if (pathname.startsWith("/works/")) {
-      const work = fakeWorksData.find((work) => pathname.includes(work.urlSlug));
+      const work = worksData.find((work) => pathname.includes(work.urlSlug));
       setSelectedItem(work ? `${work.reference} ${work.title}` : null);
       setExpanded("works");
     } else if (pathname.startsWith("/blog/")) {
@@ -95,7 +95,7 @@ export default function MainNav() {
               </div>
               {expanded === 'works' && (
   <ul className="pl-4 space-y-0">
-    {fakeWorksData.map((work) => (
+    {worksData.map((work) => (
       <li
         key={work.id}
         onClick={() => handleItemClick(`${work.reference} ${work.title}`, `/works/${work.urlSlug}`)}

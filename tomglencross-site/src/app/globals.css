@@ -5,7 +5,8 @@
 
 /*THIS WAS PRELOADED IN GLOBALS, I JUST CHANGED FONT FAMILY*/
 :root {
-  --background: #ffffff;
+  /* --background: #ffffff; */
+  --background: #FFF5FE;
   --foreground: #171717;
   --font-default: 'Times New Roman', Times, serif;
 }

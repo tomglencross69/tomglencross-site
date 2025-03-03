@@ -1,13 +1,13 @@
 "use client"
 import Link from 'next/link';
-import fakeWorksData from '@/testdata/testWorksData';
+import worksData from '@/app/works/worksData';
 
 export default function Works() {
  
   return (
     <div>
       <ul>
-        {fakeWorksData.map((work) => (
+        {worksData.map((work) => (
           <li key={work.id}>
             <Link className="text-3xl pl-4 space-y-0" href={`/works/${work.urlSlug}`}>
               1.{work.id} 

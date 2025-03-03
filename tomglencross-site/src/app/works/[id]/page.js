@@ -1,9 +1,9 @@
-import fakeWorksData from "@/testdata/testWorksData";
+import worksData from '@/app/works/worksData';
 
 export default async function IndividualWorkPage({params}) {
 const { id } = await params
 
-    const individualWork = fakeWorksData.find((work) => work.urlSlug === id)
+    const individualWork = worksData.find((work) => work.urlSlug === id)
   
     return (
         <div>

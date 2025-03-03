@@ -27,8 +27,8 @@ export default function DevCV() {
                 <div className="border-t-[2px] border-pinkCustom w-80 text-center mx-auto"></div>
                 <p className="text-2xl pt-1"><i>Education</i></p>
                 <div className="text-lg">
-                <p className="text-sm">NORTHCODERS</p> 
-                <p className="pl-2">JavaScript Software Development Bootcamp Leeds, 2024-2025</p>
+                <p className="text-sm">NORTHCODERS, LEEDS, UK</p> 
+                <p className="pl-2">JavaScript Software Development Bootcamp, 2024-2025</p>
                 <p className="text-sm">GOLDSMITHS, UNIVERSITY OF LONDON</p> 
                 <p className="pl-2">MA English Comparative Literature</p>
                 <p className="text-sm">GOLDSMITHS, UNIVERSITY OF LONDON</p> 
