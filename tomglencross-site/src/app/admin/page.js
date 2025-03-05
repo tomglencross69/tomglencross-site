@@ -89,7 +89,7 @@ export default function AdminDashboard() {
       <div className="text-3xl pl-2 py-2 my-3">I Blogpost Dashboard</div>
       <div className="space-y-6">
         {blogPosts.map((post) => (
-          <div key={post.blog_id} className="bg-white p-3 rounded-lg shadow-md">
+          <div key={post.blog_id} className="p-3 rounded-lg shadow-md">
             <div className="text-xl text-gray-800 mb-3">{post.title}</div>
             <button
               onClick={() => handleDelete(post.blog_id)}
