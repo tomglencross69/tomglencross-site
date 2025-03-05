@@ -13,7 +13,8 @@ export default function ArtistCV() {
                       hover:text-pinkCustom hover:dark:text-nightModePinkCustom 
                       transition-colors duration-300`}> Artist CV</span>
                 </div>
-          
+                <p className="text-2xl py-3"><i>Introduction</i></p>
+          <div className="text-lg">Tom Glencross (b. 1992) is an artist and writer born in Scunthorpe and working in Leeds, UK. Their work is concerned with the codes and myths of work and labour; folklore, social histories and their reproduction; gender, masculinities and alienation; queer and working-class experiences.</div>
                 <p className="text-2xl py-3"><i>Selected exhibitions and works </i></p>
                 <div className="text-lg space-y-1 divide-y divide-pinkCustom">
                 <p>Kneading Cultures, Konstfack (Sweden, January-February 2025)</p>
@@ -24,6 +25,7 @@ export default function ArtistCV() {
                 href="https://www.sunnybankmills.co.uk/lore/tom-glencross/" 
                 target="_blank">
                 ⚵ the-old-stones <i>link</i></a></p>
+                <p> Strong as Steel, 202! Visual Arts, Scunthorpe (UK, August-September 2024) </p>
                 <p>The Most Humane, Augarten Contemporary Kyiv Biennial, Miriam Stoney, Vienna (Austria, December 2023) <a className={`cursor-pointer
                 text-pinkCustom dark:text-nightModePinkCustom
                 hover:text-blueCustom hover:dark:text-nightModePinkCustom 

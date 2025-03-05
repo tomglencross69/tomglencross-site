@@ -15,7 +15,7 @@ export default function DevCV() {
                 </div>
                 <div>
                 <p className="text-2xl"><i>Introduction, Projects & Portfolio</i></p>
-                <p className="pl-2 pb-3 text-lg"> My work is guided by experimentation and informed by elegant and accessible design principles, communicating emotions and ideas beyond just functionality.</p>
+                <p className="pl-2 pb-3 text-lg"> Guided by experimentation and informed by elegant and accessible design principles, communicating emotions and ideas beyond form and functionality.</p>
                 <p className="pl-2 pb-3 text-lg"> Current projects and links to my GitHub can be found at
                 <a onClick={(()=> router.push('/dev'))}><span className="text-xl cursor-pointer"> 2<span className={`cursor-pointer text-blueCustom dark:text-nightModeBlueCustom
                       hover:text-pinkCustom hover:dark:text-nightModePinkCustom 
