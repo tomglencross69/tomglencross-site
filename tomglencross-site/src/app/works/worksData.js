@@ -4,6 +4,8 @@ const worksData = [
         title: "The Old Stones", 
         urlSlug: "the-old-stones", 
         description: "THE OLD STONES is an ongoing photographic documentary of Neolithic folk art and rock carvings, amongst the oldest artistic representations in Britain.", 
+        info: "LORE, Sunnybank Mills, Leeds (UK, October-December 2024)",
+        links:["https://www.sunnybankmills.co.uk/lore/tom-glencross/"],
         images: [
             {src:"/images/the-old-stones/cup-and-ring-small.webp", alt:"Neolthic stone carving showing cup and ring motif"},
             {src:"/images/the-old-stones/gallery-1-small.webp",

@@ -36,11 +36,23 @@ const [currentImageIndex, setCurrentImageIndex] = useState(0);
     return (
       <>
         <div>
-        <h1> title {individualWork.title}</h1>
-        <p> description {individualWork.description}</p>
-        <p> body {individualWork.body}</p>
+        <div className='text-3xl'>{individualWork.title}</div>
+        <div className='text-xl'><i>{individualWork.info}</i></div>
+          <div className='relative w-full aspect-[4/3] border overflow-hidden'>
+          <Image
+          src={individualWork.images[2].src}
+          alt={individualWork.images[2].alt}
+          fill
+          className='object-contain'
+          priority={true}
+          >  
+          </Image>
+          </div>
+        <div className='text-xl pb-2'>{individualWork.description}</div>
+        <div className='text-lg'>{individualWork.body}</div>
+        </div>
         <p></p>
-      </div>
+ 
 
       {/* CLICK TO VIEW IMAGE MODAL */}
 {individualWork.displayType === "imagegrid" && (
@@ -57,6 +69,7 @@ const [currentImageIndex, setCurrentImageIndex] = useState(0);
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           style={{ objectFit: "cover" }}
+          className='cursor-pointer'
           />
           </div>
       ))}
