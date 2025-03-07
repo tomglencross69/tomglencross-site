@@ -9,7 +9,7 @@ export default function DevCV() {
     <span onClick={(()=> router.push('/cv'))} className={`text-3xl cursor-pointer text-pinkCustom dark:nightModePinkCustom`}>↞</span> 
     <div className="text-3xl pl-4 py-3 space-y-0">
                   4.2 
-                  <span className={`cursor-pointer text-blueCustom dark:text-nightModeBlueCustom
+                  <span className={`cursor-pointer text-pinkCustom dark:text-nightModePinkCustom
                       hover:text-pinkCustom hover:dark:text-nightModePinkCustom 
                       transition-colors duration-300`}> Dev CV</span>
                 </div>

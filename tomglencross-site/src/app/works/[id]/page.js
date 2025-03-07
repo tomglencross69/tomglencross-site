@@ -4,6 +4,8 @@ import Image from 'next/image';
 import ImageModal from '@/components/ImageModal';
 import { useState } from 'react';
 import { useParams } from 'next/navigation';
+import ReactMarkdown from 'react-markdown'
+
 
 
 export default function IndividualWorkPage({params}) {
@@ -38,20 +40,30 @@ const [currentImageIndex, setCurrentImageIndex] = useState(0);
         <div>
         <div className='text-3xl'>{individualWork.title}</div>
         <div className='text-xl'><i>{individualWork.info}</i></div>
-          <div className='relative w-full aspect-[4/3] border overflow-hidden'>
+          <div className='relative w-full aspect-[4/3] overflow-hidden'>
           <Image
-          src={individualWork.images[2].src}
-          alt={individualWork.images[2].alt}
+          src={individualWork.images[0].src}
+          alt={individualWork.images[0].alt}
           fill
           className='object-contain'
           priority={true}
           >  
           </Image>
           </div>
-        <div className='text-xl pb-2'>{individualWork.description}</div>
-        <div className='text-lg'>{individualWork.body}</div>
+        <div className='text-2xl pb-2'>{individualWork.description}</div>
+        <div className='text-lg'>
+          <ReactMarkdown>{individualWork.body}</ReactMarkdown>
+          <div>
+          <a className={`cursor-pointer
+                text-pinkCustom dark:text-nightModeBlueCustom
+                hover:text-blueCustom hover:dark:text-nightModePinkCustom 
+                transition-colors duration-300`}
+                href={individualWork.links[0]} 
+                target="_blank">
+                ⚵ {individualWork.urlSlug} <i>link</i></a>
+          </div>
+          </div>
         </div>
-        <p></p>
  
 
       {/* CLICK TO VIEW IMAGE MODAL */}

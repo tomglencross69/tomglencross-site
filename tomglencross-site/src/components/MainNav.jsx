@@ -78,7 +78,10 @@ export default function MainNav() {
     <>
     <div className="flex">
         <Header onClick={() => handleItemClick(null, '/')}/>
-        <button className="text-xl ml-auto pr-2"  onClick={toggleMode}> {isDarkMode? '☾ ☀' : '☀ ☾'}</button>
+        <button className="text-xl ml-auto pr-2 cursor-pointer
+                 dark:text-nightModeBlueCustom
+                hover:text-blueCustom hover:dark:text-nightModePinkCustom 
+                transition-colors duration-300"  onClick={toggleMode}> {isDarkMode? '☾ ☀' : '☀ ☾'}</button>
         </div>
         <SideNav handleItemClick={handleItemClick}/>
         <nav className={`text-blueCustom dark:text-nightModeBlueCustom bg-transparent text-3xl flex p-2 sm:p-4`} >

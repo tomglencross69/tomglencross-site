@@ -19,7 +19,7 @@ export default function ArtistCV() {
                 <div className="text-lg space-y-1 divide-y divide-pinkCustom">
                 <p>Kneading Cultures, Konstfack (Sweden, January-February 2025)</p>
                 <p> LORE, Sunnybank Mills, Leeds (UK, October-December 2024) <a className={`cursor-pointer
-                text-pinkCustom dark:text-nightModePinkCustom
+                text-pinkCustom dark:text-nightModeBlueCustom
                 hover:text-blueCustom hover:dark:text-nightModePinkCustom 
                 transition-colors duration-300`}
                 href="https://www.sunnybankmills.co.uk/lore/tom-glencross/" 
@@ -27,7 +27,7 @@ export default function ArtistCV() {
                 ⚵ the-old-stones <i>link</i></a></p>
                 <p> Strong as Steel, 202! Visual Arts, Scunthorpe (UK, August-September 2024) </p>
                 <p>The Most Humane, Augarten Contemporary Kyiv Biennial, Miriam Stoney, Vienna (Austria, December 2023) <a className={`cursor-pointer
-                text-pinkCustom dark:text-nightModePinkCustom
+                text-pinkCustom dark:text-nightModeBlueCustom
                 hover:text-blueCustom hover:dark:text-nightModePinkCustom 
                 transition-colors duration-300`}
                 href="https://2023.kyivbiennial.org/en/program/reading-miriam-stoney-and-tom-glencross-otherwise-humane" 
@@ -35,7 +35,7 @@ export default function ArtistCV() {
                 ⚵ the-most-humane <i>link</i></a> </p>
                 <p>Indelicate 3.0, Manchester (UK, March-April 2023)</p>
                 <p>Indebtedness: Die Haftung der Geschenknehmenden, Miriam Stoney, Kevin Space Gallery, Vienna (Austria, March-May 2021) <a className={`cursor-pointer
-                text-pinkCustom dark:text-nightModePinkCustom
+                text-pinkCustom dark:text-nightModeBlueCustom
                 hover:text-blueCustom hover:dark:text-nightModePinkCustom 
                 transition-colors duration-300`}
                 href="https://www.viennaartweek.at/en/eating-your-cake-and-baking-it-anew/" 
@@ -57,10 +57,10 @@ export default function ArtistCV() {
                 </div>
                 <div className="border-t-[2px] border-pinkCustom w-80 text-center mx-auto"></div>
                 <p className="text-2xl py-3"><i>Experience</i></p>
-                <div className="text-lg space-y-1 pb-5 divide-y divide-blueCustom">
+                <div className="text-lg space-y-1 pb-5 divide-y divide-blueCustom dark:divide-nightModeBlueCustom">
                 <p>Studio Assistant – <a className={`cursor-pointer
-                text-pinkCustom dark:text-nightModePinkCustom
-                hover:text-blueCustom hover:dark:text-nightModePinkCustom 
+                text-pinkCustom dark:text-nightModeBlueCustom
+                hover:text-blueCustom hover:dark:text-nightModePinkCustom  
                 transition-colors duration-300`} href="https://emiialrai.com/" target="_blank">Emii Alrai </a>(2023–)</p>
                 <p>Apprentice Jeweller and Silversmith (2022–2023)</p>
                 <p>Workshop Coordinator – Leeds Craft Centre and Design Gallery (2021–2022)</p>
