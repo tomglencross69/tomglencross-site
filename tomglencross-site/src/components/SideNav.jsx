@@ -7,7 +7,7 @@ export default function SideNav ({handleItemClick}) {
             <li className="cursor-pointer hover:text-pinkCustom transition-colors duration-300"
             onClick={() => handleItemClick(null, '/')}>home </li><span>•</span>
             <li className="cursor-pointer hover:text-pinkCustom transition-colors duration-300"
-            onClick={() => handleItemClick('1 Works', '/works')}>works </li><span>•</span>
+            onClick={() => handleItemClick('1 Selected Works & Exhibitions', '/works')}>works </li><span>•</span>
             <li className="cursor-pointer hover:text-pinkCustom transition-colors duration-300"
             onClick={() => handleItemClick('2 Dev', '/dev')}>dev </li><span>•</span>
             <li className="cursor-pointer hover:text-pinkCustom transition-colors duration-300"

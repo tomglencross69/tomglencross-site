@@ -30,7 +30,7 @@ export default function MainNav() {
     } else if (pathname.startsWith("/works/")) {
       const work = worksData.find((work) => pathname.includes(work.urlSlug));
       setSelectedItem(work ? `${work.reference} ${work.title}` : null);
-      setExpanded("works");
+      setExpanded("selected works & exhibitions");
     } else if (pathname.startsWith("/blog/")) {
       setSelectedItem("3 Blog")
     } else if (pathname === "/dev") {
@@ -42,7 +42,7 @@ export default function MainNav() {
     } else if (pathname === "/about") {
       setSelectedItem("5 About");
     } else if (pathname === "/works") {
-      setSelectedItem("1 Works")
+      setSelectedItem("1 Selected Works & Exhibitions")
     } else {
       setSelectedItem(null);
     }
@@ -58,7 +58,7 @@ export default function MainNav() {
         router.push(route)
         setSelectedItem(item)
         const worksList = worksListFunction()
-        worksList.includes(item) ? setExpanded('works') : setExpanded(null)
+        worksList.includes(item) ? setExpanded('Selected Works & Exhibitions') : setExpanded(null)
         setIsMenuOpen(false)
         }
     }
@@ -90,13 +90,13 @@ export default function MainNav() {
           <>
             <li>
               <div
-                onClick={() => toggleSubMenu('works')}
+                onClick={() => toggleSubMenu('Selected Works & Exhibitions')}
                 className={`cursor-pointer hover:text-pinkCustom dark:nightModePinkCustom transition-colors duration-300`}
               >
-                <span><span className={`text-black dark:text-white`}>1</span> Works</span>
-                <span>{expanded === 'works' ? ' ↞' : ' ↡'}</span>
+                <span><span className={`text-black dark:text-white`}>1</span> Selected Works & Exhibitions</span>
+                <span>{expanded === 'Selected Works & Exhibitions' ? ' ↞' : ' ↡'}</span>
               </div>
-              {expanded === 'works' && (
+              {expanded === 'Selected Works & Exhibitions' && (
   <ul className="pl-4 space-y-0">
     {worksData.map((work) => (
       <li
