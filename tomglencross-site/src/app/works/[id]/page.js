@@ -40,6 +40,7 @@ const [currentImageIndex, setCurrentImageIndex] = useState(0);
         <div>
         <div className='text-3xl'>{individualWork.title}</div>
         <div className='text-xl'><i>{individualWork.info}</i></div>
+        {individualWork.images.length !== 0 ? 
           <div className='relative w-full aspect-[4/3] overflow-hidden'>
           <Image
           src={individualWork.images[0].src}
@@ -49,12 +50,14 @@ const [currentImageIndex, setCurrentImageIndex] = useState(0);
           priority={true}
           >  
           </Image>
-          </div>
-        <div className='text-2xl pb-2'>{individualWork.description}</div>
+          </div> : null }
+        <div className='text-2xl pb-2'>
+          <ReactMarkdown>{individualWork.description}</ReactMarkdown>
+        </div>
         <div className='text-lg'>
           <ReactMarkdown>{individualWork.body}</ReactMarkdown>
           <div>
-          <a className={`cursor-pointer
+          <a className={`cursor-pointer pb-3
                 text-pinkCustom dark:text-nightModeBlueCustom
                 hover:text-blueCustom hover:dark:text-nightModePinkCustom 
                 transition-colors duration-300`}
@@ -67,7 +70,7 @@ const [currentImageIndex, setCurrentImageIndex] = useState(0);
  
 
       {/* CLICK TO VIEW IMAGE MODAL */}
-{individualWork.displayType === "imagegrid" && (
+{individualWork.displayType === "imagegrid" && individualWork.images.length > 1 ? 
   <div className="grid grid-cols-3 gap-4">
       {individualWork.images.map((image, index) => (
         <div 
@@ -86,7 +89,7 @@ const [currentImageIndex, setCurrentImageIndex] = useState(0);
           </div>
       ))}
   </div>
-  )}
+  : null }
   {/* Modal */}
   {isModalOpen && (
         <ImageModal
