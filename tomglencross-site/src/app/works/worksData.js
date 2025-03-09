@@ -70,7 +70,7 @@ const worksData = [
         body: `\n\n\"Departing from Scunthorpe Correspondences, a dialogue between Stoney and Tom Glencross, a UK-based writer and friend, that was conceived and published in the given framework, this exhibition is set alongside the struggles of the working-class in Scunthorpe, where both authors grew up. Once a symbol for prosperity and wealth, the town in northern England now faces widespread precarity and disenchantment due to the decline of the steel industry and deregulating, globalizing processes. 
         \n\n\This conversation interrelates Stoney’s family’s trajectory with larger colonial histories of the UK and the Partition of Pakistan and India in 1947. Details of the town of Scunthorpe are visualized in the exhibition through a selection of Glencross’ black-and-white photographs (Sensual objects, real qualities), reminiscent of the social realism of New Objectivity, such as Bernd and Hilla Becher’s portrayal of decommissioned industrial buildings and workers’ homes prior to their vanishing."
         \n\n\ _-excerpt taken from Kevin Space Gallery, Vienna, link below:_ `},
-        {id: "3", 
+    {id: "3", 
         reference: "1.3", 
         title: "Otherwise Humane, Kyiv Biennial", 
         urlSlug: "kyiv-biennial", 
@@ -85,16 +85,16 @@ const worksData = [
         body: `"Drawing on themes inherent to this work, including the politics of witnessing and obfuscation, as well as the uses of ethical standards in encounters of radical alterity, Glencross and Stoney have written a new text that reflects on experiences of violence in everyday life and their responses to them – from the immediate, bodily reaction to the more distanced account in and through writing." - _Kyiv Biennial Program_ & _tranzit.at_`},
     {id: "4", 
         reference: "1.4", 
-        title: "Meadfluencer", 
-        urlSlug: "meadfluencer", 
-        description: "a photograph", 
-        body: "this is some text about mead."},
-    {id: "5", 
-        reference: "1.5", 
-        title: "Etc...", 
+        title: "Etc", 
         urlSlug: "etc", 
         description: "a photograph", 
-        body: "And the rest"},
+        info:[],
+        links:[],
+        images:[{src:"/images/biennial/biennial-1.webp",
+            alt:"Tom Glencross beside Miriam Stoney's sculpture 'The Most Humane"
+            }],
+        displayType:"imagegrid",
+        body: "this is some text about mead."},
 ]
 
 export default worksData

@@ -99,6 +99,15 @@ const [currentImageIndex, setCurrentImageIndex] = useState(0);
           onPrev={goToPreviousImage}
         />
       )}
+      {individualWork.id === "4" ? 
+      <div>Hi
+        <iframe
+        src="/pdf/portfolio-1.pdf"
+        style={{ width: '100%', height: '600px', border: 'none' }}>
+
+        </iframe>
+      </div>
+      : null}
 </>
   )
 }

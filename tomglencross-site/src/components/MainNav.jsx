@@ -14,6 +14,7 @@ export default function MainNav() {
   const router = useRouter()
   const pathname = usePathname()
   const { isDarkMode, toggleMode } = useTheme()
+  
   const toggleSubMenu = (menu) => {
     setExpanded(expanded === menu ? null: menu)
   }
@@ -30,7 +31,7 @@ export default function MainNav() {
     } else if (pathname.startsWith("/works/")) {
       const work = worksData.find((work) => pathname.includes(work.urlSlug));
       setSelectedItem(work ? `${work.reference} ${work.title}` : null);
-      setExpanded("selected works & exhibitions");
+      setExpanded("Selected Works & Exhibitions");
     } else if (pathname.startsWith("/blog/")) {
       setSelectedItem("3 Blog")
     } else if (pathname === "/dev") {
