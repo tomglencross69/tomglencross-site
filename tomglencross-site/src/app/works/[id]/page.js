@@ -15,6 +15,7 @@ const individualWork = worksData.find((work) => work.urlSlug === id)
 
 const [isModalOpen, setIsModalOpen] = useState(false);
 const [currentImageIndex, setCurrentImageIndex] = useState(0);
+const [showPDF, setShowPDF] = useState(false)
 
   const openModal = (index) => {
     setCurrentImageIndex(index);
@@ -100,12 +101,29 @@ const [currentImageIndex, setCurrentImageIndex] = useState(0);
         />
       )}
       {individualWork.id === "4" ? 
-      <div>Hi
+      <div>View portfolio below:
+        {!showPDF ? 
+        <button
+        onClick={() => setShowPDF(true)}
+        className='cursor-pointer text-lg px-2 bg-gray-200 hover:text-pinkCustom dark:text-black dark:hover:text-pinkCustom'
+        >
+          SHOW PORTFOLIO PDF (18MB)
+        </button>  : 
+        <div>
+        <button
+        onClick={() => setShowPDF(false)}
+         className='cursor-pointer text-lg px-2 bg-gray-200 hover:text-pinkCustom dark:text-black dark:hover:text-pinkCustom'
+        >
+          HIDE PORTFOLIO PDF
+        </button>
         <iframe
         src="/pdf/portfolio-1.pdf"
-        style={{ width: '100%', height: '600px', border: 'none' }}>
-
+        style={{ width: '100%', height: '600px', border: 'none' }}
+        className='pb-10'
+        >
         </iframe>
+        </div>
+         }
       </div>
       : null}
 </>
