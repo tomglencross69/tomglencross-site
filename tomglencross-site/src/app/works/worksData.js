@@ -90,10 +90,14 @@ const worksData = [
         description: "Links at the bottom of the page to press", 
         info:"Ongoing projects, gallery, portfolio etc...",
         links:[],
-        images:[{src:"/images/etc/six-swords-sq.webp",
-            alt:"Tom Glencross beside Miriam Stoney's sculpture 'The Most Humane"
-            }],
-        displayType:"imagegrid",
+        images:[
+            {src:"/images/etc/six-swords-sq.webp",
+                alt:"Tom Glencross beside Miriam Stoney's sculpture 'The Most Humane"
+                },
+                {src:"/images/biennial/biennial-1.webp",
+                    alt:"Tom Glencross beside Miriam Stoney's sculpture 'The Most Humane"
+                    }],
+        displayType:"imagegallery",
         body: "this is some text about mead."},
 ]
 

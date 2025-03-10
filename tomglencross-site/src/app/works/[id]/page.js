@@ -5,6 +5,7 @@ import ImageModal from '@/components/ImageModal';
 import { useState } from 'react';
 import { useParams } from 'next/navigation';
 import ReactMarkdown from 'react-markdown'
+import ImageGallery from '@/components/ImageGallery';
 
 
 
@@ -126,6 +127,10 @@ const [showPDF, setShowPDF] = useState(false)
          }
       </div>
       : null}
+       {/* Conditionally Render ImageGallery Component */}
+       {individualWork.displayType === "imagegallery" && individualWork.images.length > 1 && (
+        <ImageGallery images={individualWork.images} />
+      )}
 </>
   )
 }
