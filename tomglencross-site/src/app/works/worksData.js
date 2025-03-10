@@ -87,10 +87,10 @@ const worksData = [
         reference: "1.4", 
         title: "Etc", 
         urlSlug: "etc", 
-        description: "a photograph", 
-        info:[],
+        description: "Links at the bottom of the page to press", 
+        info:"Ongoing projects, gallery, portfolio etc...",
         links:[],
-        images:[{src:"/images/biennial/biennial-1.webp",
+        images:[{src:"/images/etc/six-swords-sq.webp",
             alt:"Tom Glencross beside Miriam Stoney's sculpture 'The Most Humane"
             }],
         displayType:"imagegrid",

@@ -101,7 +101,7 @@ const [showPDF, setShowPDF] = useState(false)
         />
       )}
       {individualWork.id === "4" ? 
-      <div>View portfolio below:
+      <div className='pb-10'>View portfolio below:
         {!showPDF ? 
         <button
         onClick={() => setShowPDF(true)}
