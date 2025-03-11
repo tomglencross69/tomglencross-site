@@ -76,7 +76,7 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
         <div className='grid grid-cols-2 py-2'>
           <label htmlFor="text" className='text-base col-start-1'>USERNAME</label>
           <input
-          className='w-full border text-base placeholder:text-sm pl-1'
+          className='w-full border text-base placeholder:text-sm dark:text-black dark:placeholder:text-pinkCustom pl-1'
             type="text"
             id="text"
             value={username}
@@ -89,7 +89,7 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
         <div className='grid grid-cols-2 pb-2 '>
           <label htmlFor="email" className='text-base'>EMAIL</label>
           <input
-          className='w-full border text-base placeholder:text-sm pl-1'
+          className='w-full border text-base placeholder:text-sm dark:text-black dark:placeholder:text-pinkCustom pl-1'
             type="email"
             id="email"
             value={email}
@@ -111,12 +111,12 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
             rows="5"
             cols="auto"
             required
-            className='text-lg border col-span-3 p-2'
+            className='text-lg border col-span-3 p-2 dark:text-black dark:placeholder:text-pinkCustom'
             maxLength={1000}
           />
         </div>
         <div className='grid grid-cols-3 pt-2'>
-        <button className='text-lg px-7 border col-start-3 justify-self-end bg-gray-200 hover:text-pinkCustom' type="submit" disabled={isSubmitting}>
+        <button className='text-lg px-7 border col-start-3 justify-self-end bg-gray-200 hover:text-pinkCustom dark:text-pinkCustom dark:hover:text-blueCustom' type="submit" disabled={isSubmitting}>
           {isSubmitting ? 'Submitting...' : 'Submit'}
         </button>
         </div>

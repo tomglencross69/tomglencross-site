@@ -146,7 +146,7 @@ const handleScrollToBottom = (e) => {
           <div>
           <button
           onClick={() => setShowPDF(false)}
-           className='cursor-pointer text-lg px-2 bg-gray-200 hover:text-pinkCustom dark:text-black dark:hover:text-pinkCustom'
+           className='cursor-pointer text-lg px-2 bg-gray-300 hover:bg-gray-200 hover:text-pinkCustom dark:text-black dark:hover:text-pinkCustom'
           >
             hide portfolio ⚵
           </button>

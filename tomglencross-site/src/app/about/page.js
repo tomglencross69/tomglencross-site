@@ -1,3 +1,5 @@
+import ContactForm from "@/components/ContactForm"
+
 export default function page() {
   return (
     <>
@@ -25,6 +27,16 @@ export default function page() {
                     href="https://github.com/tomglencross69/" 
                     target="_blank">
                     ⚵ github <i>link</i></a>
+                    <p></p>
+                    <a className={`cursor-pointer
+                    text-pinkCustom dark:text-nightModeBlueCustom
+                    hover:text-blueCustom hover:dark:text-nightModePinkCustom 
+                    transition-colors duration-300`}
+                    href="https://linkedin.com/in/tom-glencross-4760a3195" 
+                    target="_blank">
+                    ⚵ linkedin <i>link</i></a>
+                    <ContactForm/>
                     </>
+
   )
 }
