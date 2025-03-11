@@ -87,18 +87,55 @@ const worksData = [
         reference: "1.4", 
         title: "Etc", 
         urlSlug: "etc", 
-        description: "Links at the bottom of the page to press", 
-        info:"Ongoing projects, gallery, portfolio etc...",
+        description: "Archived work and ongoing projects - follow the links below for enquiries and more.", 
+        info:"Archive, ongoing projects, gallery, portfolio etc...",
         links:[],
         images:[
-            {src:"/images/etc/six-swords-sq.webp",
-                alt:"Tom Glencross beside Miriam Stoney's sculpture 'The Most Humane"
-                },
-                {src:"/images/biennial/biennial-1.webp",
-                    alt:"Tom Glencross beside Miriam Stoney's sculpture 'The Most Humane"
-                    }],
+            {src:"/images/etc/hawley-square-7am.webp",
+            alt:"Hawley Square, 7am, (2020)"
+            },
+            {src:"/images/etc/applecross.webp",
+            alt:"Applecross, (2020)"
+            },
+            {src:"/images/etc/barbican.webp",
+            alt:"Staircase, London Wall, (2018)"
+            },
+            {src:"/images/etc/cove-bay.webp",
+            alt:"Cove Bay (2020)"
+            },
+            {src:"/images/etc/drew-portrait.webp",
+            alt:"Drew, (2018)"
+            },
+            {src:"/images/etc/northumberland-residential.webp",
+            alt:"Northumberland residential, (2022)"
+            },
+            {src:"/images/etc/office-classical.webp",
+            alt:"Office Classical, (2019)"
+            },
+            {src:"/images/etc/rob-and-gary.webp",
+            alt:"Rob and Gary, Shepherds Bush (2018)"
+            },
+            {src:"/images/etc/sauna.webp",
+            alt:"Sauna (2018)"
+            },
+            {src:"/images/etc/stone-circle-1.webp",
+            alt:"Moel Ty Uchaf, (2021)"
+            },
+            {src:"/images/etc/street-couple.webp",
+            alt:"Street portrait, (2018)"
+            },
+            {src:"/images/etc/twins.webp",
+            alt:"Two trees, Wycoller, (2018)"
+            },
+            {src:"/images/etc/tynemouth.webp",
+            alt:"Tynemouth, (2020)"
+            },
+            {src:"/images/etc/wycoller.webp",
+            alt:"Wycoller, (2018)"
+            },
+        ],
         displayType:"imagegallery",
-        body: "this is some text about mead."},
+        body: "My latest portfolio is avialble as a .pdf below the image gallery."},
 ]
 
 export default worksData
