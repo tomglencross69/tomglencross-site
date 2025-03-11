@@ -135,7 +135,7 @@ const worksData = [
             },
         ],
         displayType:"imagegallery",
-        body: "My latest portfolio is avialble as a .pdf below the image gallery."},
+        body: ""},
 ]
 
 export default worksData

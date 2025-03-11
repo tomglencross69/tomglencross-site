@@ -2,11 +2,12 @@
 import worksData from '@/app/works/worksData';
 import Image from 'next/image';
 import ImageModal from '@/components/ImageModal';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import ReactMarkdown from 'react-markdown'
 import ImageGallery from '@/components/ImageGallery';
 import { useRouter } from "next/navigation"
+import { useRef } from 'react';
 
 
 
@@ -20,6 +21,17 @@ const [currentImageIndex, setCurrentImageIndex] = useState(0);
 const [showPDF, setShowPDF] = useState(false)
 
 const router = useRouter()
+const pdfRef = useRef(null)
+
+const handleScrollToBottom = (e) => {
+  e.preventDefault();
+  if (pdfRef.current) {
+    pdfRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  }
+};
 
   const openModal = (index) => {
     setCurrentImageIndex(index);
@@ -73,6 +85,7 @@ const router = useRouter()
                 ⚵ {individualWork.urlSlug} <i>link</i></a>
           </div> : 
           <div>
+            <p>My latest portfolio is avialble as a .pdf <span className='cursor-pointer' onClick={handleScrollToBottom}>below the image gallery.</span></p>
             <p className="text-lg"> For enquiries, contact details can be found at 
                 <a onClick={(()=> router.push('/about'))}><span className="text-xl cursor-pointer"> 5<span className={`cursor-pointer text-blueCustom dark:text-nightModeBlueCustom
                       hover:text-pinkCustom hover:dark:text-nightModePinkCustom 
@@ -143,6 +156,7 @@ const router = useRouter()
         <div className='pt-5 pb-10 text-xl'>Latest portfolio of my commercial, studio and artistic work available below:
           <p></p>{!showPDF ? 
           <button
+          ref={pdfRef}
           onClick={() => setShowPDF(true)}
           className='cursor-pointer text-lg px-2 bg-gray-300 hover:bg-gray-200 hover:text-pinkCustom dark:text-black dark:hover:text-pinkCustom'
           >
