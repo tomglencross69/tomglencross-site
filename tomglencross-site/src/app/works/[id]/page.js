@@ -85,34 +85,15 @@ const handleScrollToBottom = (e) => {
                 ⚵ {individualWork.urlSlug} <i>link</i></a>
           </div> : 
           <div>
-            <p>My latest portfolio is avialble as a .pdf <span className='cursor-pointer' onClick={handleScrollToBottom}>below the image gallery.</span></p>
+            <p>My latest portfolio is avialble as a .pdf <span className={`cursor-pointer
+                text-pinkCustom dark:text-nightModeBlueCustom
+                hover:text-blueCustom hover:dark:text-nightModePinkCustom 
+                transition-colors duration-300`} onClick={handleScrollToBottom}>below the image gallery.</span></p>
             <p className="text-lg"> For enquiries, contact details can be found at 
                 <a onClick={(()=> router.push('/about'))}><span className="text-xl cursor-pointer"> 5<span className={`cursor-pointer text-blueCustom dark:text-nightModeBlueCustom
                       hover:text-pinkCustom hover:dark:text-nightModePinkCustom 
                       transition-colors duration-300`}> About</span></span></a></p>
-            <a className={`cursor-pointer
-                text-pinkCustom dark:text-nightModeBlueCustom
-                hover:text-blueCustom hover:dark:text-nightModePinkCustom 
-                transition-colors duration-300`}
-                href="https://instagram.com/tom.glencross" 
-                target="_blank">
-                ⚵ instagram <i>link</i></a>
-                <p></p>
-                <a className={`cursor-pointer
-                text-pinkCustom dark:text-nightModeBlueCustom
-                hover:text-blueCustom hover:dark:text-nightModePinkCustom 
-                transition-colors duration-300`}
-                href="https://soundcloud.com/mysticcrystalworm" 
-                target="_blank">
-                ⚵ soundcloud <i>link</i></a>
-                <p></p>
-                <a className={`cursor-pointer
-                text-pinkCustom dark:text-nightModeBlueCustom
-                hover:text-blueCustom hover:dark:text-nightModePinkCustom 
-                transition-colors duration-300`}
-                href="https://github.com/tomglencross69/" 
-                target="_blank">
-                ⚵ github <i>link</i></a>
+            
           </div> }
           </div> 
         </div> 
