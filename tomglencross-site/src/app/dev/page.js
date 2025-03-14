@@ -220,9 +220,9 @@ export default function Dev() {
         <button
           className="mt-4 px-3 py-1 border rounded hover:opacity-70"
           style={{
-            color: textColor,
-            borderColor: textColor,
-            filter: bgColor !== defaultBgColor ? "invert(1)" : "none",
+            color: colourChange ? bgColor : textColor,
+            borderColor: colourChange ? bgColor : textColor,
+            filter: colourChange ? "invert(1)" : "none",
           }}
           onClick={resetColors}
         >
