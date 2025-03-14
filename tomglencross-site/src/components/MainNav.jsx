@@ -27,6 +27,7 @@ export default function MainNav() {
 
   useEffect(() => {
     if (pathname === "/") {
+      setIsMenuOpen(true);
       setSelectedItem(null);
     } else if (pathname.startsWith("/works/")) {
       const work = worksData.find((work) => pathname.includes(work.urlSlug));
@@ -35,7 +36,7 @@ export default function MainNav() {
     } else if (pathname.startsWith("/blog/")) {
       setSelectedItem("3 Blog")
     } else if (pathname === "/dev") {
-      setSelectedItem("2 Dev");
+      setIsMenuOpen(false)
     } else if (pathname === "/blog") {
       setSelectedItem("3 Blog");
     } else if (pathname === "/cv") {
@@ -50,7 +51,13 @@ export default function MainNav() {
   }, [pathname]);
 
     const handleItemClick = (item, route) => {
-        if (route === '/') {
+      if (route === pathname) return; 
+      if (route === '/dev') {
+        router.push(route)
+        setSelectedItem(null)
+        setIsMenuOpen(false)
+      } 
+        else if (route === '/') {
             router.push(route)
             setSelectedItem(null);
             setIsMenuOpen(true);

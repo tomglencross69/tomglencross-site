@@ -49,9 +49,9 @@ const ContactForm = () => {
 
   return (
     <>
-    <div className='pl-2 pt-2'>
+    <div className='pl-5 pt-2'>
         <div className='text-2xl pb-2'>Contact </div>
-        <div>If you'd like to make an enquiry, get in touch using the form below</div>
+        <div className='pb-3'>If you'd like to make an enquiry, get in touch using the form below.</div>
     <form onSubmit={handleSubmit}>
     <div className='grid grid-cols-2'>
         <label htmlFor="name" className='text-sm col-start-1'>YOUR NAME</label>
@@ -96,10 +96,11 @@ const ContactForm = () => {
       </div>
       <button 
       type="submit" 
-      className='cursor-pointer text-lg px-2 bg-gray-300 hover:bg-gray-200 hover:text-pinkCustom dark:text-black dark:hover:text-pinkCustom disabled:bg-black disabled:text-white'
+      className='cursor-pointer text-lg px-2 bg-gray-300 hover:bg-gray-200 hover:text-pinkCustom dark:text-black dark:hover:text-pinkCustom disabled:bg-gray-400 disabled:text-black disabled:hover:bg-green-100'
+     
       disabled={isSubmitting || isFormDisabled}
       >
-      {isFormDisabled ? 'New enquiries disabled' : isSubmitting ? 'Sending...' : 'Send Enquiry' }
+      {isSubmitting ? 'Sending...' : isFormDisabled ? 'Your enquiry sent successfully :)' : 'Send Enquiry'}
       </button>
       {status && <div className="text-pinkCustom animate-fade-out text-center">{status}</div>}
       
@@ -110,3 +111,10 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
+// TO DO
+
+// LOGIC FOR SUBMISSION NEEDS ALTERING SLIGHTLY, DISABLED FORM ETC...
+// ADD CAPTCHA?!
+// add localStorage timestamp to remember on refresh that form cannot be resubmitted
+//perhaps need to conditionally render two buttons? cos now isSending is also green hover as well as succesffully send button

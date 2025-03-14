@@ -52,7 +52,7 @@ export default function ImageGallery({ images }) {
           fill
           className="object-contain"
         />
-        <div className="absolute bottom-0 right-0 bg-black bg-opacity-30 text-white text-sm text-center ">
+        <div className="absolute bottom-0 right-0 bg-black bg-opacity-30 text-white text-sm text-center">
           {images[currentImageIndex].alt}
         </div>
       </div>

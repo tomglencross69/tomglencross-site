@@ -21,6 +21,9 @@ export default function ImageModal({image, onClose, onNext, onPrev}) {
           style={{ objectFit: "contain" }}
           className="mx-auto"
         />
+        <div className="bg-black bg-opacity-30 text-white text-sm ">
+          {image.alt}
+        </div>
       </div>
       <div className="flex justify-between ">
     
