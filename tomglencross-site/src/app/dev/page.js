@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import DOMPurify from 'dompurify'
 
 export default function Dev() {
   const router = useRouter();
@@ -16,6 +17,7 @@ export default function Dev() {
 
   const [bgColor, setBgColor] = useState(defaultBgColor);
   const [textColor, setTextColor] = useState(defaultTextColor);
+  const [colourChange, setColourChange] = useState(false)
 
   useEffect(() => {
     if (index < fullText.length) {
@@ -53,11 +55,13 @@ export default function Dev() {
   const resetColors = () => {
     setBgColor(defaultBgColor);
     setTextColor(defaultTextColor);
+    setColourChange(false)
   };
 
   const handleHexChange = (e, setter) => {
     let value = e.target.textContent.trim();
-    setter(value);
+    setter(DOMPurify.sanitize(value));
+    setColourChange(true)
   };
 
   const limitInputLength = (e) => {
@@ -188,7 +192,7 @@ export default function Dev() {
      
       <div className="p-4 border rounded-lg" style={{ borderColor: textColor }}>
         <div>
-          &nbsp;&nbsp;background-color:
+          body {`{`}&nbsp;&nbsp;background-color:
           <span
             onBeforeInput={limitInputLength}
             contentEditable
@@ -199,10 +203,7 @@ export default function Dev() {
           >
             {bgColor}
           </span>
-          ;
-        </div>
-        <div>
-          &nbsp;&nbsp;color:
+          ; &nbsp;&nbsp;color:
           <span
             onBeforeInput={limitInputLength}
             contentEditable
@@ -213,7 +214,7 @@ export default function Dev() {
           >
             {textColor}
           </span>
-          ;
+          ; {`}`}
         </div>
 
         <button
@@ -225,7 +226,7 @@ export default function Dev() {
           }}
           onClick={resetColors}
         >
-          RESET
+          reset
         </button>
       </div>
     </div>

@@ -12,6 +12,8 @@
     "seed": "node ./db/run-seed.js"
   },
   "dependencies": {
+    "dom": "^0.0.3",
+    "dompurify": "^3.2.4",
     "dotenv": "^16.4.7",
     "html-react-parser": "^5.2.2",
     "js-cookie": "^3.0.5",
@@ -19,6 +21,7 @@
     "nodemailer": "^6.10.0",
     "pg": "^8.13.3",
     "pg-format": "^1.0.4",
+    "purify": "^3.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-markdown": "^10.0.1",
