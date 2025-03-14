@@ -83,7 +83,7 @@ export default function Dev() {
             router.push("/");
           }}
         >
-          ↞{" "}
+          ↞
         </a>
         {text}
         <span className={`ml-1 ${showCursor ? "opacity-100" : "opacity-0"}`}>
@@ -92,6 +92,13 @@ export default function Dev() {
       </h1>
       <p className="py-4 text-2xl">Projects</p>
       <div className="opacity-90 text-xl">NOCTURNE</div>
+      <pre className="text-center text-[8px] py-4"        
+> {`N   N  OOO   CCCC  TTTTT  U   U  RRRR   N   N  EEEEE
+ NN  N O   O C        T    U   U  R   R  NN  N  E    
+ N N N O   O C        T    U   U  RRRR   N N N  EEEE 
+ N  NN O   O C        T    U   U  R  R   N  NN  E    
+ N   N  OOO   CCCC    T     UUU   R   R  N   N  EEEEE`}
+</pre>
       <div>
         <a
           className="underline cursor-pointer hover:text-pinkCustom hover:text-lg hover:underline transition-colors duration-1000"
@@ -108,22 +115,21 @@ export default function Dev() {
         <p>- Full-stack web application built with React</p>
         <p>
           - Database and user account authentication in Firestore/Firebase
-        </p>{" "}
+        </p>
         <p>- Deployed with Netlify</p>
         <p>- MotionFramer and tsParticles for dynamic visuals</p>
         <p>- Open-source LLMs hosted on Hugging Face</p>
         <p>
-          - App demo and tech-stack can be viewed{" "}
+          - App demo and tech-stack can be viewed {""}
           <a
             className="underline cursor-pointer hover:text-pinkCustom hover:text-lg hover:underline transition-colors duration-1000"
             href="https://www.youtube.com/watch?v=eZsLUtNKPNk"
             target="_blank"
-          >
-            here
+          >here
           </a>
         </p>
         <p>
-          - GitHub{" "}
+          - GitHub {""}
           <a
             className="underline cursor-pointer hover:text-pinkCustom hover:text-lg hover:underline transition-colors duration-1000"
             href="https://github.com/MGough22/dream-team"
@@ -134,9 +140,15 @@ export default function Dev() {
         </p>
       </div>
       <div className="pt-4 text-center">
-        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
       </div>
       <div className="opacity-90 text-xl pt-4">TOMGLENCROSS.COM</div>
+      <pre className="text-[5px] text-center py-4">{`  TTTTT  OOO  M   M  GGGG  L      EEEEE  N   N  CCCC  RRRR   OOO  SSSS  SSSS  .  CCCC  OOO  M   M
+   T   O   O MM MM G      L      E      NN  N C      R   R O   O S      S    .  C     O   O MM MM
+   T   O   O M M M G  GG  L      EEEE   N N N C      RRRR  O   O  SSS   SSS  .  C     O   O M M M
+   T   O   O M   M G   G L      E      N  NN C      R  R  O   O     S      S .  C     O   O M   M
+   T    OOO  M   M  GGGG  LLLLL  EEEEE  N   N  CCCC  R   R  OOO  SSSS  SSSS  .  CCCC  OOO  M   M
+`}</pre>
       <div className="pb-10">
         <a
           className="underline cursor-pointer hover:text-pinkCustom hover:text-lg hover:underline transition-colors duration-1000"
@@ -159,7 +171,7 @@ export default function Dev() {
         </p>
         <p>
           - Custom Admin Dashboard CMS with js-cookie login-auth, blogpost and
-          comment approval/deletion{" "}
+          comment approval/deletion
         </p>
         <p>- react-quill custom wysiwyg blogpost dashboard with live preview</p>
         <p>- Database built in PostgreSQL</p>
@@ -168,7 +180,7 @@ export default function Dev() {
           dev-themes
         </p>
         <p>
-          - Project plan and progress including wireframes, component tree etc.,{" "}
+          - Project plan and progress including wireframes, component tree etc., {""}
           <a
             className="underline cursor-pointer hover:text-pinkCustom hover:text-lg hover:underline transition-colors duration-1000"
             href="https://www.figma.com/board/QLJFEnQSkpcz5B7RYu9ETN/tomglencross.com-project-board?node-id=0-1&p=f&t=lP7eonXJilk17Gzc-0"
@@ -178,7 +190,7 @@ export default function Dev() {
           </a>
         </p>
         <p>
-          - GitHub{" "}
+          - GitHub {""}
           <a
             className="underline cursor-pointer hover:text-pinkCustom hover:text-lg hover:underline transition-colors duration-1000"
             href="https://github.com/tomglencross69/tomglencross-site"

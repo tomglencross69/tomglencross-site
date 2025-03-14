@@ -96,7 +96,7 @@ const ContactForm = () => {
       </div>
       <button 
       type="submit" 
-      className='cursor-pointer text-lg px-2 bg-gray-300 hover:bg-gray-200 hover:text-pinkCustom dark:text-black dark:hover:text-pinkCustom disabled:bg-gray-400 disabled:text-black disabled:hover:bg-green-100'
+      className='cursor-pointer text-lg px-2 mb-5 bg-gray-300 hover:bg-gray-200 hover:text-pinkCustom dark:text-black dark:hover:text-pinkCustom disabled:bg-gray-400 disabled:text-black disabled:hover:bg-green-100'
      
       disabled={isSubmitting || isFormDisabled}
       >
