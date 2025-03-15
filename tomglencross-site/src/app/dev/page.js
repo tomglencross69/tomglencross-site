@@ -92,16 +92,20 @@ export default function Dev() {
       </h1>
       <p className="py-4 text-2xl">Projects</p>
       <div className="opacity-90 text-xl">NOCTURNE</div>
-      <pre className="text-center text-[8px] py-4"        
-> {`N   N  OOO   CCCC  TTTTT  U   U  RRRR   N   N  EEEEE
+      <pre className="text-center text-[8px] py-4 cursor-pointer hover:text-pinkCustom transition-colors duration-1000">
+        <a href="https://nocturne-journal.netlify.app"
+          target="_blank" > 
+          {`N   N  OOO   CCCC  TTTTT  U   U  RRRR   N   N  EEEEE
  NN  N O   O C        T    U   U  R   R  NN  N  E    
  N N N O   O C        T    U   U  RRRR   N N N  EEEE 
  N  NN O   O C        T    U   U  R  R   N  NN  E    
  N   N  OOO   CCCC    T     UUU   R   R  N   N  EEEEE`}
+</a>   
+
 </pre>
       <div>
         <a
-          className="underline cursor-pointer hover:text-pinkCustom hover:text-lg hover:underline transition-colors duration-1000"
+          className="font-bold cursor-pointer hover:text-pinkCustom hover:underline transition-colors duration-1000"
           href="https://nocturne-journal.netlify.app"
           target="_blank"
         >
@@ -122,7 +126,7 @@ export default function Dev() {
         <p>
           - App demo and tech-stack can be viewed {""}
           <a
-            className="underline cursor-pointer hover:text-pinkCustom hover:text-lg hover:underline transition-colors duration-1000"
+            className="underline cursor-pointer hover:text-pinkCustom hover:underline transition-colors duration-1000"
             href="https://www.youtube.com/watch?v=eZsLUtNKPNk"
             target="_blank"
           >here
@@ -131,7 +135,7 @@ export default function Dev() {
         <p>
           - GitHub {""}
           <a
-            className="underline cursor-pointer hover:text-pinkCustom hover:text-lg hover:underline transition-colors duration-1000"
+            className="underline cursor-pointer hover:text-pinkCustom hover:underline transition-colors duration-1000"
             href="https://github.com/MGough22/dream-team"
             target="_blank"
           >
@@ -143,15 +147,18 @@ export default function Dev() {
         +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
       </div>
       <div className="opacity-90 text-xl pt-4">TOMGLENCROSS.COM</div>
-      <pre className="text-[5px] text-center py-4">{`  TTTTT  OOO  M   M  GGGG  L      EEEEE  N   N  CCCC  RRRR   OOO  SSSS  SSSS  .  CCCC  OOO  M   M
+      <pre className="text-[5px] text-center py-4 cursor-pointer hover:text-pinkCustom transition-colors duration-1000">
+        <a href="https:/tomglencross.com"
+          target="_blank">{`  TTTTT  OOO  M   M  GGGG  L      EEEEE  N   N  CCCC  RRRR   OOO  SSSS  SSSS  .  CCCC  OOO  M   M
    T   O   O MM MM G      L      E      NN  N C      R   R O   O S      S    .  C     O   O MM MM
    T   O   O M M M G  GG  L      EEEE   N N N C      RRRR  O   O  SSS   SSS  .  C     O   O M M M
    T   O   O M   M G   G L      E      N  NN C      R  R  O   O     S      S .  C     O   O M   M
    T    OOO  M   M  GGGG  LLLLL  EEEEE  N   N  CCCC  R   R  OOO  SSSS  SSSS  .  CCCC  OOO  M   M
-`}</pre>
+`}</a>
+</pre>
       <div className="pb-10">
         <a
-          className="underline cursor-pointer hover:text-pinkCustom hover:text-lg hover:underline transition-colors duration-1000"
+          className="font-bold cursor-pointer hover:text-pinkCustom  hover:underline transition-colors duration-1000"
           href="https:/tomglencross.com"
           target="_blank"
         >

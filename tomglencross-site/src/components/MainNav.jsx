@@ -54,8 +54,8 @@ export default function MainNav() {
       if (route === pathname) return; 
       if (route === '/dev') {
         router.push(route)
+        setIsMenuOpen(true)
         setSelectedItem(null)
-        setIsMenuOpen(false)
       } 
         else if (route === '/') {
             router.push(route)
@@ -67,7 +67,7 @@ export default function MainNav() {
         setSelectedItem(item)
         const worksList = worksListFunction()
         worksList.includes(item) ? setExpanded('Selected Works & Exhibitions') : setExpanded(null)
-        setIsMenuOpen(false)
+        setIsMenuOpen(true)
         }
     }
 
@@ -92,7 +92,7 @@ export default function MainNav() {
                 transition-colors duration-300"  onClick={toggleMode}> {isDarkMode? '☾ ☀' : '☀ ☾'}</button>
         </div>
         <SideNav handleItemClick={handleItemClick}/>
-        <nav className={`text-blueCustom dark:text-nightModeBlueCustom bg-transparent text-3xl flex p-2 sm:p-4`} >
+        <nav className={`text-blueCustom dark:text-nightModeBlueCustom bg-transparent text-3xl flex p-4`} >
       <ul className="space-y-0">
         {isMenuOpen && (
           <>

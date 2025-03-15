@@ -55,10 +55,10 @@ const handleScrollToBottom = (e) => {
     return (
       <>
         <div>
-        <div className='text-3xl'>{individualWork.title}</div>
-        <div className='text-xl'><i>{individualWork.info}</i></div>
+        <div className='text-3xl md:text-4xl'>{individualWork.title}</div>
+        <div className='text-xl md:text-2xl'><i>{individualWork.info}</i></div>
         {individualWork.images.length !== 0 ? 
-          <div className='relative w-full aspect-[4/3] overflow-hidden'>
+          <div className='relative w-full aspect-[4/3] md:max-w-[600px] overflow-hidden md:mx-auto'>
           <Image
           src={individualWork.images[0].src}
           alt={individualWork.images[0].alt}
@@ -71,12 +71,12 @@ const handleScrollToBottom = (e) => {
         <div className='text-2xl pb-2'>
           <ReactMarkdown>{individualWork.description}</ReactMarkdown>
         </div>
-        <div className='text-lg'>
+        <div className='text-lg md:text-xl'>
           <ReactMarkdown>{individualWork.body}</ReactMarkdown>
           {/* CONDITIONALLY RENDERED STUFF FOR ETC PAGE */}
             {individualWork.id !== "4" ? 
           <div>
-          <a className={`cursor-pointer pb-3
+          <a className={`cursor-pointer pb-3 md:text-2xl
                 text-pinkCustom dark:text-nightModeBlueCustom
                 hover:text-blueCustom hover:dark:text-nightModePinkCustom 
                 transition-colors duration-300`}
@@ -105,14 +105,14 @@ const handleScrollToBottom = (e) => {
       {individualWork.images.map((image, index) => (
         <div 
         key={index} 
-        className="relative pb-[100%]"
+        className="relative w-full pb-[100%] md:max-h-[100]"
         onClick={()=> openModal(index)}>
           <Image 
           key={index} 
           src={image.src} 
           alt={image.alt} 
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="sm:10vw md:10%"
           style={{ objectFit: "cover" }}
           className='cursor-pointer'
           />
