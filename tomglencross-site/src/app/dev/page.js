@@ -8,7 +8,7 @@ import { useTheme } from "@/app/context/ThemeContext";
 export default function Dev() {
   const router = useRouter();
   const [text, setText] = useState("");
-  const fullText = "2 dev";
+  const fullText = "2 <dev><dev><dev><dev><dev><dev><dev><dev><dev><dev><dev><dev><dev>";
   const [index, setIndex] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
   const [fadeIn, setFadeIn] = useState(false);
@@ -25,7 +25,7 @@ export default function Dev() {
       const timeout = setTimeout(() => {
         setText((prev) => prev + fullText[index]);
         setIndex((prev) => prev + 1);
-      }, 400);
+      }, 200);
 
       return () => clearTimeout(timeout);
     }
@@ -73,24 +73,26 @@ export default function Dev() {
 
   return (
     <div
-      className={`font-mono transition-opacity duration-[1000ms] ${
+      className={`font-mono transition-opacity duration-[1000ms]  ${
         fadeIn ? "opacity-100" : "opacity-0"
       }`}
     >
-      <h1 className="text-4xl">
+      <div className="overflow-visible whitespace-nowrap">
+      <h1 className="text-4xl inline-block">
         <a
           className="cursor-pointer"
           onClick={() => {
             router.push("/");
           }}
         >
-          ↞
+          ↞{" "}
         </a>
         {text}
         <span className={`ml-1 ${showCursor ? "opacity-100" : "opacity-0"}`}>
           ▮
         </span>
       </h1>
+      </div>
       <p className="py-4 text-2xl">Projects</p>
       <div className="opacity-90 text-xl">NOCTURNE</div>
       <pre className="text-center text-[8px] py-4 cursor-pointer hover:text-pinkCustom transition-colors duration-1000">

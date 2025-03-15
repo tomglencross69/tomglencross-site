@@ -26,6 +26,7 @@ export default function MainNav() {
     setPrevPathname(pathname);
   }, [pathname]); 
 
+  // CALLS HANDLEITEMCLICK WHEN NAVIGATING TO DEV FROM CV
   useEffect(() => {
     if (prevPathname === "/cv/dev-cv" && pathname !== "/cv/dev-cv") {
       handleItemClick("2 Dev", "/dev")
@@ -81,6 +82,7 @@ export default function MainNav() {
         if (!isDarkMode) {
         toggleMode()
       } 
+      
       
      } else if (route === '/') {
             router.push(route)
@@ -198,4 +200,5 @@ export default function MainNav() {
 -MEDIA QUERY RENDERING!!!\
 -portrait images in modal not displaying properly on lg screen, is it to do with parent container settings?
 -should menu disappear once selected? or remain in mobile too?
+-clicking any link on dev-cv goes to dev page
 */
