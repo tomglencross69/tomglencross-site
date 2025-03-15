@@ -14,6 +14,27 @@ export default function MainNav() {
   const router = useRouter()
   const pathname = usePathname()
   const { isDarkMode, toggleMode } = useTheme()
+  const [prevPathname, setPrevPathname] = useState(null)
+
+  const isOnDevPage = pathname === "/dev";
+
+
+  useEffect(() => {
+    if (prevPathname === "/dev" && pathname !== "/dev" && isDarkMode) {
+      toggleMode();
+    }
+    setPrevPathname(pathname);
+  }, [pathname]); 
+
+  useEffect(() => {
+    if (prevPathname === "/cv/dev-cv" && pathname !== "/cv/dev-cv") {
+      handleItemClick("2 Dev", "/dev")
+      setIsMenuOpen(true)
+      toggleMode(); 
+    }
+    setPrevPathname(pathname);
+  }, [pathname]);
+
   
   const toggleSubMenu = (menu) => {
     setExpanded(expanded === menu ? null: menu)
@@ -36,7 +57,7 @@ export default function MainNav() {
     } else if (pathname.startsWith("/blog/")) {
       setSelectedItem("3 Blog")
     } else if (pathname === "/dev") {
-      setIsMenuOpen(false)
+      setSelectedItem("2 Dev")
     } else if (pathname === "/blog") {
       setSelectedItem("3 Blog");
     } else if (pathname === "/cv") {
@@ -52,12 +73,16 @@ export default function MainNav() {
 
     const handleItemClick = (item, route) => {
       if (route === pathname) return; 
+
       if (route === '/dev') {
         router.push(route)
-        setIsMenuOpen(true)
-        setSelectedItem(null)
+        setIsMenuOpen(true) 
+
+        if (!isDarkMode) {
+        toggleMode()
       } 
-        else if (route === '/') {
+      
+     } else if (route === '/') {
             router.push(route)
             setSelectedItem(null);
             setIsMenuOpen(true);
@@ -67,7 +92,7 @@ export default function MainNav() {
         setSelectedItem(item)
         const worksList = worksListFunction()
         worksList.includes(item) ? setExpanded('Selected Works & Exhibitions') : setExpanded(null)
-        setIsMenuOpen(true)
+        setIsMenuOpen(false)
         }
     }
 
@@ -86,10 +111,11 @@ export default function MainNav() {
     <>
     <div className="flex">
         <Header onClick={() => handleItemClick(null, '/')}/>
+        {!isOnDevPage && (
         <button className="text-xl ml-auto pr-2 cursor-pointer
                  dark:text-nightModeBlueCustom
                 hover:text-blueCustom hover:dark:text-nightModePinkCustom 
-                transition-colors duration-300"  onClick={toggleMode}> {isDarkMode? '☾ ☀' : '☀ ☾'}</button>
+                transition-colors duration-300"  onClick={toggleMode}> {isDarkMode? '☾ ☀' : '☀ ☾'}</button> )}
         </div>
         <SideNav handleItemClick={handleItemClick}/>
         <nav className={`text-blueCustom dark:text-nightModeBlueCustom bg-transparent text-3xl flex p-4`} >
@@ -169,7 +195,7 @@ export default function MainNav() {
 
 
 /* to do 
--pink background?
--think about themes now?
+-MEDIA QUERY RENDERING!!!\
+-portrait images in modal not displaying properly on lg screen, is it to do with parent container settings?
 -should menu disappear once selected? or remain in mobile too?
 */

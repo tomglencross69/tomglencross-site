@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import DOMPurify from 'dompurify'
+import { useTheme } from "@/app/context/ThemeContext";
 
 export default function Dev() {
   const router = useRouter();
