@@ -28,14 +28,12 @@ export default function MainNav() {
 
   // CALLS HANDLEITEMCLICK WHEN NAVIGATING TO DEV FROM CV
   useEffect(() => {
-    if (prevPathname === "/cv/dev-cv" && pathname !== "/cv/dev-cv") {
-      handleItemClick("2 Dev", "/dev")
-      setIsMenuOpen(true)
-      toggleMode(); 
+    if (prevPathname === "/cv/dev-cv" && pathname === "/dev") {
+      setIsMenuOpen(true);
+      toggleMode();
     }
     setPrevPathname(pathname);
-  }, [pathname]);
-
+  }, [pathname])
   
   const toggleSubMenu = (menu) => {
     setExpanded(expanded === menu ? null: menu)
