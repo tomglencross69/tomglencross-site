@@ -61,6 +61,12 @@ export default function MainNav() {
       setSelectedItem("3 Blog");
     } else if (pathname === "/cv") {
       setSelectedItem("4 CV");
+    } else if (pathname === "/cv/artist-cv") {
+      setSelectedItem("4.1 Artist CV")
+      setExpanded("CV");
+    }else if (pathname === "/cv/dev-cv") {
+      setSelectedItem("4.2 Dev CV");
+      setExpanded("CV")
     } else if (pathname === "/about") {
       setSelectedItem("5 About");
     } else if (pathname === "/works") {
@@ -161,13 +167,31 @@ export default function MainNav() {
               </div>
             </li>
             <li>
-              <div
-                onClick={() => handleItemClick('4 CV', '/cv')}
-                className={`cursor-pointer ${selectedItem === '4 CV' ? `text-pinkCustom dark:nightModePinkCustom` : ''} hover:text-pinkCustom dark:nightModePinkCustom transition-colors duration-300 `}
-              >
-                <span className={`text-black dark:text-white`}>4</span> CV
-              </div>
-            </li>
+  <div
+    onClick={() => toggleSubMenu('CV')}
+    className={`cursor-pointer hover:text-pinkCustom dark:nightModePinkCustom transition-colors duration-300`}
+  >
+    <span><span className={`text-black dark:text-white`}>4</span> CV</span>
+    <span>{expanded === 'CV' ? ' ↞' : ' ↡'}</span>
+  </div>
+  {expanded === 'CV' && (
+    <ul className="pl-4 space-y-0">
+      <li
+        onClick={() => handleItemClick('4.1 Artist CV', '/cv/artist-cv')}
+        className={`cursor-pointer ${selectedItem === '4.1 Artist CV' ? `text-pinkCustom dark:nightModePinkCustom` : ''} hover:text-pinkCustom dark:nightModePinkCustom transition-colors duration-300 `}
+      >
+        <span className={`text-black dark:text-white`}>4.1</span> Artist CV
+      </li>
+      <li
+        onClick={() => handleItemClick('4.2 Dev CV', '/cv/dev-cv')}
+        className={`cursor-pointer ${selectedItem === '4.2 Dev CV' ? `text-pinkCustom dark:nightModePinkCustom` : ''} hover:text-pinkCustom dark:nightModePinkCustom transition-colors duration-300 `}
+      >
+        <span className={`text-black dark:text-white`}>4.2</span> Dev CV
+      </li>
+    </ul>
+  )}
+</li>
+
             <li>
               <div
                 onClick={() => handleItemClick('5 About', '/about')}

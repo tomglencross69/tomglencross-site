@@ -6,12 +6,8 @@ export default function ArtistCV() {
   return (
     <>
     <div>
-    <span onClick={(()=> router.back())} className={`text-3xl cursor-pointer text-pinkCustom dark:nightModePinkCustom`}>↞</span> 
-    <div className="text-3xl pl-4 pb-2 space-y-0">
-                  4.1 
-                  <span className={`cursor-pointer text-pinkCustom dark:text-nightModePinkCustom
-                      hover:text-pinkCustom hover:dark:text-nightModePinkCustom 
-                      transition-colors duration-300`}> Artist CV</span>
+    <div className="text-3xl pb-2 space-y-0">
+                 Artist CV
                 </div>
                 <p className="text-2xl py-3"><i>Introduction</i></p>
           <div className="text-lg">Tom Glencross (b. 1992) is an artist and writer born in Scunthorpe and working in Leeds, UK. Their work is concerned with the codes and myths of work and labour; folklore, social histories and their reproduction; gender, masculinities and alienation; queer and working-class experiences.</div>
