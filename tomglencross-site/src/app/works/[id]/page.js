@@ -112,7 +112,7 @@ const handleScrollToBottom = (e) => {
           src={image.src} 
           alt={image.alt} 
           fill
-          sizes="sm:10vw md:10%"
+          sizes="md:10%"
           style={{ objectFit: "cover" }}
           className='cursor-pointer'
           />

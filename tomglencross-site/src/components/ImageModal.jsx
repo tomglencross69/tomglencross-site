@@ -16,10 +16,10 @@ export default function ImageModal({image, onClose, onNext, onPrev}) {
         <Image
           src={image.src}
           alt={image.alt}
-          width={1000}
-          height={1000}
-          style={{ objectFit: "contain" }}
-          className="mx-auto"
+          width={400}
+          height={400}
+          style={{ width:"auto", height: "auto", objectFit: "contain" }}
+          className="mx-auto intrinsic"
         />
         <div className="bg-black bg-opacity-30 text-white text-sm ">
           {image.alt}
