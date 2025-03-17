@@ -31,7 +31,7 @@ export default function BlogCard({blogPost, isFirst}) {
             className="object-cover fill"
             />
     </div>
-    <div className="text-3xl">{blogPost.title}</div>
+    <div className={`text-3xl ${!isFirst && "md:text-2xl"}`}>{blogPost.title}</div>
     <div className="text-xl pb-2">{blogPost.subtitle}</div>
     <div className="text-base pb-5">{blogPost.excerpt}</div>
     </Link>
