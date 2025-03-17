@@ -18,8 +18,12 @@ export default function Blog() {
 
     return (
       <>
-      {blogPosts.map((blogPost)=> (
-       <BlogCard key={blogPost.blog_id} blogPost={blogPost}/>
+      {blogPosts.map((blogPost, index)=> (
+      <div key={blogPost.blog_id} className={`${
+        index === 0 ? 'md:pt-6' : ''
+      } md:max-w-[500px] mx-auto`}>
+       <BlogCard blogPost={blogPost}/>
+      </div>
       ))}
       </>
     )

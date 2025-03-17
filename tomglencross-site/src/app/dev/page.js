@@ -78,7 +78,7 @@ export default function Dev() {
       }`}
     >
       <div className="overflow-visible whitespace-nowrap">
-      <h1 className="text-4xl inline-block">
+      <h1 className="text-4xl md:text-5 inline-block">
         <a
           className="cursor-pointer"
           onClick={() => {
@@ -93,9 +93,9 @@ export default function Dev() {
         </span>
       </h1>
       </div>
-      <p className="py-4 text-2xl">Projects</p>
-      <div className="opacity-90 text-xl">NOCTURNE</div>
-      <pre className="text-center text-[8px] py-4 cursor-pointer hover:text-pinkCustom transition-colors duration-1000">
+      <p className="py-4 text-2xl md:text-3xl">Projects</p>
+      <div className="opacity-90 text-xl md:text-2xl">NOCTURNE</div>
+      <pre className="text-center text-[8px] md:text-[12px] py-4 cursor-pointer hover:text-pinkCustom transition-colors duration-1000">
         <a href="https://nocturne-journal.netlify.app"
           target="_blank" > 
           {`N   N  OOO   CCCC  TTTTT  U   U  RRRR   N   N  EEEEE
@@ -106,9 +106,9 @@ export default function Dev() {
 </a>   
 
 </pre>
-      <div>
+      <div className="md:text-xl">
         <a
-          className="font-bold cursor-pointer hover:text-pinkCustom hover:underline transition-colors duration-1000"
+          className="md:text-xl font-bold cursor-pointer hover:text-pinkCustom hover:underline transition-colors duration-1000"
           href="https://nocturne-journal.netlify.app"
           target="_blank"
         >
@@ -146,11 +146,11 @@ export default function Dev() {
           </a>
         </p>
       </div>
-      <div className="pt-4 text-center">
+      <div className="md:text-2xl pt-4 text-center">
         +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
       </div>
-      <div className="opacity-90 text-xl pt-4">TOMGLENCROSS.COM</div>
-      <pre className="text-[5px] text-center py-4 cursor-pointer hover:text-pinkCustom transition-colors duration-1000">
+      <div className="opacity-90 md:text-2xl text-xl pt-4">TOMGLENCROSS.COM</div>
+      <pre className="text-[5px] md:text-[8px] text-center py-4 cursor-pointer hover:text-pinkCustom transition-colors duration-1000">
         <a href="https:/tomglencross.com"
           target="_blank">{`  TTTTT  OOO  M   M  GGGG  L      EEEEE  N   N  CCCC  RRRR   OOO  SSSS  SSSS  .  CCCC  OOO  M   M
    T   O   O MM MM G      L      E      NN  N C      R   R O   O S      S    .  C     O   O MM MM
@@ -159,7 +159,7 @@ export default function Dev() {
    T    OOO  M   M  GGGG  LLLLL  EEEEE  N   N  CCCC  R   R  OOO  SSSS  SSSS  .  CCCC  OOO  M   M
 `}</a>
 </pre>
-      <div className="pb-10">
+      <div className="pb-10 md:text-xl">
         <a
           className="font-bold cursor-pointer hover:text-pinkCustom  hover:underline transition-colors duration-1000"
           href="https:/tomglencross.com"
@@ -212,7 +212,7 @@ export default function Dev() {
       </div>
 
      
-      <div className="p-4 border rounded-lg" style={{ borderColor: textColor }}>
+      <div className="p-4 border rounded-lg md:text-xl" style={{ borderColor: textColor }}>
         <div>
           body {`{`}&nbsp;&nbsp;background-color:
           <span

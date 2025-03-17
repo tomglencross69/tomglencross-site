@@ -5,13 +5,13 @@ import Image from "next/image"
 export default function About() {
   return (
     <>
-    <div className="flex justify-center py-5">
+    <div className="flex justify-center py-4">
      <Image 
         alt="portrait of Tom Glencross beside some neolithic standing stones"
         src={aboutMe}
         width={250}
         height={250}
-        className="reponsive"
+        className="reponsive md:w-[300] md:h-[auto]"
         priority
         placeholder="blur"/>
         </div>

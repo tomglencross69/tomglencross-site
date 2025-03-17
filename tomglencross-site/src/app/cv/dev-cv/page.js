@@ -6,7 +6,7 @@ export default function DevCV() {
   return (
     <>
     <div>
-    <div className="text-3xl pb-2 space-y-0">
+    <div className="text-3xl pb-2 space-y-0 md:pt-4">
                  Dev CV
                 </div>
                 <div>

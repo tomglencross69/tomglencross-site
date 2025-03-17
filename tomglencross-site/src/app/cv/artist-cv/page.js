@@ -6,7 +6,7 @@ export default function ArtistCV() {
   return (
     <>
     <div>
-    <div className="text-3xl pb-2 space-y-0">
+    <div className="text-3xl pb-2 space-y-0 md:pt-4">
                  Artist CV
                 </div>
                 <p className="text-2xl py-3"><i>Introduction</i></p>

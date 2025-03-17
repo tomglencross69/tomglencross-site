@@ -45,25 +45,11 @@ export default function BlogPostPage({ params }) {
   
   return (
     <>
-    <div className="text-3xl pl-4">
+    <div className="text-3xl pl-4 md:pt-4">
         <span onClick={() => handleClickedBlogPostReturn('/blog')}className={`cursor-pointer text-pinkCustom dark:nightModePinkCustom`}>↫</span> 
         <span> 3.{individualBlogPost.blog_id}</span>
       <span className={`text-pinkCustom dark:nightModePinkCustom`}> {individualBlogPost.title}</span>
     </div>
-     {/* logic removed whilst working out how to show images that come from URL sources
-    {/* <Image
-            alt={individualBlogPost.image_alt_text}
-            src={
-    individualBlogPost.image_src.startsWith("http") 
-      ? individualBlogPost.image_src 
-      : `/images/${individualBlogPost.image_src.replace('../assets/images/', '')}`
-  }
-            width={1000}
-            height={1000}
-            style={{ objectFit: "cover", width: "100%", height: "100%" }}
-            className="object-cover fill"
-            priority
-            /> */}
             <img
             alt={individualBlogPost.image_alt_text}
             src={
@@ -73,8 +59,8 @@ export default function BlogPostPage({ params }) {
   }
             width={1000}
             height={1000}
-            style={{ objectFit: "cover", width: "100%", height: "100%" }}
-            className="object-cover fill"
+            style={{ objectFit: "cover"}}
+            className="md:pt-2 object-cover fill md:w-[800px] md:h-auto md:object-cover mx-auto"
             />
     <div className="font-arimo text-xs ">{`${individualBlogPost.tags[0]} / ${individualBlogPost.tags[1]} / ${individualBlogPost.tags[2]}`.toUpperCase()}</div>
     <div className="font-arimo text-xs pb-5">
