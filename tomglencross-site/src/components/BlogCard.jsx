@@ -1,12 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
 
-export default function BlogCard({blogPost}) {
+export default function BlogCard({blogPost, isFirst}) {
 
   return (
     <>
+    <div className="">
     <Link href={`/blog/${blogPost.blog_id}`}>
-    <div className="relative h-[300px]">
+    <div className={`${isFirst ? "md:h-[400px] md:w-full" : null } md:pt-5 h-[200px]`}>
       {/* logic removed whilst working out how to show images that come from URL sources */}
     {/* <Image
         alt={blogPost.image_alt_text}
@@ -37,6 +38,7 @@ export default function BlogCard({blogPost}) {
     <div className="font-arimo text-xs">{`${blogPost.tags[0]} / ${blogPost.tags[1]} / ${blogPost.tags[2]}`.toUpperCase()}</div>
     <div className="font-arimo text-xs ">{`Last updated ${new Date(blogPost.date_added).toLocaleString().slice(0,-3)}`}</div>
     <div className="font-arimo text-xs pb-10 ">Comments ({blogPost.comment_count || 0})</div>
+    </div>
     </>
     )
 }

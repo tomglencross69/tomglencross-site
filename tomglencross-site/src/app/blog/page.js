@@ -16,16 +16,21 @@ export default function Blog() {
     fetchBlogPosts()
   }, []);
 
-    return (
-      <>
-      {blogPosts.map((blogPost, index)=> (
-      <div key={blogPost.blog_id} className={`${
-        index === 0 ? 'md:pt-6' : ''
-      } md:max-w-[500px] mx-auto`}>
-       <BlogCard blogPost={blogPost}/>
+  return (
+    <>
+      <div className="flex flex-col md:flex-row md:flex-wrap md:gap-4">
+        {blogPosts.map((blogPost, index) => (
+          <div
+            key={blogPost.blog_id}
+            className={`${
+              index === 0 ? 'md:w-full md:pr-10' : 'md:max-w-[200px]'
+            } `} 
+          >
+            <BlogCard blogPost={blogPost} isFirst={index === 0} />
+          </div>
+        ))}
       </div>
-      ))}
-      </>
-    )
+    </>
+  );
   }
 
