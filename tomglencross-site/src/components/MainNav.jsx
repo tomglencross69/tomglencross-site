@@ -43,11 +43,16 @@ export default function MainNav() {
   // CALLS HANDLEITEMCLICK WHEN NAVIGATING TO DEV FROM CV
   useEffect(() => {
     if (prevPathname === "/cv/dev-cv" && pathname === "/dev") {
-      setIsMenuOpen(true);
-      toggleMode();
+      if (!isDarkMode) {
+        toggleMode();
+      }
+      const isScreenAbove768px = window.matchMedia("(min-width: 768px)").matches;
+      if (isScreenAbove768px) {
+        setIsMenuOpen(true);
+      }
     }
     setPrevPathname(pathname);
-  }, [pathname])
+  }, [pathname, prevPathname, isDarkMode]);
   
   const toggleSubMenu = (menu) => {
     setExpanded(expanded === menu ? null: menu)
