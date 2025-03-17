@@ -50,6 +50,8 @@ export default function ImageGallery({ images }) {
           src={images[currentImageIndex].src}
           alt={images[currentImageIndex].alt}
           fill
+          priority
+          sizes="(max-width: 768px) 100vw,"
           className="object-contain"
         />
         <div className="absolute bottom-0 right-0 bg-black bg-opacity-30 text-white text-sm text-center">
@@ -69,7 +71,7 @@ export default function ImageGallery({ images }) {
               src={image.src}
               alt={image.alt}
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 5vw, 5vw"
               style={{ objectFit: "cover" }}
               className="cursor-pointer"
             />

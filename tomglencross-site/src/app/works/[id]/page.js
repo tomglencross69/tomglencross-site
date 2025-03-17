@@ -65,6 +65,8 @@ const handleScrollToBottom = (e) => {
           fill
           className='object-contain'
           priority={true}
+          sizes="auto"
+
           >  
           </Image>
           </div> : null }
