@@ -18,7 +18,21 @@ export default function MainNav() {
 
   const isOnDevPage = pathname === "/dev";
 
+  // HOOK TO DETECT SCREEN SIZE
+  useEffect(() => {
+    const handleResize = () => {
+      if (pathname === "/dev" && !window.matchMedia("(min-width: 768px)").matches) {
+        setIsMenuOpen(false); // Always keep menu closed on mobile for /dev
+      } else {
+        setIsMenuOpen(window.matchMedia("(min-width: 768px)").matches);
+      }
+    };
+    handleResize(); // Run once on mount
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [pathname]); // Re-run when navigating
 
+// MAKES SURE DARK MODE IS TOGGLED OFF (if already on) WHEN LEAVING /DEV
   useEffect(() => {
     if (prevPathname === "/dev" && pathname !== "/dev" && isDarkMode) {
       toggleMode();
@@ -80,12 +94,12 @@ export default function MainNav() {
       if (route === pathname) return; 
 
       if (route === '/dev') {
-        router.push(route)
-        setIsMenuOpen(true) 
-
         if (!isDarkMode) {
         toggleMode()
       } 
+        router.push(route)
+        setIsMenuOpen(true) 
+
       
       
      } else if (route === '/') {
@@ -98,7 +112,8 @@ export default function MainNav() {
         setSelectedItem(item)
         const worksList = worksListFunction()
         worksList.includes(item) ? setExpanded('Selected Works & Exhibitions') : setExpanded(null)
-        setIsMenuOpen(false)
+        setIsMenuOpen(true)
+        // setIsMenuOpen(false)
         }
     }
 
@@ -202,15 +217,18 @@ export default function MainNav() {
             </li>
           </>
         )}
-        {selectedItem && !isMenuOpen && (
-          <div className="text-3xl">
+        {selectedItem && 
+        !isMenuOpen && 
+        pathname !== '/dev'  ?
+        (
+          <div className="text-3xl block md:hidden">
             <span 
             onClick={() => handleClickedItemMenuReturn()}className={`cursor-pointer text-pinkCustom dark:nightModePinkCustom`}>↞
             </span> 
             <span className={`text-black dark:text-white`}>{" " + selectedItem.split(' ')[0]}</span>
             <span className={`text-pinkCustom dark:nightModePinkCustom`}>{" " + selectedItem.split(' ').slice(1).join(' ')}</span>
           </div>
-        )}
+        ) : null }
       </ul>
     </nav>
     </>
