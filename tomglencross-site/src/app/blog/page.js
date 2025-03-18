@@ -19,10 +19,9 @@ export default function Blog() {
   return (
     <>
       <div className="flex flex-col md:flex-col md:gap-4">
-       
         {blogPosts.length > 0 && (
-          <div className="md:w-full md:h-[500px]  ">
-            <div className=" w-full">
+          <div className="md:w-full md:h-[500px]">
+            <div className="w-full">
               <BlogCard blogPost={blogPosts[0]} isFirst={true} />
             </div>
           </div>

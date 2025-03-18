@@ -40,11 +40,13 @@ export default function Dev() {
 
   useEffect(() => {
     document.body.classList.add("dev-mode");
+    document.body.style.overflowX = "hidden";
     setTimeout(() => setFadeIn(true), 50);
     return () => {
       document.body.classList.remove("dev-mode");
       document.body.style.backgroundColor = "";
       document.body.style.color = "";
+      document.body.style.overflowX = ""
     };
   }, []);
 
