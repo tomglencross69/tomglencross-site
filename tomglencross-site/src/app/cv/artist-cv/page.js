@@ -6,13 +6,13 @@ export default function ArtistCV() {
   return (
     <>
     <div>
-    <div className="text-3xl pb-2 space-y-0 md:pt-4">
+    <div className="text-3xl md:text-4xl pb-2 space-y-0 md:pt-4">
                  Artist CV
                 </div>
-                <p className="text-2xl py-3"><i>Introduction</i></p>
-          <div className="text-lg">Tom Glencross (b. 1992) is an artist and writer born in Scunthorpe and working in Leeds, UK. Their work is concerned with the codes and myths of work and labour; folklore, social histories and their reproduction; gender, masculinities and alienation; queer and working-class experiences.</div>
+                <p className="text-2xl md:text-3xl  py-3"><i>Introduction</i></p>
+          <div className="text-lg md:text-xl ">Tom Glencross (b. 1992) is an artist and writer born in Scunthorpe and working in Leeds, UK. Their work is concerned with the codes and myths of work and labour; folklore, social histories and their reproduction; gender, masculinities and alienation; queer and working-class experiences.</div>
                 <p className="text-2xl py-3"><i>Selected exhibitions and works </i></p>
-                <div className="text-lg space-y-1 divide-y divide-pinkCustom">
+                <div className="text-lg md:text-xl space-y-1 divide-y divide-pinkCustom">
                 <p>Kneading Cultures, Konstfack (Sweden, January-February 2025)</p>
                 <p> LORE, Sunnybank Mills, Leeds (UK, October-December 2024) <a className={`cursor-pointer
                 text-pinkCustom dark:text-nightModeBlueCustom
@@ -45,15 +45,15 @@ export default function ArtistCV() {
                 <p className="pb-3">Housewives – Twilight Splendour, Blank Editions Records (UK, 2019) Visual, text.</p>
                 </div>
                 <div className="border-t-[2px] border-pinkCustom w-80 text-center mx-auto"></div>
-                <p className="text-2xl py-3"><i>Education</i></p>
-                <div className="text-lg space-y-3">
+                <p className="text-2xl md:text-3xl py-3"><i>Education</i></p>
+                <div className="text-lg md:text-xl space-y-3">
                 <p><span className="text-base">MA </span> English and Comparative Literature, Goldsmiths, University of London	<i>Distinction </i> </p>
                 <p><span className="text-base">BA </span>English Literature, Goldsmiths, University of London <i>1st Class Hons, Winifred Hyde Prize for highest overall undergraduate classification</i></p>
                 <p></p>
                 </div>
                 <div className="border-t-[2px] border-pinkCustom w-80 text-center mx-auto"></div>
-                <p className="text-2xl py-3"><i>Experience</i></p>
-                <div className="text-lg space-y-1 pb-5 divide-y divide-blueCustom dark:divide-nightModeBlueCustom">
+                <p className="text-2xl md:text-3xl py-3 "><i>Experience</i></p>
+                <div className="text-lg md:text-xl space-y-1 pb-5 divide-y divide-blueCustom dark:divide-nightModeBlueCustom">
                 <p>Studio Assistant – <a className={`cursor-pointer
                 text-pinkCustom dark:text-nightModeBlueCustom
                 hover:text-blueCustom hover:dark:text-nightModePinkCustom  

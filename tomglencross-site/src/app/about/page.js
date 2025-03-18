@@ -15,7 +15,8 @@ export default function About() {
         priority
         placeholder="blur"/>
         </div>
-    <div className="text-xl pb-2">Tom Glencross (b. 1992) is an artist and writer and software developer working in Leeds, UK. <br/> Their work is concerned with the codes and myths of work and labour; folklore, social histories and their reproduction; gender, masculinities and alienation; queer and working-class experiences.</div>
+    <div className="text-xl md:text-2xl pb-2">Tom Glencross (b. 1992) is an artist and writer and software developer working in Leeds, UK. <br/> Their work is concerned with the codes and myths of work and labour; folklore, social histories and their reproduction; gender, masculinities and alienation; queer and working-class experiences.</div>
+    <div className="md:text-xl">
     <a className={`cursor-pointer
                     text-pinkCustom dark:text-nightModeBlueCustom
                     hover:text-blueCustom hover:dark:text-nightModePinkCustom 
@@ -47,6 +48,7 @@ export default function About() {
                     href="https://soundcloud.com/mysticcrystalworm" 
                     target="_blank">
                     ⚵ soundcloud <i>link</i></a>
+                    </div>
                     <ContactForm/>
                     </>
 

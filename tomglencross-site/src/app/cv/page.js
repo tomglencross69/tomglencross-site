@@ -4,7 +4,7 @@ export default function CV() {
     return (
       <>
         <div>
-          <ul>
+          <ul className="md:pt-4">
               <li>
                 <Link className="text-3xl pl-4 space-y-0" href={`/cv/artist-cv`}>
                   4.1 

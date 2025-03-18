@@ -18,17 +18,23 @@ export default function Blog() {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row md:flex-wrap md:gap-4">
-        {blogPosts.map((blogPost, index) => (
-          <div
-            key={blogPost.blog_id}
-            className={`${
-              index === 0 ? 'md:w-full md:pr-10' : 'md:max-w-[200px]'
-            } `} 
-          >
-            <BlogCard blogPost={blogPost} isFirst={index === 0} />
+      <div className="flex flex-col md:flex-col md:gap-4">
+       
+        {blogPosts.length > 0 && (
+          <div className="md:w-full md:h-[500px]  ">
+            <div className=" w-full">
+              <BlogCard blogPost={blogPosts[0]} isFirst={true} />
+            </div>
           </div>
-        ))}
+        )}
+  
+        <div className="grid md:grid-cols-3 gap-4">
+          {blogPosts.slice(1).map((blogPost) => (
+            <div key={blogPost.blog_id} className="md:max-w-[300px] w-full">
+              <BlogCard blogPost={blogPost} isFirst={false} />
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );

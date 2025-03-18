@@ -22,17 +22,17 @@ export default function MainNav() {
   useEffect(() => {
     const handleResize = () => {
       if (pathname === "/dev" && !window.matchMedia("(min-width: 768px)").matches) {
-        setIsMenuOpen(false); // Always keep menu closed on mobile for /dev
+        setIsMenuOpen(false)
       } else {
         if (pathname !== "/") {
         setIsMenuOpen(window.matchMedia("(min-width: 768px)").matches);
         }
       }
     };
-    handleResize(); // Run once on mount
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [pathname]); // Re-run when navigating
+  }, [pathname])
 
 // MAKES SURE DARK MODE IS TOGGLED OFF (if already on) WHEN LEAVING /DEV
   useEffect(() => {
@@ -120,7 +120,6 @@ export default function MainNav() {
         const worksList = worksListFunction()
         worksList.includes(item) ? setExpanded('Selected Works & Exhibitions') : setExpanded(null)
         setIsMenuOpen(true)
-        // setIsMenuOpen(false)
         }
     }
 
@@ -146,7 +145,7 @@ export default function MainNav() {
                 transition-colors duration-300"  onClick={toggleMode}> {isDarkMode? '☾ ☀' : '☀ ☾'}</button> )}
         </div>
         <SideNav handleItemClick={handleItemClick}/>
-        <nav className={`text-blueCustom dark:text-nightModeBlueCustom bg-transparent text-3xl flex pl-4 pb-4`} >
+        <nav className={`text-blueCustom dark:text-nightModeBlueCustom bg-transparent text-3xl md:text-4xl flex pl-4 pb-4`} >
       <ul className="space-y-0">
         {isMenuOpen && (
           <>

@@ -50,11 +50,11 @@ const ContactForm = () => {
   return (
     <>
     <div className='pl-5 pt-2'>
-        <div className='text-2xl pb-2'>Contact </div>
-        <div className='pb-3'>If you'd like to make an enquiry, get in touch using the form below.</div>
+        <div className='text-2xl md:text-3xl pb-2'>Contact </div>
+        <div className='pb-3 md:text-xl'>If you'd like to make an enquiry, get in touch using the form below.</div>
     <form onSubmit={handleSubmit}>
     <div className='grid grid-cols-2'>
-        <label htmlFor="name" className='text-sm col-start-1'>YOUR NAME</label>
+        <label htmlFor="name" className='text-sm md:text-base col-start-1'>YOUR NAME</label>
       <input
         type="text"
         id="name"
@@ -64,11 +64,11 @@ const ContactForm = () => {
         onChange={(e) => setName(e.target.value)}
         required
         disabled={isFormDisabled} 
-        className='p-1 dark:text-black dark:placeholder:text-pinkCustom'
+        className='p-1 md:text-xl dark:text-black dark:placeholder:text-pinkCustom'
       />
       </div>
       <div className='grid grid-cols-2 py-2'>
-      <label htmlFor="email" className='text-sm col-start-1'>YOUR EMAIL</label>
+      <label htmlFor="email" className='text-sm md:text-base  col-start-1'>YOUR EMAIL</label>
       <input
         type="email"
         id="email"
@@ -78,7 +78,7 @@ const ContactForm = () => {
         onChange={(e) => setEmail(e.target.value)}
         required
         disabled={isFormDisabled} 
-        className='p-1 dark:text-black dark:placeholder:text-pinkCustom'
+        className='p-1 md:text-xl dark:text-black dark:placeholder:text-pinkCustom'
       />
       </div>
       <div className='grid grid-cols-1 pb-2'>
@@ -91,18 +91,18 @@ const ContactForm = () => {
         rows="5"
         cols="auto"
         disabled={isFormDisabled} 
-        className='p-1 dark:text-black dark:placeholder:text-pinkCustom'
+        className='p-1 md:text-xl  dark:text-black dark:placeholder:text-pinkCustom'
       ></textarea>
       </div>
       <button 
       type="submit" 
-      className='cursor-pointer text-lg px-2 mb-5 bg-gray-300 hover:bg-gray-200 hover:text-pinkCustom dark:text-black dark:hover:text-pinkCustom disabled:bg-gray-400 disabled:text-black disabled:hover:bg-green-100'
+      className='cursor-pointer text-lg md:text-xl px-2 mb-5 bg-gray-300 hover:bg-gray-200 hover:text-pinkCustom dark:text-black dark:hover:text-pinkCustom disabled:bg-gray-400 disabled:text-black disabled:hover:bg-green-100'
      
       disabled={isSubmitting || isFormDisabled}
       >
       {isSubmitting ? 'Sending...' : isFormDisabled ? 'Your enquiry sent successfully :)' : 'Send Enquiry'}
       </button>
-      {status && <div className="text-pinkCustom animate-fade-out text-center">{status}</div>}
+      {status && <div className="text-pinkCustom animate-fade-out md:text-xl text-center">{status}</div>}
       
     </form>
     </div>
