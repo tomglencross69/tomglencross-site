@@ -34,8 +34,10 @@ export default function AdminLogin() {
                 placeholder="Enter Admin Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                className="m-4"
             />
-            <button type="submit">Login</button>
+            <button type="submit"
+            className="bg-gray-300 px-2 hover:bg-gray-100">Login</button>
             {error && <p>{error}</p>}
         </form>
     );

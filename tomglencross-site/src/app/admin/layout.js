@@ -21,7 +21,7 @@ const navigateToAdminHome = () => {
 
   return (
     <>
-    <div onClick={navigateToAdminHome} className={`text-3xl pl-2 cursor-pointer text-pinkCustom hover:text-nightModeBlueCustom dark:nightModeBlueCustom transition-colors duration-300 `}>ADMIN DASHBOARD</div>
+    <div onClick={navigateToAdminHome} className={`text-3xl pl-2 pt-4 cursor-pointer text-pinkCustom hover:text-nightModeBlueCustom dark:nightModeBlueCustom transition-colors duration-300 `}>ADMIN DASHBOARD</div>
     <nav className="column pl-2 text-3xl text-pinkCustom">
         <div>
         <button className={`text-3xl cursor-pointer text-pinkCustom hover:text-nightModeBlueCustom dark:nightModeBlueCustom transition-colors duration-300`}
