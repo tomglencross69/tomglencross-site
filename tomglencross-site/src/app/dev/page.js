@@ -152,7 +152,7 @@ export default function Dev() {
         +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
       </div>
       <div className="opacity-90 md:text-2xl text-xl pt-4">TOMGLENCROSS.COM</div>
-      <pre className="text-[5px] md:text-[8px] text-center py-4 cursor-pointer hover:text-pinkCustom transition-colors duration-1000">
+      <pre className="text-[5px] md:text-[7px] text-center py-4 cursor-pointer hover:text-pinkCustom transition-colors duration-1000">
         <a href="https:/tomglencross.com"
           target="_blank">{`  TTTTT  OOO  M   M  GGGG  L      EEEEE  N   N  CCCC  RRRR   OOO  SSSS  SSSS  .  CCCC  OOO  M   M
    T   O   O MM MM G      L      E      NN  N C      R   R O   O S      S    .  C     O   O MM MM

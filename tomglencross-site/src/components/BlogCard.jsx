@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function BlogCard({ blogPost, isFirst }) {
+const pathname = usePathname()
+
   return (
     <>
       <div
@@ -39,8 +42,8 @@ export default function BlogCard({ blogPost, isFirst }) {
         >
           <div className={`cursor-pointer hover:text-pinkCustom dark:nightModePinkCustom transition-colors duration-300 `}>
           <Link href={`/blog/${blogPost.blog_id}`}>
-          {isFirst &&
-          <div className="text-xl">Latest</div>
+          {isFirst && pathname !== "/" &&
+          <div className="text-xl text-pinkCustom md:block bg-gradient-to-r from-pinkCustom via-nightModeBlueCustom to-pinkCustom bg-[length:200%_100%] animate-gradient bg-clip-text text-transparent"><i>[Latest post]</i></div>
         }
             <div className={`text-3xl ${!isFirst && "md:text-2xl"}`}>
               {blogPost.title}

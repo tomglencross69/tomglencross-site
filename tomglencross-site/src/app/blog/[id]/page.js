@@ -1,15 +1,17 @@
 "use client";
 import { useState, useEffect } from "react";
 import { use } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import parse from "html-react-parser"
 import CommentForm from "@/components/CommentForm";
+
 
 export default function BlogPostPage({ params }) {
   const { id } = use(params); 
   const [individualBlogPost, setIndividualBlogPost] = useState(null);
   const router = useRouter()
+
 
   const handleClickedBlogPostReturn = (route) => {
     router.push(route)

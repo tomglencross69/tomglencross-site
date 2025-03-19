@@ -3,20 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/*THIS WAS PRELOADED IN GLOBALS, I JUST CHANGED FONT FAMILY*/
 :root {
   /* --background: #ffffff; */
   --background: #FFF5FE;
   --foreground: #171717;
   --font-default: 'Times New Roman', Times, serif;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
 
 .dark {
   --background: #0a0a0a;
@@ -35,4 +27,17 @@ body {
   color: #86efac ;
 }
 
-/*THIS WAS PRELOADED IN GLOBALS, I JUST CHANGED FONT FAMILY*/
+@keyframes swipeColor {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+.animate-gradient {
+  animation: swipeColor 3s linear infinite;
+}
+
+

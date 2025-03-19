@@ -139,7 +139,7 @@ export default function MainNav() {
     <div className="flex">
         <Header onClick={() => handleItemClick(null, '/')}/>
         {!isOnDevPage && (
-        <button className="text-xl ml-auto pr-2 cursor-pointer
+        <button className="text-xl ml-auto pr-10 md:pr-1 cursor-pointer
                  dark:text-nightModeBlueCustom
                 hover:text-blueCustom hover:dark:text-nightModePinkCustom 
                 transition-colors duration-300"  onClick={toggleMode}> {isDarkMode? '☾ ☀' : '☀ ☾'}</button> )}
