@@ -226,7 +226,7 @@ export default function CreateBlogPost() {
         <div>
           <button
             type="button"
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+            className="text-lg md:text-xl px-7 border col-start-3 justify-self-end bg-gray-200 hover:text-pinkCustom dark:text-pinkCustom dark:hover:text-blueCustom"
             onClick={handleSubmit}
           >
             Save Post
