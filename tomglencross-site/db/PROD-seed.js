@@ -1,4 +1,4 @@
-import db from './connection.js'
+import db from './PROD-connection.js'
 import format from 'pg-format'
 
 const productionSeed = async ({seedBlogData, seedCommentsData, seedUserData}) => {
@@ -17,8 +17,7 @@ const productionSeed = async ({seedBlogData, seedCommentsData, seedUserData}) =>
       await db.query(`
         CREATE TABLE users (
           user_id SERIAL PRIMARY KEY,
-          username VARCHAR UNIQUE NOT NULL,
-          created_at TIMESTAMP DEFAULT NOW()
+          username VARCHAR UNIQUE NOT NULL
         );
       `);
   
@@ -53,26 +52,26 @@ const productionSeed = async ({seedBlogData, seedCommentsData, seedUserData}) =>
       console.log('🌱 Inserting test data...');
       // Insert users data
       const insertUsersQuery = format(
-        `INSERT INTO users (user_id, username) VALUES %L RETURNING *;`,
-        seedUserData.map(({user_id, username}) => [user_id, username])
+        `INSERT INTO users (username) VALUES %L RETURNING *;`,
+        seedUserData.map(({username}) => [username])
       );
       const { rows: insertedUsers } = await db.query(insertUsersQuery);
   
-      // Insert blogposts
+      // Insert blogposts -removed blog_id from query and map whilst edebugging
       const insertBlogPostsQuery = format(
-        `INSERT INTO blogposts (blog_id, title, author, subtitle, excerpt, body, image_src, image_alt_text, tags) 
+        `INSERT INTO blogposts (title, author, subtitle, excerpt, body, image_src, image_alt_text, tags) 
          VALUES %L RETURNING *;`,
-        seedBlogData.map(({ blog_id, title, author, subtitle, excerpt, body, image_src, image_alt_text, tags }) => [
-          blog_id, title, author, subtitle, excerpt, body, image_src, image_alt_text, tags ? `{${tags.join(',')}}` : null,
+        seedBlogData.map(({ title, author, subtitle, excerpt, body, image_src, image_alt_text, tags }) => [
+          title, author, subtitle, excerpt, body, image_src, image_alt_text, tags ? `{${tags.join(',')}}` : null,
         ])
       );
       const { rows: insertedPosts } = await db.query(insertBlogPostsQuery);
   
-      // Insert comments with correct blog_id and user_id mapping
+      // Insert comments with correct blog_id and user_id mapping removed comment_id from query and map whilst debugging
       const insertCommentsQuery = format(
-        `INSERT INTO comments (comment_id, user_id, blog_id, comment_text, isPending) VALUES %L;`,
-        seedCommentsData.map(({ comment_id, user_id, blog_id, comment_text, isPending }) => [
-          comment_id, user_id, blog_id, comment_text, isPending
+        `INSERT INTO comments (user_id, blog_id, comment_text, isPending) VALUES %L;`,
+        seedCommentsData.map(({user_id, blog_id, comment_text, isPending }) => [
+          user_id, blog_id, comment_text, isPending
         ])
       );
       await db.query(insertCommentsQuery);

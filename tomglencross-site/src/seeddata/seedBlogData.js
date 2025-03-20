@@ -1,4 +1,5 @@
-const seedBlogData = {
+const seedBlogData = [
+  {
     title: "Seed worked?",
     author: "Tom Glencross",
     subtitle: "We will have to find out",
@@ -11,5 +12,6 @@ const seedBlogData = {
     date_added: "2024-02-19T14:30:00.000Z",
     tags: ["politics", "art", "erotica"],
   }
+]
 
   export default seedBlogData

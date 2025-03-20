@@ -7,6 +7,7 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState('');
+  const [isFormDisabled, setIsFormDisabled] = useState(false)
 
   const handleCommentChange = (event) => {
     setCommentText(event.target.value);
@@ -23,13 +24,15 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsSubmitting(true);
+    setIsFormDisabled(true); 
     setError(null);
     setSuccessMessage('');
 
     // Ensure username and email are provided
     if (!username || !email || !commentText) {
       setError('Please fill in all fields.');
-      setIsSubmitting(false);
+      setIsSubmitting(false)
+      setIsFormDisabled(false);
       return;
     }
 
@@ -66,8 +69,15 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
       setError('Failed to submit the comment.');
     } finally {
       setIsSubmitting(false);
+      
+      setTimeout(() => {
+        setIsFormDisabled(false);
+        setSuccessMessage('');
+      }, 60000);
     }
   };
+
+  
 
   return (
     <div className='pb-10'>
@@ -84,6 +94,7 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
             placeholder="Your username"
             required
             maxLength={30}
+            disabled={isFormDisabled}
           />
         </div>
         <div className='grid grid-cols-2 pb-2 '>
@@ -98,6 +109,7 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
             autoComplete="on"
             required
             maxLength={100}
+            disabled={isFormDisabled}
           />
         </div>
         <div className='grid grid-cols-3'>
@@ -113,11 +125,16 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
             required
             className='text-lg border col-span-3 p-2 dark:text-black dark:placeholder:text-pinkCustom'
             maxLength={1000}
+            disabled={isFormDisabled}
           />
         </div>
         <div className='grid grid-cols-3 pt-2'>
-        <button className='text-lg md:text-xl px-7 border col-start-3 justify-self-end bg-gray-200 hover:text-pinkCustom dark:text-pinkCustom dark:hover:text-blueCustom' type="submit" disabled={isSubmitting}>
-          {isSubmitting ? 'Submitting...' : 'Submit'}
+        <button className='text-lg md:text-xl px-7 border col-start-3 justify-self-end bg-gray-200 hover:text-pinkCustom dark:text-pinkCustom dark:hover:text-blueCustom' type="submit" disabled={isSubmitting || isFormDisabled}>
+        {isSubmitting
+              ? 'Submitting...'
+              : isFormDisabled
+              ? 'Submitted :)'
+              : 'Submit'}
         </button>
         </div>
       {successMessage && <div className="text-pinkCustom animate-fade-out text-center">{successMessage}</div>}

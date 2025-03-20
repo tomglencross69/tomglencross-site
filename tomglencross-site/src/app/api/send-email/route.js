@@ -4,20 +4,19 @@ import nodemailer from 'nodemailer'
 export async function POST(req) {
   const { name, email, message } = await req.json();
 
-  // Set up a transporter using your email provider's SMTP settings
   const transporter = nodemailer.createTransport({
-    service: 'gmail', // or use a custom SMTP provider
+    service: 'gmail', 
     auth: {
-      user: process.env.EMAIL_USER, // Your email
-      pass: process.env.EMAIL_PASS, // Your email password or app password
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
   const mailOptions = {
-    from: email, // Sender's email (provided by the user)
-    to: process.env.EMAIL_USER, // Recipient email (yours)
-    subject: `New message from ${name}`, // Email subject
-    text: message, // Message content
+    from: email, 
+    to: process.env.EMAIL_USER, 
+    subject: `New message from ${name}`, 
+    text: message, 
   };
 
   try {

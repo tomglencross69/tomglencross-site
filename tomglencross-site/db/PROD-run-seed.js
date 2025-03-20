@@ -1,5 +1,5 @@
-import seed from './seed.js'
-import db from './connection.js'
+import productionSeed from './PROD-seed.js'
+import db from './PROD-connection.js'
 
 import seedBlogData from '../src/seeddata/seedBlogData.js'
 import seedCommentsData from '../src/seeddata/seedCommentsData.js'
@@ -7,7 +7,7 @@ import seedUserData from '../src/seeddata/seedUserData.js'
 
 const runProductionSeed = async () => {
     try {
-      await seed({
+      await productionSeed({
       seedBlogData: seedBlogData,
       seedCommentsData: seedCommentsData,
       seedUserData: seedUserData

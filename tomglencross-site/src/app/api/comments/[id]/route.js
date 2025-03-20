@@ -1,4 +1,4 @@
-import db from "@db/connection.js";
+import db from "@db/PROD-connection.js";
 
 export async function DELETE(req, { params }) {
     const { id } = await params;
