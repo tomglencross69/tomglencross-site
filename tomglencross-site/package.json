@@ -9,7 +9,9 @@
     "start": "next start",
     "lint": "next lint",
     "setup-dbs": "psql -f ./db/setup.sql",
-    "seed": "node ./db/run-seed.js"
+    "seed": "node ./db/run-seed.js",
+    "setup-prod-dbs": "psql -f ./db/PROD-setup.sql",
+    "seed-prod": "node ./db/PROD-run-seed.js"
   },
   "dependencies": {
     "@cloudinary/react": "^1.14.1",
