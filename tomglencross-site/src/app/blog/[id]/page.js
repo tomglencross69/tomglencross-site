@@ -62,7 +62,7 @@ export default function BlogPostPage({ params }) {
             width={1000}
             height={1000}
             style={{ objectFit: "cover"}}
-            className="md:py-2 object-cover fill md:max-w-[500px md:overflow md:h-auto md:object-cover mx-auto"
+            className="md:py-2 object-cover fill md:max-w-[500px] md:overflow md:h-auto md:object-cover mx-auto"
             />
     <div className="font-arimo text-xs ">{`${individualBlogPost.tags[0]} / ${individualBlogPost.tags[1]} / ${individualBlogPost.tags[2]}`.toUpperCase()}</div>
     <div className="font-arimo text-xs pb-5">
