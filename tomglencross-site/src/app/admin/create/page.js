@@ -171,7 +171,7 @@ export default function CreateBlogPost() {
           <label htmlFor="content" className="block font-medium">
             Content
           </label>
-          {/* HIDDEN TEXT AREA REMOVE ERORRS WITH QUILL AND FORM ID TAGS */}
+          {/* HIDDEN TEXT AREA REMOVES ERORRS WITH QUILL AND FORM ID TAGS */}
           <textarea id="content" name="content" className="hidden" />
           <ReactQuill
             value={content}
