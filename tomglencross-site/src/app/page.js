@@ -30,6 +30,7 @@ export default function Home() {
       <div>Loading...</div> // You can replace this with a more styled loading spinner or skeleton loader
     );
   }
+  console.log(blogPosts[0].image_src, "image log")
   
   return (
     <>
