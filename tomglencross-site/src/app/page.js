@@ -21,11 +21,10 @@ export default function Home() {
   return (
     <>
   
-      <div className="md:flex md:flex-col md:items-center md:pt-4">
-        <div className="text-3xl md:text-4xl text-center">⚶</div>
-        <div className="text-2xl md:text-4xl pt-3 pb-6 md:text-center">Tom Glencross is an artist, writer, and dev working in the UK.</div>
-     
         <div className="ml-4 text-center md:mt-4">
+          <div className="text-2xl md:text-4xl text-pinkCustom bg-gradient-to-r from-pinkCustom via-nightModeBlueCustom to-pinkCustom bg-[length:200%_100%] animate-gradient bg-clip-text text-transparent mb-4">
+            <div>✿･.｡.: <i>LATEST POST</i>.:｡.･✿</div>
+          </div>
       
       <div className="mb-5 inline-block relative z-10 ">
 
@@ -37,9 +36,6 @@ export default function Home() {
            bg-[#FFF5FE;] dark:bg-black transform hover:scale-105 transition-transform duration-300 ease-in-out z-10 "
            
         >
-          <div className="text-2xl md:text-4xl text-pinkCustom bg-gradient-to-r from-pinkCustom via-nightModeBlueCustom to-pinkCustom bg-[length:200%_100%] animate-gradient bg-clip-text text-transparent  ">
-            <div>✿･.｡.: <i>LATEST POST</i>.:｡.･✿</div>
-          </div>
   
           {blogPosts.length > 0 && (
             <div className=" w-full flex">
@@ -79,6 +75,10 @@ export default function Home() {
         </div>
       </div>
       </div>
+      <div className="md:flex md:flex-col md:items-center md:pt-4">
+        <div className="text-3xl md:text-4xl text-center">⚶</div>
+        <div className="text-2xl md:text-4xl pt-3 pb-6 md:text-center">Tom Glencross is an artist, writer, and dev working in the UK.</div>
+     
     
         <div className="flex justify-center pl-3">
           <Image 
