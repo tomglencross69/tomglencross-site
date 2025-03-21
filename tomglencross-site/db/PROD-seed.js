@@ -57,7 +57,7 @@ const productionSeed = async ({seedBlogData, seedCommentsData, seedUserData}) =>
       );
       const { rows: insertedUsers } = await db.query(insertUsersQuery);
   
-      // Insert blogposts -removed blog_id from query and map whilst edebugging
+      // Insert blogposts -removed blog_id from query and map whilst debugging
       const insertBlogPostsQuery = format(
         `INSERT INTO blogposts (title, author, subtitle, excerpt, body, image_src, image_alt_text, tags) 
          VALUES %L RETURNING *;`,

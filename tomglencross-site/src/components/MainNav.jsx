@@ -240,11 +240,3 @@ export default function MainNav() {
     </>
   )
 }
-
-
-/* to do 
--MEDIA QUERY RENDERING!!!\
--portrait images in modal not displaying properly on lg screen, is it to do with parent container settings?
--should menu disappear once selected? or remain in mobile too?
--clicking any link on dev-cv goes to dev page
-*/

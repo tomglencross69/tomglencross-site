@@ -1,10 +1,3 @@
-// The Response class:
-// The Response constructor creates an HTTP response object. It can be used to define:
-
-// The status code (status: 200),
-// The response body (body: JSON.stringify(result.rows)),
-// The headers ({ 'Content-Type': 'application/json' }).
-
 import db from "@db/PROD-connection.js";
 
 export async function GET() {

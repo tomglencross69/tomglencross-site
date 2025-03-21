@@ -2,8 +2,7 @@ import { useState } from 'react';
 
 export default function CommentForm({ blogId, userId, refreshComments}) {
  const [commentText, setCommentText] = useState('');
-  const [username, setUsername] = useState('tom_glencross');
-  // const [email, setEmail] = useState('tom.glencross@tomglencross.com');
+  const [username, setUsername] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState('');
@@ -17,10 +16,6 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
     setUsername(event.target.value);
   };
 
-  // const handleEmailChange = (event) => {
-  //   setEmail(event.target.value);
-  // };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsSubmitting(true);
@@ -28,7 +23,6 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
     setError(null);
     setSuccessMessage('');
 
-    // Ensure username is provided
     if (!username || !commentText) {
       setError('Please fill in all fields.');
       setIsSubmitting(false)
@@ -37,18 +31,13 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
     }
 
     try {
-        // const randomCommentId = Math.floor(Math.random() * (100 - 19 + 1)) + 19;
-
       const response = await fetch(`/api/blogposts/${blogId}/comments`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          // comment_id: randomCommentId,
-          // user_id: userId,
           username: username,
-          // email: email,
           comment_text: commentText,
           ispending: true
         }),
@@ -60,7 +49,6 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
         setSuccessMessage('Comment submitted successfully!');
         setCommentText('');
         setUsername('');
-        // setEmail('')
         await refreshComments();
       } else {
         setError(data.error || 'An error occurred.');
@@ -97,21 +85,6 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
             disabled={isFormDisabled}
           />
         </div>
-        {/* <div className='grid grid-cols-2 pb-2 '>
-          <label htmlFor="email" className='text-base md:text-lg'>EMAIL</label>
-          <input
-          className='w-full border text-base placeholder:text-sm placeholder:md:text-base dark:text-black dark:placeholder:text-pinkCustom pl-1'
-            type="email"
-            id="email"
-            value={email}
-            onChange={handleEmailChange}
-            placeholder="Your email (won't be displayed)"
-            autoComplete="on"
-            required
-            maxLength={100}
-            disabled={isFormDisabled}
-          />
-        </div> */}
         <div className='grid grid-cols-3'>
           <label htmlFor="comment-box"></label>
           <textarea
@@ -140,11 +113,6 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
       {successMessage && <div className="text-pinkCustom animate-fade-out text-center">{successMessage}</div>}
       {error && <div className='text-red'>{error}</div>}
       </form>
-{/* 
-      <div className='text-sm md:text-base text-justify pt-1'>
-        Your email address will not be displayed with your comment - only your username will be shown. Comments will appear after admin approval.
-      </div> */}
-
     </div>
   );
 }

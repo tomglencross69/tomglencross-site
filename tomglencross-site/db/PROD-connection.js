@@ -15,7 +15,3 @@ const db = new Pool({
 
 export default db
 
-// If psql connects to tomglencross, it’s because that’s your default user.
-// To list your databases, run \l.
-// To switch to production_website, run \c production_website.
-// To connect directly to website_test, use psql -d website_test -U tomglencross.

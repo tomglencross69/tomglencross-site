@@ -111,10 +111,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-
-// TO DO
-
-// LOGIC FOR SUBMISSION NEEDS ALTERING SLIGHTLY, DISABLED FORM ETC...
-// ADD CAPTCHA?!
-// add localStorage timestamp to remember on refresh that form cannot be resubmitted
-//perhaps need to conditionally render two buttons? cos now isSending is also green hover as well as succesffully send button
