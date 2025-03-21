@@ -142,10 +142,10 @@ export default function MainNav() {
         <button className="text-xl ml-auto pr-10 md:pr-1 cursor-pointer
                  dark:text-nightModeBlueCustom
                 hover:text-blueCustom hover:dark:text-nightModePinkCustom 
-                transition-colors duration-300"  onClick={toggleMode}> {isDarkMode? '☾ ☀' : '☀ ☾'}</button> )}
+                transition-colors duration-300"  onClick={toggleMode}> {isDarkMode? '☾ ☼' : '☼ ☾'}</button> )}
         </div>
         <SideNav handleItemClick={handleItemClick}/>
-        <nav className={`text-blueCustom dark:text-nightModeBlueCustom bg-transparent text-3xl md:text-4xl flex pl-4 pb-4`} >
+        <nav className={`text-blueCustom dark:text-nightModeBlueCustom bg-transparent text-3xl md:text-4xl flex pl-6 pb-4`} >
       <ul className="space-y-0">
         {isMenuOpen && (
           <>
