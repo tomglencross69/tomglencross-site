@@ -86,12 +86,12 @@ const handleScrollToBottom = (e) => {
                 target="_blank">
                 ⚵ {individualWork.urlSlug} <i>link</i></a>
           </div> : 
-          <div>
-            <p>My latest portfolio is avialble as a .pdf <span className={`cursor-pointer
+          <div >
+            <p className='pb-2'>My latest portfolio is avialble as a .pdf <span className={`cursor-pointer
                 text-pinkCustom dark:text-nightModeBlueCustom
                 hover:text-blueCustom hover:dark:text-nightModePinkCustom 
                 transition-colors duration-300`} onClick={handleScrollToBottom}>below the image gallery.</span></p>
-            <p className="text-lg"> For enquiries, contact details can be found at 
+            <p className="text-lg md:text-xl pb-2"> For enquiries, contact details can be found at 
                 <a onClick={(()=> router.push('/about'))}><span className="text-xl cursor-pointer"> 5<span className={`cursor-pointer text-blueCustom dark:text-nightModeBlueCustom
                       hover:text-pinkCustom hover:dark:text-nightModePinkCustom 
                       transition-colors duration-300`}> About</span></span></a></p>
