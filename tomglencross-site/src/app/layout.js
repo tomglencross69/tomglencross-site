@@ -8,6 +8,9 @@ import { ThemeProvider } from "./context/ThemeContext";
 
 export default function RootLayout({ children }) {
   return (
+    <>
+    <title>TOMGLENCROSS.COM</title> 
+    <link rel="icon" href="/favicon.png" />
     <html lang="en">
       <body>
         <ThemeProvider>
@@ -25,5 +28,6 @@ export default function RootLayout({ children }) {
         </ThemeProvider>
       </body>
     </html>
+    </>
   );
 }

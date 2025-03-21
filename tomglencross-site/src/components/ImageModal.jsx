@@ -19,7 +19,7 @@ export default function ImageModal({image, onClose, onNext, onPrev}) {
           width={1000}
           height={1000}
           style={{ objectFit: "contain" }}
-          className="mx-auto w-auto md:h-[600px]"
+          className="mx-auto w-auto h-[500px] md:h-[600px]"
         />
         <div className="bg-black bg-opacity-30 text-white text-sm ">
           {image.alt}
