@@ -22,8 +22,8 @@ const worksData = [
             {src:"/images/the-old-stones/landscape-stone-small.webp",
             alt:"Neolthic stone carving showing cup and ring motif"
             },
-            {src:"/images/the-old-stones/cup-and-ring-small.webp", alt:"Neolthic stone carving showing cup and ring motif"    
-            },
+            // {src:"/images/the-old-stones/cup-and-ring-small.webp", alt:"Neolthic stone carving showing cup and ring motif"    
+            // },
             {src:"/images/the-old-stones/gallery-1-small.webp",
             alt:"Interior of Sunnybank Mills with rock carving photographs"
             },

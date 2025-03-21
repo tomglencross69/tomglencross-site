@@ -145,7 +145,7 @@ export default function MainNav() {
                 transition-colors duration-300"  onClick={toggleMode}> {isDarkMode? '☾ ☼' : '☼ ☾'}</button> )}
         </div>
         <SideNav handleItemClick={handleItemClick}/>
-        <nav className={`text-blueCustom dark:text-nightModeBlueCustom bg-transparent text-3xl md:text-4xl flex pl-6 pb-4`} >
+        <nav className={`text-blueCustom dark:text-nightModeBlueCustom bg-transparent text-3xl md:text-4xl flex pl-4 pr-6 pb-4`} >
       <ul className="space-y-0">
         {isMenuOpen && (
           <>
