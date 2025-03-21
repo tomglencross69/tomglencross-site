@@ -35,20 +35,20 @@ export default function Home() {
   return (
     <>
   
-        <div className="ml-4 text-center md:mt-4">
+        <div className="ml-4 text-center md:mt-4 ">
     {/* {console.log(blogPosts[0].image_alt_text)} */}
-          <div className="text-2xl md:text-4xl text-pinkCustom bg-gradient-to-r from-pinkCustom via-nightModeBlueCustom to-pinkCustom bg-[length:200%_100%] animate-gradient bg-clip-text text-transparent mb-4">
+          <div className="text-2xl md:text-4xl text-pinkCustom bg-gradient-to-r from-pinkCustom via-nightModeBlueCustom to-pinkCustom bg-[length:200%_100%] animate-gradient bg-clip-text text-transparent mb-4 ">
             <div>✿･.｡.: <i>LATEST POST</i>.:｡.･✿</div>
           </div>
       
-      <div className="mb-5 inline-block relative z-10 ">
+      <div className="mb-5 inline-block relative z-10  ">
 
-        <div className="absolute bg-pinkCustom dark:bg-nightModeBlueCustom w-[101%] h-[98%] z-0"></div>
+        <div className="absolute bg-pinkCustom dark:bg-nightModeBlueCustom w-[102%] h-[100%] z-0 shadow-md"></div>
   
        
         <div
           className="inline-block 
-           bg-[#FFF5FE;] dark:bg-black transform hover:scale-105 transition-transform duration-300 ease-in-out z-10 "
+           bg-[#FFF5FE;] dark:bg-black transform hover:scale-105 transition-transform duration-300 ease-in-out z-10"
            
         >
   
