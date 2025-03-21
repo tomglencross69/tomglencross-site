@@ -43,7 +43,7 @@ export default function Home() {
               <div className="flex items-stretch ">
                 <Link href={`/blog/${blogPosts[0].blog_id}`} passHref>
                   <img
-                    src={`${blogPosts[0].image_src}`}
+                    src={blogPosts[0].image_src}
                     alt={blogPosts[0].image_alt_text}
                     className="h-full w-auto max-w-[150px] object-cover"
                     priority="true"
