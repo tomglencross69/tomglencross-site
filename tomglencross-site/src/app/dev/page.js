@@ -74,6 +74,8 @@ export default function Dev() {
   };
 
   return (
+    <>
+    <div className="overflow-hidden">
     <div
       className={`font-mono transition-opacity duration-[1000ms]  ${
         fadeIn ? "opacity-100" : "opacity-0"
@@ -254,5 +256,7 @@ export default function Dev() {
         </button>
       </div>
     </div>
+    </div>
+    </>
   );
 }
