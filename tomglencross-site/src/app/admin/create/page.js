@@ -23,11 +23,9 @@ export default function CreateBlogPost() {
   const [previewContent, setPreviewContent] = useState("");
   const router = useRouter();
 
-  const blog_id = 10;
 
   const handleSubmit = async () => {
     const postData = {
-      blog_id: 10,
       title,
       author,
       subtitle,
@@ -193,7 +191,7 @@ export default function CreateBlogPost() {
           <h2 className="text-xl font-bold mb-4">Live Preview</h2>
           <div className="border p-4 rounded bg-white shadow">
             <div className="flex items-center space-x-2 text-sm text-gray-600">
-              <span className="text-xl">{`3.${blog_id}`}</span>
+              <span className="text-xl">{`3.[blog_id]`}</span>
               <span className="text-pinkCustom dark:nightModePinkCustom text-xl">
                 {title || "Post Title"}
               </span>

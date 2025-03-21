@@ -17,6 +17,7 @@ export default function AdminDashboard() {
       }, []);
 
       const handleDelete = async (blog_id) => {
+        console.log(blog_id, "blog id in comments delete")
         if (confirm("Delete post?")) {
             const response = await fetch(`/api/blogposts/${blog_id}`, {method: "DELETE"})
             if (response.ok) {

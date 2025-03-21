@@ -46,7 +46,7 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
         },
         body: JSON.stringify({
           // comment_id: randomCommentId,
-          user_id: userId,
+          // user_id: userId,
           username: username,
           // email: email,
           comment_text: commentText,
@@ -129,10 +129,10 @@ export default function CommentForm({ blogId, userId, refreshComments}) {
           />
         </div>
         <div className='grid grid-cols-3 pt-2'>
-        <button className='text-lg md:text-xl px-7 border col-start-3 justify-self-end bg-gray-200 hover:text-pinkCustom dark:text-pinkCustom dark:hover:text-blueCustom' type="submit" disabled={isSubmitting || isFormDisabled}>
+        <button className='text-lg md:text-xl px-7 border col-start-3 justify-self-end bg-gray-200 hover:text-pinkCustom dark:text-pinkCustom dark:hover:text-blueCustom disabled:bg-gray-100 disabled:hover:text-black disabled:dark:hover:text-black disabled:dark:text-black' type="submit" disabled={isSubmitting || isFormDisabled}>
         {isSubmitting
               ? 'Submitting...'
-              : isFormDisabled
+              : successMessage
               ? 'Submitted :)'
               : 'Submit'}
         </button>

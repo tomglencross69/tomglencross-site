@@ -4,14 +4,16 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "NODE_ENV=production next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "setup-dbs": "psql -f ./db/setup.sql",
     "seed": "node ./db/run-seed.js",
     "setup-prod-dbs": "psql -f ./db/PROD-setup.sql",
-    "seed-prod": "node ./db/PROD-run-seed.js"
+    "seed-prod": "node ./db/PROD-run-seed.js",
+    "supa-setup-prod-dbs": "ENV=production psql -f ./db/PROD-setup.sql",
+    "supa-seed-prod": "ENV=production node ./db/PROD-run-seed.js"
   },
   "dependencies": {
     "@cloudinary/react": "^1.14.1",
