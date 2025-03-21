@@ -6,22 +6,36 @@ import { useState, useEffect } from "react"
 import Link from "next/link";
 
 export default function Home() {
-
+  
   const [blogPosts, setBlogPosts] = useState([]);
-
+  const [isLoading, setIsLoading] = useState(true)
+  
   useEffect(() => {
     const fetchBlogPosts = async () => {
-        const response = await fetch('/api/blogposts'); 
+      try {
+        const response = await fetch('/api/blogposts');
         const data = await response.json();
-        setBlogPosts(data);  
+        setBlogPosts(data);
+      } catch (error) {
+        console.error("Failed to fetch blog posts:", error);
+      } finally {
+        setIsLoading(false); // Set loading to false once data is fetched
+      }
     };
-    fetchBlogPosts()
+    fetchBlogPosts();
   }, []);
 
+  if (isLoading) {
+    return (
+      <div>Loading...</div> // You can replace this with a more styled loading spinner or skeleton loader
+    );
+  }
+  
   return (
     <>
   
         <div className="ml-4 text-center md:mt-4">
+    {/* {console.log(blogPosts[0].image_alt_text)} */}
           <div className="text-2xl md:text-4xl text-pinkCustom bg-gradient-to-r from-pinkCustom via-nightModeBlueCustom to-pinkCustom bg-[length:200%_100%] animate-gradient bg-clip-text text-transparent mb-4">
             <div>✿･.｡.: <i>LATEST POST</i>.:｡.･✿</div>
           </div>
