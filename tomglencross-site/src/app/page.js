@@ -43,7 +43,7 @@ export default function Home() {
       
       <div className="mb-5 inline-block relative z-10  ">
 
-        <div className="absolute bg-pinkCustom dark:bg-nightModeBlueCustom w-[102%] h-[100%] z-0 shadow-md"></div>
+        <div className="absolute bg-gradient-to-r from-pinkCustom via-nightModeBlueCustom to-pinkCustom bg-[length:200%_100%] animate-gradient  w-[102%] h-[100%] z-0 shadow-md"></div>
   
        
         <div
