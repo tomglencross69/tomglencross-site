@@ -1,6 +1,7 @@
 import db from "@db/PROD-connection.js";
 
 export async function DELETE(req, { params }) {
+    
     const { id } = await params;
     try {
         const result = await db.query('DELETE FROM comments WHERE comment_id = $1', [id]);
@@ -19,6 +20,7 @@ export async function DELETE(req, { params }) {
   }
 
   export async function PATCH(req, { params }) {
+    
     const { id } = await params;
     try {
         const result = await db.query(
