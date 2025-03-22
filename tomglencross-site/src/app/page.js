@@ -95,7 +95,7 @@ export default function Home() {
       </div>
       <div className="md:flex md:flex-col md:items-center md:pt-4">
         <div className="text-3xl md:text-4xl text-center">⚶</div>
-        <div className="text-2xl md:text-4xl pt-3 pb-6 md:text-center">Tom Glencross is an artist, writer, and dev working in the UK.</div>
+        <div className="text-2xl md:text-4xl pt-3 pb-6 pl-4 md:text-center">Tom Glencross is an artist, writer, and dev working in the UK.</div>
      
     
         <div className="flex justify-center pl-3">

@@ -76,7 +76,7 @@ export default function BlogPostPage({ params }) {
     }}
          className= "cursor-pointer hover:text-pinkCustom active:text-pinkCustom transition-colors duration-1000">TOM GLENCROSS</span></div>
     <div className="text-3xl text-center pb-5">⚶</div>
-    <div className="text-xl">
+    <div className="text-xl dark:text-white">
         {containsHtml(individualBlogPost.body) ? parse(individualBlogPost.body) : individualBlogPost.body}       
     <div className="text-3xl text-center pt-5 pb-5">߷</div>
     <div className="text-xl text-center pb-5">COMMENTS</div>
