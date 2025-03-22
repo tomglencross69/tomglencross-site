@@ -39,4 +39,14 @@ body {
   animation: swipeColor 3s linear infinite;
 }
 
+/* Ensure the editor content adapts to dark mode */
+.dark .ql-editor {
+  color: white !important;
+  background-color: transparent !important;
+}
 
+/* Ensure paragraphs and spans inside Quill are also white */
+.dark .ql-editor p,
+.dark .ql-editor span {
+  color: white !important;
+}
