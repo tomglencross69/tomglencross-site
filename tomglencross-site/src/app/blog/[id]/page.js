@@ -62,7 +62,7 @@ export default function BlogPostPage({ params }) {
             width={1000}
             height={1000}
             style={{ objectFit: "cover"}}
-            className="md:py-2 object-cover fill md:max-w-[500px] md:overflow md:h-auto md:object-cover mx-auto"
+            className="md:py-2 object-cover fill max-w-[250px] md:max-w-[400px] md:overflow md:h-auto md:object-cover mx-auto"
             />
     <div className="font-arimo text-xs ">{`${individualBlogPost.tags[0]} / ${individualBlogPost.tags[1]} / ${individualBlogPost.tags[2]}`.toUpperCase()}</div>
     <div className="font-arimo text-xs pb-5">
@@ -76,7 +76,7 @@ export default function BlogPostPage({ params }) {
     }}
          className= "cursor-pointer hover:text-pinkCustom active:text-pinkCustom transition-colors duration-1000">TOM GLENCROSS</span></div>
     <div className="text-3xl text-center pb-5">⚶</div>
-    <div className="text-xl dark:text-white prose dark:prose-invert">
+    <div className="text-xl dark:text-white">
         {containsHtml(individualBlogPost.body) ? parse(individualBlogPost.body) : individualBlogPost.body}       
     <div className="text-3xl text-center pt-5 pb-5">߷</div>
     <div className="text-xl text-center pb-5">COMMENTS</div>
