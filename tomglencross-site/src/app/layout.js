@@ -1,7 +1,7 @@
 "use client";
 
 import "./globals.css";
-import { useEffect, useState } from "react";
+import Head from "next/head";
 import MainNav from "@/components/MainNav";
 import { ThemeProvider } from "./context/ThemeContext";
 
@@ -12,6 +12,18 @@ export default function RootLayout({ children }) {
     <title>TOMGLENCROSS.COM</title> 
     <link rel="icon" href="/favicon.png" />
     <html lang="en">
+      <Head>
+      <meta
+                property="og:description"
+                content="✿ welcome to tomglencross.com - for portfolio, blog, projects, and more ... ✿"
+              />
+              <meta
+                property="og:image"
+                content="https://www.tomglencross.com/images/link.jpg" // Replace with your image URL
+              />
+              <meta property="og:url" content="https://tomglencross.com" />
+              <meta property="og:type" content="website" />
+      </Head>
       <body>
         <ThemeProvider>
           {/* becomes grid on large screen */}
