@@ -34,19 +34,18 @@ export default function Home() {
   
   return (
     <>
+        <div className="ml-4 text-center md:mt-4 ">
+          <div className="text-2xl md:text-4xl text-pinkCustom bg-gradient-to-r from-pinkCustom via-nightModeBlueCustom to-pinkCustom bg-[length:200%_100%] animate-gradient bg-clip-text text-transparent mb-4 ">
+            <div>✿･.｡.: <i>LATEST POST</i>.:｡.･✿</div>
+          </div>
   {isLoading ? <div className="flex justify-center items-center h-32">
     <Image 
-      src="/images/pixelloader.png" // Corrected path
+      src="/images/hourglass.gif"
       alt="Loading..."
       width={32} 
       height={32} 
     />
   </div> :
-        <div className="ml-4 text-center md:mt-4 ">
-    {/* {console.log(blogPosts[0].image_alt_text)} */}
-          <div className="text-2xl md:text-4xl text-pinkCustom bg-gradient-to-r from-pinkCustom via-nightModeBlueCustom to-pinkCustom bg-[length:200%_100%] animate-gradient bg-clip-text text-transparent mb-4 ">
-            <div>✿･.｡.: <i>LATEST POST</i>.:｡.･✿</div>
-          </div>
       
       <div className="mb-5 inline-block relative z-10  ">
 
@@ -99,8 +98,9 @@ export default function Home() {
           )}
         </div>
       </div>
-      </div>
 }
+      </div>
+
       <div className="md:flex md:flex-col md:items-center md:pt-4">
         <div className="text-3xl md:text-4xl text-center">⚶</div>
         <div className="text-2xl md:text-4xl pt-3 pb-6 pl-4 md:text-center">Tom Glencross is an artist, writer, and dev working in the UK.</div>
