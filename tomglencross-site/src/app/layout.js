@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     <title>TOMGLENCROSS.COM</title> 
     <link rel="icon" href="/favicon.png" />
     <html lang="en">
-      <Head>
+      <head>
       <meta
                 property="og:description"
                 content="✿ welcome to tomglencross.com - for portfolio, blog, projects, and more ... ✿"
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
               />
               <meta property="og:url" content="https://tomglencross.com" />
               <meta property="og:type" content="website" />
-      </Head>
+      </head>
       <body>
         <ThemeProvider>
           {/* becomes grid on large screen */}
