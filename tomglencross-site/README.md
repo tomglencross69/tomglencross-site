@@ -38,7 +38,7 @@
 
 ---
 
-## 🧑‍💻 Coming soon for v2...
+## 🔧 Coming soon for v2...
 
 - 📫 Mailing List... for informing subscribers about new blogposts.
 
@@ -47,9 +47,10 @@
 
 ## 🧠 What I Learned
 
-- Building a full-stack app from the ground up (frontend, backend, DB)
+- First solo full-stack app from the ground up (frontend, backend, DB)
+- Using Next.js app router/api route structure
 - Securing an admin interface using JWT and cookie-based auth
-- Designing for real humans (a11y + UX testing)
+- Building CMS from scratch
 - Integrating Supabase and implementing RLS policies
 - Managing project structure and planning with Figma & Git
 
