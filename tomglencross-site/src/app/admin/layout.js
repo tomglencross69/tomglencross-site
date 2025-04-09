@@ -1,15 +1,13 @@
 "use client"
-
 import { useRouter } from "next/navigation"
-import Cookies from "js-cookie"
 
 export default function AdminLayout({children}) {
 const router = useRouter()
 
-const handleLogout = () => {
-    Cookies.remove("admin-auth")
-    router.push("/adminlogin")
-}
+const handleLogout = async () => {
+    await fetch("/api/logout", { method: "POST" });
+    router.push("/adminlogin");
+};
 
 const navigateToCreate = () => {
     router.push("/admin/create")

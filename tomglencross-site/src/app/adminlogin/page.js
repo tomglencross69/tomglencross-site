@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Cookies from "js-cookie";
 
 export default function AdminLogin() {
     const [password, setPassword] = useState("");
@@ -17,10 +16,9 @@ export default function AdminLogin() {
             body: JSON.stringify({ password }),
         });
 
-        const loginResponseData = await loginResponse.json();
+        const data = await loginResponse.json();
 
-        if (loginResponseData.success) {
-            Cookies.set("admin-auth", "true", { expires: 1 });
+        if (data.success) {
             router.push("/admin");
         } else {
             setError("Incorrect password");
