@@ -1,7 +1,6 @@
 'use client'
 import Image from "next/image";
 import homepageImage from "@/assets/images/homePageImage1.jpg"
-import BlogCard from "@/components/BlogCard"
 import { useState, useEffect } from "react"
 import Link from "next/link";
 
@@ -24,13 +23,6 @@ export default function Home() {
     };
     fetchBlogPosts();
   }, []);
-
-  // if (isLoading) {
-  //   return (
-  //     <div>Loading...</div> // You can replace this with a more styled loading spinner or skeleton loader
-  //   );
-  // }
-
   
   return (
     <>
@@ -66,8 +58,8 @@ export default function Home() {
                 <Image
   src={blogPosts[0].image_src}
   alt={blogPosts[0].image_alt_text}
-  width={150} // Specify a width for the image
-  height={150} // Specify a height for the image
+  width={150} 
+  height={150} 
   className="object-cover"
   style={{width: 'auto'}}
   priority

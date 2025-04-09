@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌊 tomglencross.com — Personal Website & Full-Stack Playground
 
-## Getting Started
+> You're surfin' it right now, buddy. 🏄‍♂️  
+> A full-stack personal website project that brings together my portfolio, blog, artworks, and experiments — all custom-built from scratch with love.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# 📬 Contact
+[🌐 Use the contact form](https://www.tomglencross.com/about)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- ⚛️ **Next.js & React** – Full-stack framework using **RESTful API** principles
+- 🎨 **TailwindCSS** – Custom theming, dark mode, and playful dev theme
+- ♿ **Accessible & Energy-Efficient** – WCAG 3.0 accessibility + low-energy UI guidelines
+- 💾 **PostgreSQL + Supabase** – Database + RLS security baked in
+- 🧠 **JWT Auth** – Cookie-based admin login with secure token validation
+- 📚 **React-Quill WYSIWYG** – Rich blog post editor with live preview ✍️
+- 🔐 **Custom Admin CMS** – Approve/delete blog posts & comments via dashboard
+- 🧩 **Component Architecture** – Carefully planned in Figma, with full wireframes & component tree
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🧑‍💻 Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 🌐 Fully responsive, from mobile to widescreen
+- 📝 Blog with markdown-like editor (thanks to React Quill)
+- 🎨 Portfolio & artwork galleries
+- 🔒 Admin login with JWT auth via secure HttpOnly cookies
+- 🧹 CMS tools (approve/delete blog posts & comments)
+- 🌘 Theming support: dev themes + night mode toggle
+- 🔧 Figma-based project planning (wireframes, progress tracking)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📂 [View Figma project board](https://www.figma.com/board/QLJFEnQSkpcz5B7RYu9ETN/tomglencross.com-project-board?node-id=0-1&p=f&t=lP7eonXJilk17Gzc-0)  
+📁 [View GitHub Repo](https://github.com/tomglencross69/tomglencross-site)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🧑‍💻 Coming soon for v2...
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 📫 Mailing List... for informing subscribers about new blogposts.
+
+
+---
+
+## 🧠 What I Learned
+
+- Building a full-stack app from the ground up (frontend, backend, DB)
+- Securing an admin interface using JWT and cookie-based auth
+- Designing for real humans (a11y + UX testing)
+- Integrating Supabase and implementing RLS policies
+- Managing project structure and planning with Figma & Git
+
+---

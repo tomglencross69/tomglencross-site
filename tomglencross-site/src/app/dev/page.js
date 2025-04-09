@@ -184,7 +184,7 @@ export default function Dev() {
           guidelines
         </p>
         <p>
-          - Custom Admin Dashboard CMS with js-cookie login-auth, blogpost and
+          - Custom Admin Dashboard CMS with JWT authorisation, blogpost and
           comment approval/deletion
         </p>
         <p>- react-quill custom wysiwyg blogpost dashboard with live preview</p>
