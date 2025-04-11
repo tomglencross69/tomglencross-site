@@ -4,6 +4,7 @@ import "./globals.css";
 import Head from "next/head";
 import MainNav from "@/components/MainNav";
 import { ThemeProvider } from "./context/ThemeContext";
+import { Analytics } from "@vercel/analytics/next"
 
 
 export default function RootLayout({ children }) {
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
             {/* everything else in two columns on large screen */}
             <div className="pl-2 pr-9 md:col-span-2 md:pl-10 ">
               {children}
+              <Analytics/>
             </div>
           </div>
         </ThemeProvider>
