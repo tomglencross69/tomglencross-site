@@ -10,9 +10,43 @@
 
 //     [Visit Website](https://example.com)`
 
+//25/11/25 - BODGE but I can't work out how to code otherwise. When new works are added, and you want to add them to the top of the list, data in each object has to be manually changed ie. id:1 and reference 1.1 have to become 2 and 2.2, to make room for a new object with an id of 1 at the top.
+
 const worksData = [
     {id: "1", 
         reference: "1.1", 
+        title: "Provincial Pride [work in progress]", 
+        urlSlug: "provincial-pride", 
+        description: `"_WORK IN PROGRESS_... foregrounding queer, working-class experiences in post-industrial Britain - new insights into the social and cultural production of visibility, belonging, and regional identity."`, 
+        info: "UK, ongoing locations",
+        links:["https://www.tomglencross.com/works/provincial-pride"],
+        images: [
+            {src:"/images/provincial-pride/portrait1.jpg.webp",
+            alt:"Portrait of Scunthorpe Pride attendee"
+            },
+            {src:"/images/provincial-pride/portrait2.jpg.webp",
+            alt:"Portrait of Scunthorpe Pride attendee"
+            },
+           {src:"/images/provincial-pride/portrait3.jpg.webp",
+            alt:"Portrait of Scunthorpe Pride attendee"
+            },
+           {src:"/images/provincial-pride/portrait4.jpg.webp",
+            alt:"Portrait of Scunthorpe Pride attendee"
+            },
+           {src:"/images/provincial-pride/portrait5.jpg.webp",
+            alt:"Portrait of Scunthorpe Pride attendee"
+            },
+            {src:"/images/provincial-pride/portrait6.jpg.webp",
+            alt:"Portrait of Scunthorpe Pride attendee"
+            },
+            {src:"/images/provincial-pride/portrait7.jpg.webp",
+            alt:"Portrait of Scunthorpe Pride attendee"
+            },
+        ],
+        displayType: "imagegrid",
+        body: `"_Provincial Pride_ investigates the intersection of queer identity, working-class culture, and regional space through documentary photography, oral histories, and critical reflection. Building on a documentation of Pride in my hometown Scunthorpe — a small post-industrial steel town in northern England — the project explores how queer visibility is performed, negotiated, and experienced provincially, outside metropolitan centres.`},
+    {id: "2", 
+        reference: "1.2", 
         title: "The Old Stones", 
         urlSlug: "the-old-stones", 
         description: "THE OLD STONES is an ongoing photographic documentary of Neolithic folk art and rock carvings, amongst the oldest artistic representations in Britain.", 
@@ -42,8 +76,8 @@ const worksData = [
         ],
         displayType: "imagegrid",
         body: `"The significance of _THE OLD STONES_ is deeply communal, sensual, and unknowable. The rock carvings are pregnant with guesswork and invocations of thousands of years of living people, and the engraved marks are immortal imprints of their hands, their touch.\n\n\Showing non-figurative abstract lines, organic circles, and their distinctive cup-and-ring marks, they were carved by people who saw little distinction between human-made and natural-made. The unadorned stones themselves may have held supernatural significance, deposited by glaciers millennia before even the hunter-gatherers, appearing as if from nowhere on the high crest of a miles-wide trough shaped valley – what power carried them up here to these vistas, and for what purpose?\n\n\Tom Glencross’ medium format photographs, enlarged to dream-like proportions, continue to ask these questions and to celebrate these original records, the primary utterances and expressions of the earliest people, their society, their thoughts, their feelings."`},
-    {id: "2", 
-        reference: "1.2", 
+    {id: "3", 
+        reference: "1.3", 
         title: "Indebtedness", 
         urlSlug: "indebtedness", 
         description: "Ephemeral objects accumulate alongside black-and-white photographs. The fading glory of the steel town where Stoney and Glencross grew up, the working class’s disillusionment and an ambitious yet anonymous conformity draw a moved silence. - Anna Barbieri, Critics Pick, Vienna Art Week", 
@@ -70,8 +104,8 @@ const worksData = [
         body: `\n\n\"Departing from Scunthorpe Correspondences, a dialogue between Stoney and Tom Glencross, a UK-based writer and friend, that was conceived and published in the given framework, this exhibition is set alongside the struggles of the working-class in Scunthorpe, where both authors grew up. Once a symbol for prosperity and wealth, the town in northern England now faces widespread precarity and disenchantment due to the decline of the steel industry and deregulating, globalizing processes. 
         \n\n\This conversation interrelates Stoney’s family’s trajectory with larger colonial histories of the UK and the Partition of Pakistan and India in 1947. Details of the town of Scunthorpe are visualized in the exhibition through a selection of Glencross’ black-and-white photographs (Sensual objects, real qualities), reminiscent of the social realism of New Objectivity, such as Bernd and Hilla Becher’s portrayal of decommissioned industrial buildings and workers’ homes prior to their vanishing."
         \n\n\ _-excerpt taken from Kevin Space Gallery, Vienna, link below:_ `},
-    {id: "3", 
-        reference: "1.3", 
+    {id: "4", 
+        reference: "1.4", 
         title: "Otherwise Humane, Kyiv Biennial", 
         urlSlug: "kyiv-biennial", 
         description: `"For the Kyiv Biennial 2023, Miriam Stoney invites writer, photographer and childhood friend Tom Glencross to join her for a reading inside the installation The Most Humane." - _Kyiv Biennial Program_`, 
@@ -83,8 +117,8 @@ const worksData = [
             }],
         displayType: "imagegrid",
         body: `"Drawing on themes inherent to this work, including the politics of witnessing and obfuscation, as well as the uses of ethical standards in encounters of radical alterity, Glencross and Stoney have written a new text that reflects on experiences of violence in everyday life and their responses to them – from the immediate, bodily reaction to the more distanced account in and through writing." - _Kyiv Biennial Program_ & _tranzit.at_`},
-    {id: "4", 
-        reference: "1.4", 
+    {id: "5", 
+        reference: "1.5", 
         title: "Etc", 
         urlSlug: "etc", 
         description: "Archived work and ongoing projects - follow the links below for enquiries and more.", 

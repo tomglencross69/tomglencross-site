@@ -76,7 +76,7 @@ const handleScrollToBottom = (e) => {
         <div className='text-lg md:text-xl'>
           <ReactMarkdown>{individualWork.body}</ReactMarkdown>
           {/* CONDITIONALLY RENDERED STUFF FOR ETC PAGE */}
-            {individualWork.id !== "4" ? 
+            {individualWork.id !== "5" ? 
           <div>
           <a className={`cursor-pointer pb-3 md:text-2xl
                 text-pinkCustom dark:text-nightModeBlueCustom
@@ -135,7 +135,7 @@ const handleScrollToBottom = (e) => {
        {individualWork.displayType === "imagegallery" && individualWork.images.length > 1 && (
          <ImageGallery images={individualWork.images} />
         )}
-        {individualWork.id === "4" ? 
+        {individualWork.id === "5" ? 
         <div className='pt-5 pb-10 text-xl'>Latest portfolio of my commercial, studio and artistic work available below:
           <p></p>{!showPDF ? 
           <button
