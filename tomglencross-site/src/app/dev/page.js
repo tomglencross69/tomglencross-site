@@ -98,6 +98,8 @@ export default function Dev() {
       </h1>
       </div>
       <p className="py-4 text-2xl md:text-3xl">Projects</p>
+
+      {/* NOCTURNE */}
       <div className="opacity-90 text-xl md:text-2xl">NOCTURNE</div>
       <pre className="text-center text-[8px] md:text-[12px] py-4 cursor-pointer hover:text-pinkCustom transition-colors duration-1000">
         <a href="https://nocturne-journal.netlify.app"
@@ -153,6 +155,8 @@ export default function Dev() {
       <div className="md:text-2xl pt-4 text-center">
         +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
       </div>
+
+      {/* TOMGLENCROSS.COM*/}
       <div className="opacity-90 md:text-2xl text-xl pt-4">TOMGLENCROSS.COM</div>
       <pre className="text-[5px] md:text-[7px] text-center py-4 cursor-pointer hover:text-pinkCustom transition-colors duration-1000">
         <a href="https://www.tomglencross.com"
@@ -173,7 +177,7 @@ export default function Dev() {
         </a>
         <p>
           You're surfin' it right now buddy. A full-stack personal website
-          project to host portfolio, projects, blog, artworks.
+          project to host portfolio, projects, blog, artworks
         </p>
         <p>
           - Full-stack project built with Next.js & React using RESTful API
@@ -214,8 +218,80 @@ export default function Dev() {
           </a>
         </p>
       </div>
-
+<div className="md:text-2xl text-center">
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+      </div>
      
+     {/* TheCollections*/}
+
+     <div className="opacity-90 md:text-2xl text-xl pt-4">TheCollections</div>
+   <pre className="text-[5px] md:text-[7px] text-center py-4 cursor-pointer hover:text-pinkCustom transition-colors duration-1000">
+  <a href="https://the-collections-museum-curation-app.vercel.app/"
+     target="_blank">{`  TTTTT  H   H  EEEEE       CCCC  OOO  L      L      EEEEE  CCCC  TTTTT  I  OOO  N   N  SSSS
+    T    H   H  E          C     O   O L      L      E      C        T     I  O   O NN  N S
+    T    HHHHH  EEEE       C     O   O L      L      EEEE   C        T     I  O   O N N N  SSS
+    T    H   H  E          C     O   O L      L      E      C        T     I  O   O N  NN     S
+    T    H   H  EEEEE       CCCC  OOO  LLLLL  LLLLL EEEEE  CCCC    T     I   OOO  N   N SSSS
+`}</a>
+</pre>
+
+      <div className="pb-8 md:text-xl">
+        <a
+          className="font-bold cursor-pointer hover:text-pinkCustom  hover:underline transition-colors duration-1000"
+          href="https://the-collections-museum-curation-app.vercel.app/"
+          target="_blank"
+        >
+         TheCollections
+        </a>
+        <p>
+  A virtual space for exploring
+  and curating exhibitions from two heritage collections, designed with a clean,
+  accessible user experience in mind.
+</p>
+<p>
+  - Full-stack project built with Nuxt 3 & Vue 3 using Pinia for state management
+  and RESTful APIs from Portable Antiquities Scheme & Europeana
+</p>
+<p>
+  - UI/UX designed following WCAG accessibility and semantic HTML guidelines
+</p>
+<p>
+  - Search, filter, and sort across collections with pagination
+</p>
+<p>
+  - Individual artwork views with images and essential metadata
+</p>
+<p>
+  - Save artworks to temporary exhibitions and view curated galleries
+</p>
+
+<p>
+  - Project plan, wireframes, and component tree are available{" "}
+  <a
+    className="underline cursor-pointer hover:text-pinkCustom hover:text-lg hover:underline transition-colors duration-1000"
+    href="https://www.figma.com/board/GneUPcx4qQbnQFL75d1iGA/museum-curator?node-id=0-1&p=f&t=6Ktoql9pla7J846G-0" 
+    target="_blank"
+  >
+    here
+  </a>
+</p>
+<p>
+  - GitHub repository available{" "}
+  <a
+    className="underline cursor-pointer hover:text-pinkCustom hover:text-lg hover:underline transition-colors duration-1000"
+    href="https://github.com/tomglencross69/the-collections-museum-curation-app"
+    target="_blank"
+  >
+    here
+  </a>
+</p>
+
+
+      </div>
+<div className="md:text-2xl text-center pb-10">
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+      </div>
+
       <div className="p-4 border rounded-lg md:text-xl" style={{ borderColor: textColor }}>
         <div>
           body {`{`}&nbsp;&nbsp;background-color:
