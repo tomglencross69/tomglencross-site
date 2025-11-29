@@ -21,25 +21,25 @@ const worksData = [
         info: "UK, ongoing locations",
         links:["https://www.tomglencross.com/works/provincial-pride"],
         images: [
-            {src:"/images/provincial-pride/portrait1.jpg.webp",
+            {src:"/images/provincial-pride/portrait1.webp",
             alt:"Portrait of Scunthorpe Pride attendee"
             },
-            {src:"/images/provincial-pride/portrait2.jpg.webp",
+            {src:"/images/provincial-pride/portrait2.webp",
             alt:"Portrait of Scunthorpe Pride attendee"
             },
-           {src:"/images/provincial-pride/portrait3.jpg.webp",
+           {src:"/images/provincial-pride/portrait3.webp",
             alt:"Portrait of Scunthorpe Pride attendee"
             },
-           {src:"/images/provincial-pride/portrait4.jpg.webp",
+           {src:"/images/provincial-pride/portrait4.webp",
             alt:"Portrait of Scunthorpe Pride attendee"
             },
-           {src:"/images/provincial-pride/portrait5.jpg.webp",
+           {src:"/images/provincial-pride/portrait5.webp",
             alt:"Portrait of Scunthorpe Pride attendee"
             },
-            {src:"/images/provincial-pride/portrait6.jpg.webp",
+            {src:"/images/provincial-pride/portrait6.webp",
             alt:"Portrait of Scunthorpe Pride attendee"
             },
-            {src:"/images/provincial-pride/portrait7.jpg.webp",
+            {src:"/images/provincial-pride/portrait7.webp",
             alt:"Portrait of Scunthorpe Pride attendee"
             },
         ],
